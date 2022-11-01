@@ -1,0 +1,24 @@
+{
+  "name": "duan1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/insc15/duan1.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/insc15/duan1/issues"
+  },
+  "homepage": "https://github.com/insc15/duan1#readme",
+  "dependencies": {
+    "@tailwindcss/line-clamp": "^0.4.2",
+    "tailwindcss": "^3.2.1",
+    "yarn": "^1.22.19"
+  }
+}
