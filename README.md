@@ -8,6 +8,9 @@ $`yarn tailwindcss -i ./assets/style/input.scss -o ./assets/style/common.css --w
 Replace the path in the .htaccess file with yours
 `RewriteBase /<change-this>/` -> `RewriteBase /<example_path>/`
 `RewriteRule . /change-this/index.php [L]` -> `RewriteRule . /example_path/index.php [L]`
+Then 
+
+$`git update-index --assume-unchanged .htaccess`
 ## Commit
 - Meaningful commit message
 
