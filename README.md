@@ -2,12 +2,17 @@
 
 ## Getting Started
 $`git clone https://github.com/insc15/duan1.git`
+
 $`cd duan1`
+
 $`yarn tailwindcss -i ./assets/style/input.scss -o ./assets/style/common.css --watch`
 
 Replace the path in the .htaccess file with yours
+
 `RewriteBase /<change-this>/` -> `RewriteBase /<example_path>/`
+
 `RewriteRule . /change-this/index.php [L]` -> `RewriteRule . /example_path/index.php [L]`
+
 Then 
 
 $`git update-index --assume-unchanged .htaccess`
