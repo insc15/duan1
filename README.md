@@ -4,7 +4,8 @@
 $`git clone https://github.com/insc15/duan1.git`
 
 $`cd duan1`
-
+$`npm i`
+$`npm i yarn`
 $`yarn tailwindcss -i ./assets/style/input.scss -o ./assets/style/common.css --watch`
 
 Replace the path in the .htaccess file with yours
