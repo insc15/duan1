@@ -7,8 +7,7 @@ $`cd duan1`
 
 $`npm i`
 
-$`npm i yarn`
-$`yarn tailwindcss -i ./assets/style/input.scss -o ./assets/style/common.css --watch` (try use npx if not working)
+$`npx tailwindcss -i ./assets/style/input.scss -o ./assets/style/common.css --watch` (try use npx if not working)
 
 Replace the path in the .htaccess file with yours
 
