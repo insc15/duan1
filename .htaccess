@@ -1,6 +1,6 @@
 RewriteEngine On
-RewriteBase /<change_this>/
+RewriteBase /<duan1>/
 RewriteRule ^index\.php＄ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /change_this/index.php [L]
+RewriteRule . /duan1/index.php [L]
