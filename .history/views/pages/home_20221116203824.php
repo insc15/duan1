@@ -1,7 +1,6 @@
 <?php
-require('./controllers/product.php');
-$list_product = view_products();
-print_r($list_product)
+require('./controllers/product.php')
+echo view_products();
 ?>
 
 <section

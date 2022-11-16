@@ -1,7 +1,6 @@
 <?php
 require('./controllers/product.php');
-$list_product = view_products();
-print_r($list_product)
+print_r(view_products())
 ?>
 
 <section
