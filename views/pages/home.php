@@ -71,7 +71,7 @@ print_r($list_product)
         <p class="text-4xl font-bold">New Arrivals</p>
         <p class="text-sm">Summer Collection New Morden Design</p>
     </div>
-    <div class="grid grid-cols-4 gap-x-10 max-w-screen-xl mx-auto  w-full hover:-translate-y-6 ease-in-out duration-500">
+    <div class="grid grid-cols-4 gap-x-10 max-w-screen-xl mx-auto  w-full ">
         <!-- product -->
         <div class="bg-white rounded-lg shadow-xl border-green-600 border-2 p-3"> 
             <a href="">
@@ -107,6 +107,8 @@ print_r($list_product)
                 </div>
             </a>
         </div>
+        <!-- zzz -->
+        
     </div>
     <div class="explore my-10 flex justify-center">
         <a href="">
