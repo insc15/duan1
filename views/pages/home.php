@@ -21,7 +21,7 @@ print_r($list_product)
     <div class="grid grid-cols-4 gap-x-10 max-w-screen-xl mx-auto px-5 w-full ">
         <div class="bg-white rounded-lg p-6 shadow-xl border-green-600 border-2">
              <div class="">
-                <img class=""src=".assets/images/hero4.png" alt="">
+                <img class=""src="./assets/images/hero4.png" alt="">
              </div>
         </div>
         <div>
