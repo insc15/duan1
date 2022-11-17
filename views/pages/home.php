@@ -12,7 +12,7 @@ $list_product = view_products();
         <p class="my-5">Save more with coupons & up to 70%off!</p>
     </div>
 </section>
-<section class="md:h-96 lg:h-screen">
+<section class="">
     <div class="text-center my-10">
         <p class="text-4xl font-bold">Featured Products</p>
         <p class="text-sm">Summer Collection New Morden Design</p>
