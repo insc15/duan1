@@ -48,7 +48,7 @@ $list_product = view_products();
             </a>
             <a href="">
                 <div class="price">
-                    <p class="text-green-600 font-bold text-base pt-2"><?php echo $value['price'] ?></p>
+                    <p class="text-green-600 font-bold text-base pt-2"><?php echo $value['price'] ?>đ</p>
                 </div>
             </a>
             <a href="">
@@ -113,7 +113,7 @@ $list_product = view_products();
             </a>
             <a href="">
                 <div class="price">
-                    <p class="text-green-600 font-bold text-base pt-2"><?php echo $value['price'] ?></p>
+                    <p class="text-green-600 font-bold text-base pt-2"><?php echo $value['price'] ?> đ</p>
                 </div>
             </a>
             <a href="">
