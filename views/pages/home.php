@@ -17,8 +17,7 @@ $list_product = view_products();
         <p class="text-4xl font-bold">Featured Products</p>
         <p class="text-sm">Summer Collection New Morden Design</p>
     </div>
-    <div
-        class="grid grid-cols-4 gap-x-10 max-w-screen-xl mx-auto  w-full hover:-translate-y-6 ease-in-out duration-500">
+    <div class="grid grid-cols-4 gap-x-10 max-w-screen-xl mx-auto  w-full ">
         <!-- product -->
         <!-- for list hàng -->
         <?php foreach ($list_product as $value) : ?>
