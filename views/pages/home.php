@@ -43,7 +43,7 @@ print_r($list_product)
             </a>
             <a href="">
             <div class="price">
-                <p class="text-green-600 font-bold text-base pt-2">78.000 đ</p>
+                <p class="text-green-600 font-bold text-base pt-2 ">78.000 đ</p>
             </div>
             </a>
             <a href="">

@@ -13,6 +13,9 @@
             case $root.'/shop':
                 get_view('./controllers/pages/shop.php');
                 break;
+            case $root.'/cart':
+                get_view('./controllers/pages/cart.php');
+                break;
             case str_contains($_SERVER['REQUEST_URI'], $root.'/shop-detail'):
                 get_view('./controllers/pages/shop-detail.php');
                 break;
