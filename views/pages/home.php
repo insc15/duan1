@@ -30,11 +30,11 @@ $list_product = view_products();
                 </div>
             </a>
             <div class="trademark ">
-                <p class="text-xs pt-4"><?php echo $value['name'] ?></p>
+                <p class="text-xs pt-4">Adidas</p>
             </div>
             <div class="name">
                 <a href="">
-                    <h4 class="text-base font-bold hover:text-red-700">Cartoon Astronaut T-Shirts</h4>
+                    <h4 class="text-base font-bold hover:text-red-700"><?php echo $value['name'] ?></h4>
                 </a>
             </div>
             <a href="">
@@ -95,11 +95,11 @@ $list_product = view_products();
                 </div>
             </a>
             <div class="trademark ">
-                <p class="text-xs pt-4"><?php echo $value['name'] ?></p>
+                <p class="text-xs pt-4">Adidas</p>
             </div>
             <div class="name">
                 <a href="">
-                    <h4 class="text-base font-bold hover:text-red-700">Cartoon Astronaut T-Shirts</h4>
+                    <h4 class="text-base font-bold hover:text-red-700"><?php echo $value['name'] ?></h4>
                 </a>
             </div>
             <a href="">
