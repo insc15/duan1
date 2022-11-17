@@ -1,6 +1,20 @@
 <?php
 require('./controllers/product.php');
 $list_product = view_products();
+/*
+id	
+name	
+price	
+discount	
+featured_image	
+created_date	
+category	
+feature
+view	
+description	
+color	
+ size
+*/
 print_r($list_product)
 ?>
 
