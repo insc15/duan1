@@ -80,12 +80,9 @@ $list_product = view_products();
         <p class="text-4xl font-bold">New Arrivals</p>
         <p class="text-sm">Summer Collection New Morden Design</p>
     </div>
-<<<<<<< HEAD
+    
+
     <div class="grid grid-cols-4 gap-x-10 max-w-screen-xl mx-auto  w-full ">
-=======
-    <div
-        class="grid grid-cols-4 gap-x-10 max-w-screen-xl mx-auto  w-full hover:-translate-y-6 ease-in-out duration-500">
->>>>>>> 57888f1134159969244b4533f2dda8bd8e7b91c5
         <!-- product -->
         <!-- for list hàng -->
         <?php foreach ($list_product as $value) : ?>
@@ -128,13 +125,9 @@ $list_product = view_products();
                 </div>
             </a>
         </div>
-<<<<<<< HEAD
         <!-- zzz -->
-        
-=======
         <?php endif; ?>
         <?php endforeach; ?>
->>>>>>> 57888f1134159969244b4533f2dda8bd8e7b91c5
     </div>
     <div class="explore my-10 flex justify-center">
         <a href="">
