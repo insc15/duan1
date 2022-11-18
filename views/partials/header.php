@@ -3,7 +3,16 @@
         <img src="./assets/images/logo.png" alt="logo">
         <nav class="font-semibold ml-auto flex items-center">
             <a class="text-primary relative md:block hidden after:content-[''] after:w-2/3 after:bg-primary after:h-[2px] after:left-0 after:-bottom-1 after:absolute mx-5" href="<?php get_home_url() ?>">Home</a>
-            <a class="hover:text-primary md:block hidden duration-150 relative after:content-[''] hover:after:w-2/3 after:w-0 after:duration-150 after:bg-primary after:h-[2px] after:left-0 after:-bottom-1 after:absolute mx-5" href="<?php get_home_url() ?>">Shop</a>
+            <div>
+            <a class="hover:text-primary md:block hidden duration-150 relative after:content-[''] hover:after:w-2/3 after:w-0 after:duration-150 after:bg-primary after:h-[2px] after:left-0 after:-bottom-1 after:absolute mx-5 peer" id="dropdownDefault" data-dropdown-toggle="dropdown" href="#">Shop</a>
+            <div class="hidden peer-hover:flex hover:flex
+         w-[200px]
+         flex-col bg-white drop-shadow-lg">
+            <a class="px-5 py-3 hover:bg-gray-200" href="#">About Us</a>
+            <a class="px-5 py-3 hover:bg-gray-200" href="#">Contact Us</a>
+            <a class="px-5 py-3 hover:bg-gray-200" href="#">Privacy Policy</a>
+        </div>
+        </div>
             <a class="hover:text-primary md:block hidden duration-150 relative after:content-[''] hover:after:w-2/3 after:w-0 after:duration-150 after:bg-primary after:h-[2px] after:left-0 after:-bottom-1 after:absolute mx-5" href="<?php get_home_url() ?>">Blog</a>
             <a class="hover:text-primary md:block hidden duration-150 relative after:content-[''] hover:after:w-2/3 after:w-0 after:duration-150 after:bg-primary after:h-[2px] after:left-0 after:-bottom-1 after:absolute mx-5" href="<?php get_home_url() ?>">About</a>
             <a class="hover:text-primary md:block hidden duration-150 relative after:content-[''] hover:after:w-2/3 after:w-0 after:duration-150 after:bg-primary after:h-[2px] after:left-0 after:-bottom-1 after:absolute mx-5" href="<?php get_home_url() ?>">Contact</a>
