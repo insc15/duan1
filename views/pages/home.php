@@ -17,13 +17,13 @@ $list_product = view_products();
         <p class="text-4xl font-bold">Featured Products</p>
         <p class="text-sm">Summer Collection New Morden Design</p>
     </div>
-    <div class="grid grid-cols-4 gap-10 max-w-screen-xl mx-auto  w-full ">
+    <div class="grid grid-cols-4 gap-10 max-w-screen-xl mx-auto  w-full lg: gap-5 md: grid grid-cols-2 gap-10 gap-y-10 ">
         <!-- product -->
         <!-- for list hàng -->
         <?php foreach ($list_product as $value) : ?>
         <!-- kiểm tra loại hàng -->
         <?php if ($value['featured'] == false) : ?>
-        <div class="bg-white rounded-lg shadow-xl border-green-600 border-2 p-3 hover:-translate-y-6 ease-in-out duration-500">
+        <div class="bg-white rounded-lg shadow-xl border-[#088178] border p-3 hover:-translate-y-6 ease-in-out duration-500 lg:mx-2 md:mx-5 sm:mx-5">
             <a href="">
                 <div class="">
                     <a href=""><img class="" src="<?php echo $value['featured_image'] ?>" alt=""></a>
@@ -34,7 +34,7 @@ $list_product = view_products();
             </div>
             <div class="name">
                 <a href="">
-                    <h4 class="text-base font-bold hover:text-red-700"><?php echo $value['name'] ?></h4>
+                    <h4 class="text-base font-bold hover:text-red-700 lg:pb-4 h-12 text-sm md:text-base"><?php echo $value['name'] ?></h4>
                 </a>
             </div>
             <a href="">
@@ -53,7 +53,7 @@ $list_product = view_products();
             </a>
             <a href="">
                 <div class="but my-2">
-                    <button class="bg-[#041E42] rounded-xl h-9 w-64 hover:bg-red-700 ease-in-out duration-300">
+                    <button class="bg-[#041E42] rounded-xl h-9 w-64 hover:bg-red-700 ease-in-out duration-300 lg:w-48 md:w-72 ml-2 sm:w-56 text-base">
                          <p class="justify-center flex text-xs text-white py-2"><i class="fi fi-rr-shopping-cart-add"></i> ADD TO CART</p>
                     </button>
                 </div>
@@ -74,20 +74,20 @@ $list_product = view_products();
 </section>
 
 <!-- section2 -->
-<section class="md:h-96 lg:h-screen">
+<section class="md: lg:h-screen">
     <div class="text-center my-10">
         <p class="text-4xl font-bold">New Arrivals</p>
         <p class="text-sm">Summer Collection New Morden Design</p>
     </div>
     
 
-    <div class="grid grid-cols-4 gap-10 max-w-screen-xl mx-auto  w-full ">
+    <div class="grid grid-cols-4 gap-10 max-w-screen-xl mx-auto  w-full lg: gap-5 md: grid grid-cols-2 gap-10 gap-y-10  ">
         <!-- product -->
         <!-- for list hàng -->
         <?php foreach ($list_product as $value) : ?>
         <!-- kiểm tra loại hàng -->
         <?php if ($value['featured']) : ?>
-        <div class="bg-white rounded-lg shadow-xl border-green-600 border-2 p-3 hover:-translate-y-6 ease-in-out duration-500">
+        <div class="bg-white rounded-lg shadow-xl border-[#088178] border p-3 hover:-translate-y-6 ease-in-out duration-500 lg:mx-2 md:mx-5 sm:mx-5">
             <a href="">
                 <div class="">
                     <a href=""><img class="" src="<?php echo $value['featured_image'] ?>" alt=""></a>
@@ -98,7 +98,7 @@ $list_product = view_products();
             </div>
             <div class="name">
                 <a href="">
-                    <h4 class="text-base font-bold hover:text-red-700"><?php echo $value['name'] ?></h4>
+                    <h4 class="text-base font-bold hover:text-red-700 lg:pb-4 h-12 text-sm md:text-base"><?php echo $value['name'] ?></h4>
                 </a>
             </div>
             <a href="">
@@ -117,9 +117,8 @@ $list_product = view_products();
             </a>
             <a href="">
                 <div class="but my-2">
-                    <button class="bg-[#041E42] rounded-xl h-9 w-64 hover:bg-red-700 ease-in-out duration-300">
-                        <p class="justify-center flex text-xs text-white py-2"><i
-                                class="fi fi-rr-shopping-cart-add"></i> ADD TO CART</p>
+                    <button class="bg-[#041E42] rounded-xl h-9 w-64 hover:bg-red-700 ease-in-out duration-300 lg:w-48 md:w-72 ml-2 sm:w-56">
+                        <p class="justify-center flex text-xs text-white py-2"><i class="fi fi-rr-shopping-cart-add"></i> ADD TO CART</p>
                     </button>
                 </div>
             </a>
