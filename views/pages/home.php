@@ -17,7 +17,7 @@ $list_product = view_products();
         <p class="text-4xl font-bold">Featured Products</p>
         <p class="text-sm">Summer Collection New Morden Design</p>
     </div>
-    <div class="grid grid-cols-4 gap-x-10 max-w-screen-xl mx-auto  w-full ">
+    <div class="grid grid-cols-4 gap-10 max-w-screen-xl mx-auto  w-full ">
         <!-- product -->
         <!-- for list hàng -->
         <?php foreach ($list_product as $value) : ?>
@@ -53,9 +53,8 @@ $list_product = view_products();
             </a>
             <a href="">
                 <div class="but my-2">
-                    <button class="bg-green-800 rounded-sm h-9 w-64 hover:bg-red-700 ease-in-out duration-300">
-                        <p class="justify-center flex text-base text-white py-2"><i
-                                class="fi fi-rr-shopping-cart-add"></i> ADD TO CART</p>
+                    <button class="bg-[#041E42] rounded-xl h-9 w-64 hover:bg-red-700 ease-in-out duration-300">
+                         <p class="justify-center flex text-xs text-white py-2"><i class="fi fi-rr-shopping-cart-add"></i> ADD TO CART</p>
                     </button>
                 </div>
             </a>
@@ -82,7 +81,7 @@ $list_product = view_products();
     </div>
     
 
-    <div class="grid grid-cols-4 gap-x-10 max-w-screen-xl mx-auto  w-full ">
+    <div class="grid grid-cols-4 gap-10 max-w-screen-xl mx-auto  w-full ">
         <!-- product -->
         <!-- for list hàng -->
         <?php foreach ($list_product as $value) : ?>
@@ -118,8 +117,8 @@ $list_product = view_products();
             </a>
             <a href="">
                 <div class="but my-2">
-                    <button class="bg-green-800 rounded-sm h-9 w-64 hover:bg-red-700 ease-in-out duration-300">
-                        <p class="justify-center flex text-base text-white py-2"><i
+                    <button class="bg-[#041E42] rounded-xl h-9 w-64 hover:bg-red-700 ease-in-out duration-300">
+                        <p class="justify-center flex text-xs text-white py-2"><i
                                 class="fi fi-rr-shopping-cart-add"></i> ADD TO CART</p>
                     </button>
                 </div>
