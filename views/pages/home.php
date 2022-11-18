@@ -45,11 +45,7 @@ $list_product = view_products();
             </div>
             <a href="">
                 <div class="review flex text-yellow text-xs">
-                    <i class="fi fi-rr-star hover:text-yellow-700 hover:-translate-y-1 ease-in-out duration-300"></i>
-                    <i class="fi fi-rr-star hover:text-yellow-700 hover:-translate-y-1 ease-in-out duration-300"></i>
-                    <i class="fi fi-rr-star hover:text-yellow-700 hover:-translate-y-1 ease-in-out duration-300"></i>
-                    <i class="fi fi-rr-star hover:text-yellow-700 hover:-translate-y-1 ease-in-out duration-300"></i>
-                    <i class="fi fi-rr-star hover:text-yellow-700 hover:-translate-y-1 ease-in-out duration-300"></i>
+                <i class="fi fi-sr-shopping-cart-add"></i>
                 </div>
             </a>
             <a href="">
