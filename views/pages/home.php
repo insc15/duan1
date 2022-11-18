@@ -23,7 +23,7 @@ $list_product = view_products();
         <?php foreach ($list_product as $value) : ?>
         <!-- kiểm tra loại hàng -->
         <?php if ($value['featured'] == false) : ?>
-        <div class="bg-white rounded-lg shadow-xl border-green-600 border-2 p-3">
+        <div class="bg-white rounded-lg shadow-xl border-green-600 border-2 p-3 hover:-translate-y-6 ease-in-out duration-500">
             <a href="">
                 <div class="">
                     <a href=""><img class="" src="<?php echo $value['featured_image'] ?>" alt=""></a>
@@ -48,7 +48,7 @@ $list_product = view_products();
             </a>
             <a href="">
                 <div class="price">
-                    <p class="text-green-600 font-bold text-base pt-2"><?php echo $value['price'] ?>đ</p>
+                    <p class="text-green-600 font-bold text-base pt-2"><?php echo $value['price'] ?> đ</p>
                 </div>
             </a>
             <a href="">
@@ -88,7 +88,7 @@ $list_product = view_products();
         <?php foreach ($list_product as $value) : ?>
         <!-- kiểm tra loại hàng -->
         <?php if ($value['featured']) : ?>
-        <div class="bg-white rounded-lg shadow-xl border-green-600 border-2 p-3">
+        <div class="bg-white rounded-lg shadow-xl border-green-600 border-2 p-3 hover:-translate-y-6 ease-in-out duration-500">
             <a href="">
                 <div class="">
                     <a href=""><img class="" src="<?php echo $value['featured_image'] ?>" alt=""></a>
