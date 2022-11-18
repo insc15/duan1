@@ -21,6 +21,23 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/jodit/3.18.9/jodit.es2018.min.css"
     />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jodit/3.18.9/jodit.es2018.min.js"></script> -->
+    <style>
+        .material-symbols-rounded.icon-fill{
+            font-variation-settings:
+                'FILL' 1,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 48
+        }
+
+        .material-symbols-rounded.icon-outline{
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 48
+        }
+    </style>
     <link rel="stylesheet" href="<?php echo get_home_url() ?>/assets/style/common.css">
     <script src="<?php echo get_home_url() ?>/assets/js/main.js"></script>
 </head>
