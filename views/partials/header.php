@@ -16,9 +16,9 @@
             <a class="hover:text-primary md:block hidden duration-150 relative after:content-[''] hover:after:w-2/3 after:w-0 after:duration-150 after:bg-primary after:h-[2px] after:left-0 after:-bottom-1 after:absolute mx-5" href="<?php get_home_url() ?>">Blog</a>
             <a class="hover:text-primary md:block hidden duration-150 relative after:content-[''] hover:after:w-2/3 after:w-0 after:duration-150 after:bg-primary after:h-[2px] after:left-0 after:-bottom-1 after:absolute mx-5" href="<?php get_home_url() ?>">About</a>
             <a class="hover:text-primary md:block hidden duration-150 relative after:content-[''] hover:after:w-2/3 after:w-0 after:duration-150 after:bg-primary after:h-[2px] after:left-0 after:-bottom-1 after:absolute mx-5" href="<?php get_home_url() ?>">Contact</a>
-            <a class="hover:text-primary duration-150 relative after:content-[''] hover:after:w-full after:w-0 after:duration-150 after:bg-primary after:h-[2px] after:left-0 after:-bottom-1 after:absolute mx-5" href="<?php get_home_url() ?>"><i class="fi fi-rr-shopping-cart text-2xl"></i></a>
+            <a class="hover:text-primary duration-150 relative after:content-[''] hover:after:w-full after:w-0 after:duration-150 after:bg-primary after:h-[2px] after:left-0 after:-bottom-1 after:absolute mx-5" href="<?php get_home_url() ?>"><span class="material-symbols-rounded icon-outline">shopping_cart</span></a>
         </nav>
-        <div class="md:hidden"><i class="fi fi-rr-menu-burger text-2xl"></i></div>
+        <div class="md:hidden"><span class="material-symbols-rounded icon-outline">menu</span></div>
     </div>
 </header>
 
