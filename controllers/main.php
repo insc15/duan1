@@ -10,8 +10,11 @@
             case $root.'/':
                 get_view('./controllers/pages/home.php');
                 break;
-            case str_contains($_SERVER['REQUEST_URI'], $root.'/shop1'):
-                    get_view('./controllers/pages/shop1.php');
+            case $root.'/login':
+                get_view('./controllers/pages/login.php');
+                break;
+            case str_contains($_SERVER['REQUEST_URI'], $root.'/shop'):
+                    get_view('./controllers/pages/shop.php');
                  break;
                  case str_contains($_SERVER['REQUEST_URI'], $root.'/cart'):
                     get_view('./controllers/pages/cart.php');
