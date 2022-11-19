@@ -48,13 +48,6 @@ function format_product($product)
 function formatter($item)
 {
     $item['featured'] = boolval($item['featured']);
-    $item['price'] = format_price($item['price']);
+    $item['formatted_price'] = number_format($item['price'], 0, '.', '.') . '&#8363;';
     return $item;
-}
-
-function format_price($number, $suffix = 'đ')
-{
-    if (!empty($number)) {
-        return number_format($number, 0, ',', '.') . "{$suffix}";
-    }
 }
