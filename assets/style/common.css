@@ -620,10 +620,6 @@ video {
   right: 0px;
 }
 
-.-bottom-4 {
-  bottom: -1rem;
-}
-
 .bottom-0 {
   bottom: 0px;
 }
@@ -753,6 +749,10 @@ video {
   display: flex;
 }
 
+.grid {
+  display: grid;
+}
+
 .hidden {
   display: none;
 }
@@ -763,6 +763,9 @@ video {
 
 .h-4 {
   height: 1rem;
+}
+.h-full {
+  height: 100%;
 }
 
 .h-6 {
