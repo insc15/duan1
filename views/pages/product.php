@@ -91,7 +91,12 @@
           <option>S</option>
         </select>
         
+         <button class="bg-secondary hover:bg-primary rounded ml-2 py-2 justify-center text-white flex items-center leading-normal text-xs md:text-base">
+        <span class="material-symbols-rounded icon-outline hidden md:block">add_shopping_cart</span>
+        ADD TO CART
+    </button>
       </div>
+     
       
        
      </div>
@@ -130,7 +135,7 @@
   <hr class="mt-4"/>
 
 <div class="relative  overflow-hidden w-5/12 px-5 lg:px-20 mt-10 flex py-5 ">
-  <img src="https://image.thanhnien.vn/w1024/Uploaded/2022/abfluao/2022_09_01/8-6281.jpg" alt="Avatar" class="object-cover w-20 h-20    " />
+  <img src="https://image.thanhnien.vn/w1024/Uploaded/2022/abfluao/2022_09_01/6-5116.jpg" alt="Avatar" class="object-cover w-20 h-20 rounded-[50%]   " />
   <input type="text" id="first_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 ml-5" placeholder="Comments" required>
 </div>
 </section>
