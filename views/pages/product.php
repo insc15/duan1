@@ -81,9 +81,9 @@
     
 
       </div>
-      <div class="inline-block relative w-25 mt-3 ">
-        
-        <select class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+      <div class="inline-block relative  mt-3 flex">
+        <input type="number">
+        <select class="w-25 block appearance-none  bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
           <option>size</option>
           <option>XL</option>
           <option>L</option>
@@ -124,11 +124,13 @@
     double-needle collar, and available in a range of colors, it offers it all
     in the ultimate head-turning package
   </div>
-  <hr class="mt-4"/>
-  <div class="mb-6 mt-10 flex">
-    <label for="large-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"></label>
-
-    <input type="text" id="large-input"
-      class="block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-md focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 ml-5" />
+  <div class=" w-5/12 px-5 lg:px-20 mt-10">
+    <h1 class="font-bold">Comments</h1>
   </div>
+  <hr class="mt-4"/>
+
+<div class="relative  overflow-hidden w-5/12 px-5 lg:px-20 mt-10 flex py-5 ">
+  <img src="https://image.thanhnien.vn/w1024/Uploaded/2022/abfluao/2022_09_01/8-6281.jpg" alt="Avatar" class="object-cover w-20 h-20    " />
+  <input type="text" id="first_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 ml-5" placeholder="Comments" required>
+</div>
 </section>
