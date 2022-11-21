@@ -8,10 +8,9 @@ function get_list_products($meta_query = null)
     $formatted_product = format_product($product);
     return $formatted_product;
 }
-//lấy sp nổi bật
-function get_list_prfeatured($meta_query = null)
+function get_one_product($id)
 {
-    $sql = "SELECT * FROM product WHERE featured";
+    $sql = "SELECT * FROM product where id = $id";
     $product = getData($sql, FETCH_ALL);
     $formatted_product = format_product($product);
     return $formatted_product;
