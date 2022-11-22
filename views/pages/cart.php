@@ -12,7 +12,7 @@
          <!-- left -->
          <div class="w-8/12 pr-3 ">
             <!-- products -->
-            <div class="flex justify-center  rounded-lg shadow-xl border-2 m-1">
+            <div class="flex justify-center  rounded-lg shadow-xl border-2 m-2">
                   <div class="w-2/12 m-1">
                      <div class="overflow-hidden relative pt-[100%]">
                         <img class="absolute top-0 " src="https://templateprj.vercel.app/img/products/f1.jpg" alt="">
@@ -55,7 +55,7 @@
                               </div>
                      </div>
             </div>
-            <div class="flex justify-center  rounded-lg shadow-xl border-2 m-1">
+            <div class="flex justify-center  rounded-lg shadow-xl border-2 m-2">
                   <div class="w-2/12 m-1">
                      <div class="overflow-hidden relative pt-[100%]">
                         <img class="absolute top-0 " src="https://templateprj.vercel.app/img/products/f1.jpg" alt="">
