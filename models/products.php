@@ -28,12 +28,12 @@ function get_list_prnew($day)
 // chỗ này để format các trường thông tin
 function format_product($product)
 {
-    if(isset($product['id'])){
+    if (isset($product['id'])) {
         $product = formatter($product);
-    }else{
+    } else {
         $product = array_map(function ($item) {
             return formatter($item);
-        }, $product);   
+        }, $product);
     }
     return $product;
 }
@@ -42,5 +42,6 @@ function formatter($item)
 {
     $item['featured'] = boolval($item['featured']);
     $item['formatted_price'] = number_format($item['price'], 0, '.', '.') . '&#8363;';
+    $item['formatted_discount'] = number_format($item['discount'], 0, '.', '.') . '&#8363;';
     return $item;
 }

@@ -2,6 +2,7 @@
 require('./controllers/product.php');
 $id = $_GET['id'];
 $product = view_product($id);
+$list_image = explode(',', $product['list_image']);
 ?>
 <section>
     <div class="flex">
@@ -10,21 +11,11 @@ $product = view_product($id);
                 <img src=" <?php echo $product['featured_image'] ?>" />
             </div>
             <div class="flex">
+                <?php foreach ($list_image as $value) : ?>
                 <div class="w-4/12 mt-2">
-                    <img src="https://templateprj.vercel.app/img/products/f1.jpg" alt="" />
+                    <img src="<?php echo $value ?>" alt="" />
                 </div>
-                <div class="w-4/12 mt-2 ml-1">
-                    <img src="https://templateprj.vercel.app/img/products/f1.jpg" alt="" />
-                </div>
-                <div class="w-4/12 mt-2 ml-1">
-                    <img src="https://templateprj.vercel.app/img/products/f1.jpg" alt="" />
-                </div>
-                <div class="w-4/12 mt-2 ml-1">
-                    <img src="https://templateprj.vercel.app/img/products/f1.jpg" alt="" />
-                </div>
-                <div class="w-4/12 mt-2 ml-1">
-                    <img src="https://templateprj.vercel.app/img/products/f1.jpg" alt="" />
-                </div>
+                <?php endforeach ?>
             </div>
 
         </div>
@@ -34,10 +25,10 @@ $product = view_product($id);
                 <p>Home / T-shirt</p>
             </div>
             <div class="py-5 font-bold text-2xl">
-                Men's Fashion T Shirt
+                <?php echo $product['name'] ?>
                 <p class="py-5 text-3xl text-primary flex">
                     <?php echo $product['formatted_price'] ?>
-                    <span class="ml-3 line-through text-gray-400"> 1.000.000</span>
+                    <span class="ml-3 line-through text-gray-400"> <?php echo $product['formatted_discount'] ?></span>
                 </p>
                 <div class="inline-block relative w-[2rem]">
 
@@ -50,12 +41,7 @@ $product = view_product($id);
             </div>
             <div class="float-none">
                 <p>
-                    The Gildan Cotton T-Shirt it made from a substantial 6.0 oz. per sq.
-                    yd. fabric contructer from 100% cotton, this classic fit preshrunk
-                    jersey knit provides unmatched comfort with each wear. Featuring a
-                    taped neck and shoulder, and a seamless double-needle collar, and
-                    available in a range of colors, it offers it all in the ultimate
-                    head-turning package
+                    <?php echo $product['description'] ?>
                 </p>
             </div>
             <div class="flex">
@@ -64,7 +50,7 @@ $product = view_product($id);
                     <p class="font-bold mt-2">color:</p>
                     <div class="flex items-center mr-4">
                         <input id="red-radio" type="radio" value="" name="colored-radio"
-                            class="ml-2 w-10 h-10 accent-black  rounded-full text-black ">
+                            class="ml-2 w-10 h-10 accent-black border rounded-full text-black ">
                         <label for="red-radio" class="ml-2 text-sm font-medium  dark:text-gray-300"></label>
                     </div>
                     <div class="flex items-center mr-4">
@@ -93,9 +79,9 @@ $product = view_product($id);
 
             </div>
             <div class="inline-block relative  mt-3 flex">
-                <input type="number">
+                <input type="number" value="0" class="border border-solid ">
                 <select
-                    class="w-25 block appearance-none  bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+                    class="w-25 block appearance-none  bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline ">
                     <option>size</option>
                     <option>XL</option>
                     <option>L</option>
@@ -126,21 +112,7 @@ $product = view_product($id);
     </div>
     <hr class="mt-2 " />
     <div class="px-5 lg:px-20 mt-6">
-        The Gildan Cotton T-Shirt it made from a substantial 6.0 oz. per sq. yd.
-        fabric contructer from 100% cotton, this classic fit preshrunk jersey knit
-        provides unmatched comfort with each wear. Featuring a taped neck and
-        shoulder, and a seamless double-needle collar, and available in a range of
-        colors, it offers it all in the ultimate head-turning package The Gildan
-        Cotton T-Shirt it made from a substantial 6.0 oz. per sq. yd. fabric
-        contructer from 100% cotton, this classic fit preshrunk jersey knit provides
-        unmatched comfort with each wear. Featuring a taped neck and shoulder, and a
-        seamless double-needle collar, and available in a range of colors, it offers
-        it all in the ultimate head-turning package The Gildan Cotton T-Shirt it
-        made from a substantial 6.0 oz. per sq. yd. fabric contructer from 100%
-        cotton, this classic fit preshrunk jersey knit provides unmatched comfort
-        with each wear. Featuring a taped neck and shoulder, and a seamless
-        double-needle collar, and available in a range of colors, it offers it all
-        in the ultimate head-turning package
+        <?php echo $product['description_detail'] ?>
     </div>
     <div class=" w-5/12 px-5 lg:px-20 mt-10">
         <h1 class="font-bold">Comments</h1>
