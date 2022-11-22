@@ -13,8 +13,10 @@
          <div class="w-8/12 pr-3">
             <!-- products -->
             <div class="flex justify-center  shadow border-primary m-1">
-                  <div class="w-2/12 overflow-hidden relative pt-[100%]">
-                     <img class="absolute top-0 w-24 " src="https://templateprj.vercel.app/img/products/f1.jpg" alt="">
+                  <div class="w-24">
+                     <div class="overflow-hidden relative pt-[100%]">
+                        <img class="absolute top-0 " src="https://templateprj.vercel.app/img/products/f1.jpg" alt="">
+                     </div>
                   </div>
                   <div class="w-5/12">
                      zend_version
