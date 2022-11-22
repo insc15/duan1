@@ -4,14 +4,14 @@ require_once('models/config.php');
 function get_list_products($meta_query = null)
 {
     $sql = "SELECT * FROM product";
-    $product = getData($sql, FETCH_ONE);
+    $product = getData($sql, FETCH_ALL);
     $formatted_product = format_product($product);
     return $formatted_product;
 }
 function get_one_product($id)
 {
     $sql = "SELECT * FROM product where id = $id";
-    $product = getData($sql, FETCH_ALL);
+    $product = getData($sql, FETCH_ONE);
     $formatted_product = format_product($product);
     return $formatted_product;
 }
@@ -29,7 +29,7 @@ function get_list_prnew($day)
 function format_product($product)
 {
     if(isset($product['id'])){
-        $product = array(formatter($product));
+        $product = formatter($product);
     }else{
         $product = array_map(function ($item) {
             return formatter($item);
