@@ -18,7 +18,7 @@ $list_product= view_products();
         <p class="md:text-base text-sm">Summer Collection New Morden Design</p>
     </div>
     <div class="flex flex-wrap max-w-screen-xl -mx-1 -my-2 md:mx-auto px-4">
-        <?php foreach (get_list_prfeatured() as $value) :?>
+        <?php foreach (get_list_products() as $value) :?>
             <div class="w-1/2 md:w-1/4 py-2 px-1 md:px-3">
                 <a href="<?php echo get_home_url()."/product?id=".$value['id'] ?>" class="grid h-full bg-white rounded-lg md:hover:shadow-xl md:shadow border-primary md:border md:p-3 ease-in-out duration-150">
                     <div class="rounded pt-[100%] overflow-hidden relative">
