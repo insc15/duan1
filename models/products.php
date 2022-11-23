@@ -13,7 +13,7 @@ function get_product($meta_query = null)
 
         $params .= join(' AND ',$query_array);//dựng câu query
     }
-    $sql = "SELECT * FROM product$params";
+    $sql = "SELECT * FROM product $params";
     //câu query sau khi build: SELECT * FROM product WHERE featured = '1' OR featured = ',1' OR featured = ',1,' OR featured = '1,'
     $product = getData($sql, FETCH_ALL);
     $formatted_product = format_product($product);

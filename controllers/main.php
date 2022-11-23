@@ -19,9 +19,9 @@
             case str_contains($_SERVER['REQUEST_URI'], $root.'/shop'):
                     get_view('./controllers/pages/shop.php');
                  break;
-                 case str_contains($_SERVER['REQUEST_URI'], $root.'/cart'):
-                    get_view('./controllers/pages/cart.php');
-                 break;
+            case str_contains($_SERVER['REQUEST_URI'], $root.'/cart'):
+                get_view('./controllers/pages/cart.php');
+                break;
             case str_contains($_SERVER['REQUEST_URI'], $root.'/product'):
                 get_view('./controllers/pages/product.php');
                 break;
