@@ -1,5 +1,5 @@
 <?php
-require('models/products.php');
+// require('models/products.php');
 // hiển thị all sản phẩm
 // function view_products()
 // {
