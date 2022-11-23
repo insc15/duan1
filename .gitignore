@@ -145,3 +145,5 @@ dist
 
 # End of https://www.toptal.com/developers/gitignore/api/node
 .history
+
+/assets/style/common.css
