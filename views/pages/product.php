@@ -1,8 +1,5 @@
 <?php
 require('./controllers/product.php');
-$id = $_GET['id'];
-$product = view_product($id);
-$list_image = explode(',', $product['list_image']);
 ?>
 <section>
     <div class="flex">
@@ -11,7 +8,7 @@ $list_image = explode(',', $product['list_image']);
                 <img src=" <?php echo $product['featured_image'] ?>" />
             </div>
             <div class="flex">
-                <?php foreach ($list_image as $value) : ?>
+                <?php foreach ($product['list_image'] as $value) : ?>
                 <div class="w-4/12 mt-2">
                     <img src="<?php echo $value ?>" alt="" />
                 </div>

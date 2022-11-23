@@ -1,6 +1,5 @@
 <?php
 require('./controllers/product.php');
-$list_product= view_products();
 ?>
 
 <section class="bg-[url('../images/hero4.png')] bg-no-repeat bg-cover bg-center h-[70vh] md:h-96 lg:h-screen flex flex-col justify-center items-start">
@@ -12,13 +11,13 @@ $list_product= view_products();
     </div>
 </section>
 
-<section class="pt-9">
+<section class="pt-12">
     <div class="mb-8 text-center">
         <h2 class="text-2xl md:text-4xl font-bold">Featured Products</h2>
         <p class="md:text-base text-sm">Summer Collection New Morden Design</p>
     </div>
     <div class="flex flex-wrap max-w-screen-xl -mx-1 -my-2 md:mx-auto px-4">
-        <?php foreach (get_list_products() as $value) :?>
+        <?php foreach (get_product(array('featured' => 1)) as $value) : if($value['featured']) : ?>
             <div class="w-1/2 md:w-1/4 py-2 px-1 md:px-3">
                 <a href="<?php echo get_home_url()."/product?id=".$value['id'] ?>" class="grid h-full bg-white rounded-lg md:hover:shadow-xl md:shadow border-primary md:border md:p-3 ease-in-out duration-150">
                     <div class="rounded pt-[100%] overflow-hidden relative">
@@ -42,18 +41,18 @@ $list_product= view_products();
                     </button>
                 </a>
             </div>
-        <?php endforeach; ?>
+        <?php endif;endforeach; ?>
     </div>
     <a href="#" class="mt-8 w-fit mx-auto md:text-base text-sm block rounded border-2 border-primary py-3 px-4 font-semibold text-primary hover:bg-primary hover:text-white duration-150">Explore More</a>
 </section>
 
-<section class="pt-9">
+<section class="pt-12">
     <div class="mb-8 text-center">
         <h2 class="text-2xl md:text-4xl font-bold">New Arrivals</h2>
         <p class="md:text-base text-sm">Summer Collection New Morden Design</p>
     </div>
     <div class="flex flex-wrap max-w-screen-xl -mx-1 -my-2 md:mx-auto px-4">
-        <?php foreach (get_list_products() as $value) :?>
+        <?php foreach (get_product() as $value) :?>
             <div class="w-1/2 md:w-1/4 py-2 px-1 md:px-3">
                 <a href="<?php echo get_home_url()."/product?id=".$value['id'] ?>" class="grid h-full bg-white rounded-lg md:hover:shadow-xl md:shadow border-primary md:border md:p-3 ease-in-out duration-150">
                     <div class="rounded pt-[100%] overflow-hidden relative">
@@ -81,4 +80,4 @@ $list_product= view_products();
     </div>
     <a href="#" class="mt-8 w-fit mx-auto md:text-base text-sm block rounded border-2 border-primary py-3 px-4 font-semibold text-primary hover:bg-primary hover:text-white duration-150">Explore More</a>
 </section>
-<div class="pt-9"></div>
+<div class="pt-12"></div>
