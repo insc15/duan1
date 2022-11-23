@@ -1,18 +1,28 @@
 <?php
 require_once('models/config.php');
 
-function get_list_products($meta_query = null)
+function get_product($meta_query = null)
 {
-    $sql = "SELECT * FROM product";
+    $params = ''; //đây là biến chuỗi chứa kết quả
+    if(isset($meta_query)){
+        $params = ' WHERE ';
+        $query_array = [];//biến tạm thời chứa các tham số
+        foreach ($meta_query as $key => $value) {//lặp qua các tham số 
+            array_push($query_array, "$key = '$value' OR $key = ',$value' OR $key = ',$value,' OR $key = '$value,'");//đây là chuỗi để lọc chính xác, tránh trường hợp là lấy id = 1 thì sản phẩm id 123 nó vẫn sẽ lấy
+        }
+
+        $params .= join(' AND ',$query_array);//dựng câu query
+    }
+    $sql = "SELECT * FROM product$params";
+    //câu query sau khi build: SELECT * FROM product WHERE featured = '1' OR featured = ',1' OR featured = ',1,' OR featured = '1,'
     $product = getData($sql, FETCH_ALL);
     $formatted_product = format_product($product);
     return $formatted_product;
 }
-//lấy sp nổi bật
-function get_list_prfeatured($meta_query = null)
+function get_one_product($id)
 {
-    $sql = "SELECT * FROM product WHERE featured";
-    $product = getData($sql, FETCH_ALL);
+    $sql = "SELECT * FROM product where id = $id";
+    $product = getData($sql, FETCH_ONE);
     $formatted_product = format_product($product);
     return $formatted_product;
 }
@@ -29,19 +39,13 @@ function get_list_prnew($day)
 // chỗ này để format các trường thông tin
 function format_product($product)
 {
-    switch (gettype($product)) {
-        case 'integer':
-            $product = formatter($product);
-            break;
-        case 'array':
-            $product = array_map(function ($item) {
-                return formatter($item);
-            }, $product);
-        default:
-            # code...
-            break;
+    if (isset($product['id'])) {
+        $product = formatter($product);
+    } else {
+        $product = array_map(function ($item) {
+            return formatter($item);
+        }, $product);
     }
-
     return $product;
 }
 
@@ -49,5 +53,7 @@ function formatter($item)
 {
     $item['featured'] = boolval($item['featured']);
     $item['formatted_price'] = number_format($item['price'], 0, '.', '.') . '&#8363;';
+    $item['formatted_discount'] = number_format($item['discount'], 0, '.', '.') . '&#8363;';
+    $item['list_image'] = explode(',', $item['list_image']);
     return $item;
 }
