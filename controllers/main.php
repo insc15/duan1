@@ -13,6 +13,9 @@
             case $root.'/login':
                 get_view('./controllers/pages/login.php');
                 break;
+            case str_contains($_SERVER['REQUEST_URI'], $root.'/checkout');
+                     get_view('./controllers/pages/checkout.php');
+                break;
             case str_contains($_SERVER['REQUEST_URI'], $root.'/shop'):
                     get_view('./controllers/pages/shop.php');
                  break;
