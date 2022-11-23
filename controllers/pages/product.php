@@ -1,5 +1,5 @@
 <?php
-require('./controllers/product.php');
+require('models/products.php');
 
 $id = $_GET['id'];
 if (!isset($id)) {
@@ -8,6 +8,6 @@ if (!isset($id)) {
 
 $product = get_product(array('id' => $id));
 
-// $product = $product[0];
+$product = $product[0];
 
 include('./views/pages/product.php');
