@@ -2,7 +2,7 @@
     <div class="max-w-screen-xl mx-auto flex items-center">
         <img src="./assets/images/logo.png" alt="logo">
         <nav class="font-semibold ml-auto flex items-center">
-            <a class="text-primary relative md:block hidden after:content-[''] after:w-2/3 after:bg-primary after:h-[2px] after:left-0 after:-bottom-1 after:absolute mx-5" href="<?php get_home_url() ?>">Home</a>
+            <a class="text-primary relative md:block hidden after:content-[''] after:w-2/3 after:bg-primary after:h-[2px] after:left-0 after:-bottom-1 after:absolute mx-5" href="<?php echo get_home_url() ?>">Home</a>
             <div class="group relative">
                 <a class="hover:text-primary duration-150 flex relative after:content-[''] hover:after:w-2/3 after:w-0 after:duration-150 after:bg-primary after:h-[2px] after:left-0 after:-bottom-1 after:absolute mx-5 "href="#"><span class="">Shop</span><span class="material-symbols-rounded">expand_more</span></a>
                 <!-- dropdown-menu -->
