@@ -1,5 +1,5 @@
 <?php
-require('./controllers/product.php');
+// require('./controllers/product.php');
 ?>
 
 <section class="bg-[url('../images/hero4.png')] bg-no-repeat bg-cover bg-center h-[70vh] md:h-96 lg:h-screen flex flex-col justify-center items-start">
