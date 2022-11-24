@@ -1,19 +1,18 @@
-<?php
+<!-- $product -->
 
-?>
-
-<section>
-    <div class="flex mt-10">
-        <div class="w-5/12 px-5 lg:px-20 ">
-            <div class="">
-                <img src=" <?php echo $product['featured_image'] ?>" />
-            </div>
-            <div class="flex">
-                <?php foreach ($product['list_image'] as $value) : ?>
-                <div class="w-4/12 mt-2">
-                    <img src="<?php echo $value ?>" alt="" />
+<section class="pt-11">
+    <div class="flex flex-wrap max-w-screen-xl mx-auto">
+        <div class="w-5/12">
+            <div data="main-carousel" class="splide">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <?php foreach ($product['list_image'] as $key => $value) { ?>
+                            <li class="splide__slide relative pt-[100%]">
+                                <img class="absolute top-0" src="<?php echo $value ?>" alt="">
+                            </li>
+                        <?php } ?>
+                    </ul>
                 </div>
-                <?php endforeach ?>
             </div>
 
         </div>
@@ -195,4 +194,4 @@
             </div>
         </div>
     </div>
-</section>
+</section>  
