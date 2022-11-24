@@ -1,6 +1,6 @@
 <header class="shadow-lg py-5 px-4 lg:px-20 bg-[#E3E6F3] sticky top-0 z-10">
     <div class="max-w-screen-xl mx-auto flex items-center">
-        <img src="./assets/images/logo.png" alt="logo">
+        <a href="<?php echo get_home_url()?>"><img src="./assets/images/logo.png" alt="logo"></a>
         <nav class="font-semibold ml-auto flex items-center">
             <a class="text-primary relative md:block hidden after:content-[''] after:w-2/3 after:bg-primary after:h-[2px] after:left-0 after:-bottom-1 after:absolute mx-5" href="<?php echo get_home_url() ?>">Home</a>
             <div class="group relative">
