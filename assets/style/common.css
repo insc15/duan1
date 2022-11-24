@@ -757,8 +757,8 @@ video {
   display: none;
 }
 
-.h-\[54vh\] {
-  height: 54vh;
+.h-\[480px\] {
+  height: 480px;
 }
 
 .h-24 {
@@ -787,30 +787,6 @@ video {
 
 .h-4 {
   height: 1rem;
-}
-
-.h-\[3vh\] {
-  height: 3vh;
-}
-
-.h-\[vh\] {
-  height: vh;
-}
-
-.h-\[55vh\] {
-  height: 55vh;
-}
-
-.h-\[56vh\] {
-  height: 56vh;
-}
-
-.h-\[59vh\] {
-  height: 59vh;
-}
-
-.h-\[60vh\] {
-  height: 60vh;
 }
 
 .w-8\/12 {
@@ -1021,8 +997,8 @@ video {
   background-color: rgb(227 230 243 / var(--tw-bg-opacity));
 }
 
-.bg-\[url\(\'\.\/assets\/images\/AdobeStock_418499892\.png\'\)\] {
-  background-image: url('./assets/images/AdobeStock_418499892.png');
+.bg-\[url\(\'\.\.\/images\/AdobeStock_418499892\.jpeg\'\)\] {
+  background-image: url('../images/AdobeStock_418499892.jpeg');
 }
 
 .bg-\[url\(\'\.\.\/images\/checkout\.png\'\)\] {
@@ -1031,22 +1007,6 @@ video {
 
 .bg-\[url\(\'\.\.\/images\/hero4\.png\'\)\] {
   background-image: url('../images/hero4.png');
-}
-
-.bg-\[url\(\'\.\/assets\/images\/AdobeStock_418499892\.pn\'\)\] {
-  background-image: url('./assets/images/AdobeStock_418499892.pn');
-}
-
-.bg-\[url\(\'\.\/assets\/images\/AdobeStock_418499892\.je\'\)\] {
-  background-image: url('./assets/images/AdobeStock_418499892.je');
-}
-
-.bg-\[url\(\'\.\/assets\/images\/AdobeStock_418499892\.jpeg\'\)\] {
-  background-image: url('./assets/images/AdobeStock_418499892.jpeg');
-}
-
-.bg-\[url\(\'\.\.\/images\/AdobeStock_418499892\.jpeg\'\)\] {
-  background-image: url('../images/AdobeStock_418499892.jpeg');
 }
 
 .bg-cover {
@@ -1764,12 +1724,12 @@ button {
     display: none;
   }
 
-  .md\:h-96 {
-    height: 24rem;
-  }
-
   .md\:h-80 {
     height: 20rem;
+  }
+
+  .md\:h-96 {
+    height: 24rem;
   }
 
   .md\:w-1\/4 {
