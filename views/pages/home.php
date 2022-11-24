@@ -18,39 +18,39 @@
         <p class="md:text-base text-sm">Summer Collection New Morden Design</p>
     </div>
     <div class="flex flex-wrap max-w-screen-xl -mx-1 -my-2 md:mx-auto px-4">
-        <?php foreach (get_product(array('featured' => 1)) as $value) : if ($value['featured']) : ?>
-        <div class="w-1/2 md:w-1/4 py-2 px-1 md:px-3">
-            <a href="<?php echo get_home_url() . "/product?id=" . $value['id'] ?>"
-                class="grid h-full bg-white rounded-lg md:hover:shadow-xl md:shadow border-primary md:border md:p-3 ease-in-out duration-150">
-                <div class="rounded pt-[100%] overflow-hidden relative">
-                    <img class="absolute top-0" src="<?php echo $value['featured_image'] ?>" alt="" />
-                </div>
-                <div class="py-2 md:py-4">
-                    <p class="text-xs mb-1">adidas</p>
-                    <h3 class="font-bold md:text-base text-sm"><?php echo $value['name'] ?></h3>
-                    <div class="text-yellow-400 flex">
-                        <span class="material-symbols-rounded icon-fill">star</span>
-                        <span class="material-symbols-rounded icon-fill">star</span>
-                        <span class="material-symbols-rounded icon-fill">star</span>
-                        <span class="material-symbols-rounded icon-fill">star</span>
-                        <span class="material-symbols-rounded icon-fill">star</span>
+        <?php foreach (get_product(array('featured' => 1)) as $value) : $category = get_category(array('id' => $value['category'][0]))[0] ?>
+            <div class="w-1/2 md:w-1/4 py-2 px-1 md:px-3">
+                <div class="grid h-full bg-white rounded-lg md:hover:shadow-xl md:shadow border-primary md:border md:p-3 ease-in-out duration-150">
+                    <a href="<?php echo get_home_url() . "/product?id=" . $value['id'] ?>">    
+                        <div class="rounded pt-[100%] overflow-hidden relative">
+                            <img class="absolute top-0" src="<?php echo $value['featured_image'] ?>" alt="" />
+                        </div>
+                    </a>
+                    <div class="py-2 md:py-4">
+                        <a href="<?php echo get_home_url() . "/category?id=" . $category['id'] ?>" class="text-xs mb-1"><?php echo $category['name'] ?></a>
+                        <a href="<?php echo get_home_url() . "/product?id=" . $value['id'] ?>"><h3 class="font-bold md:text-base text-sm hover:text-primary duration-150"><?php echo $value['name'] ?></h3></a>
+                        <div class="text-yellow-400 flex">
+                            <span class="material-symbols-rounded icon-fill">star</span>
+                            <span class="material-symbols-rounded icon-fill">star</span>
+                            <span class="material-symbols-rounded icon-fill">star</span>
+                            <span class="material-symbols-rounded icon-fill">star</span>
+                            <span class="material-symbols-rounded icon-fill">star</span>
+                        </div>
+                        <div class="flex items-baseline">
+                            <h4 class="text-primary font-bold mt-1"><?php echo $value['formatted_final_price'] ?></h4>
+                            <?php if(intval($value['discount']) > 0) : ?>
+                                <p class="text-[#808080] line-through ml-2 text-xs font-bold"><?php echo $value['formatted_price'] ?></p>
+                            <?php endif; ?>
+                        </div>
                     </div>
-                    <div class="flex items-baseline">
-                        <h4 class="text-primary font-bold mt-1"><?php echo $value['formatted_final_price'] ?></h4>
-                        <?php if(intval($value['discount']) > 0) : ?>
-                            <p class="text-[#808080] line-through ml-2 text-xs font-bold"><?php echo $value['formatted_price'] ?></p>
-                        <?php endif; ?>
-                    </div>
+                    <button
+                        class="bg-secondary hover:bg-primary rounded w-full mt-auto py-2 justify-center text-white flex items-center leading-normal text-xs md:text-base">
+                        <span class="material-symbols-rounded icon-outline hidden md:block">add_shopping_cart</span>
+                        ADD TO CART
+                    </button>
                 </div>
-                <button
-                    class="bg-secondary hover:bg-primary rounded w-full mt-auto py-2 justify-center text-white flex items-center leading-normal text-xs md:text-base">
-                    <span class="material-symbols-rounded icon-outline hidden md:block">add_shopping_cart</span>
-                    ADD TO CART
-                </button>
-            </a>
-        </div>
-        <?php endif;
-        endforeach; ?>
+            </div>
+        <?php endforeach; ?>
     </div>
     <a href="#"
         class="mt-8 w-fit mx-auto md:text-base text-sm block rounded border-2 border-primary py-3 px-4 font-semibold text-primary hover:bg-primary hover:text-white duration-150">Explore
@@ -63,37 +63,38 @@
         <p class="md:text-base text-sm">Summer Collection New Morden Design</p>
     </div>
     <div class="flex flex-wrap max-w-screen-xl -mx-1 -my-2 md:mx-auto px-4">
-        <?php foreach (get_product() as $value) : ?>
+        <?php foreach (get_product() as $value) : $category = get_category(array('id' => $value['category'][0]))[0] ?>
         <div class="w-1/2 md:w-1/4 py-2 px-1 md:px-3">
-            <a href="<?php echo get_home_url() . "/product?id=" . $value['id'] ?>"
-                class="grid h-full bg-white rounded-lg md:hover:shadow-xl md:shadow border-primary md:border md:p-3 ease-in-out duration-150">
-                <div class="rounded pt-[100%] overflow-hidden relative">
-                    <img class="absolute top-0" src="<?php echo $value['featured_image'] ?>" alt="" />
-                </div>
-                <div class="py-2 md:py-4">
-                    <p class="text-xs mb-1">adidas</p>
-                    <h3 class="font-bold md:text-base text-sm"><?php echo $value['name'] ?></h3>
-                    <div class="text-yellow-400 flex">
-                        <span class="material-symbols-rounded icon-fill">star</span>
-                        <span class="material-symbols-rounded icon-fill">star</span>
-                        <span class="material-symbols-rounded icon-fill">star</span>
-                        <span class="material-symbols-rounded icon-fill">star</span>
-                        <span class="material-symbols-rounded icon-fill">star</span>
+                <div class="grid h-full bg-white rounded-lg md:hover:shadow-xl md:shadow border-primary md:border md:p-3 ease-in-out duration-150">
+                    <a href="<?php echo get_home_url() . "/product?id=" . $value['id'] ?>">    
+                        <div class="rounded pt-[100%] overflow-hidden relative">
+                            <img class="absolute top-0" src="<?php echo $value['featured_image'] ?>" alt="" />
+                        </div>
+                    </a>
+                    <div class="py-2 md:py-4">
+                        <a href="<?php echo get_home_url() . "/category?id=" . $category['id'] ?>" class="text-xs mb-1"><?php echo $category['name'] ?></a>
+                        <a href="<?php echo get_home_url() . "/product?id=" . $value['id'] ?>"><h3 class="font-bold md:text-base text-sm hover:text-primary duration-150"><?php echo $value['name'] ?></h3></a>
+                        <div class="text-yellow-400 flex">
+                            <span class="material-symbols-rounded icon-fill">star</span>
+                            <span class="material-symbols-rounded icon-fill">star</span>
+                            <span class="material-symbols-rounded icon-fill">star</span>
+                            <span class="material-symbols-rounded icon-fill">star</span>
+                            <span class="material-symbols-rounded icon-fill">star</span>
+                        </div>
+                        <div class="flex items-baseline">
+                            <h4 class="text-primary font-bold mt-1"><?php echo $value['formatted_final_price'] ?></h4>
+                            <?php if(intval($value['discount']) > 0) : ?>
+                                <p class="text-[#808080] line-through ml-2 text-xs font-bold"><?php echo $value['formatted_price'] ?></p>
+                            <?php endif; ?>
+                        </div>
                     </div>
-                    <div class="flex items-baseline">
-                        <h4 class="text-primary font-bold mt-1"><?php echo $value['formatted_final_price'] ?></h4>
-                        <?php if(intval($value['discount']) > 0) : ?>
-                            <p class="text-[#808080] line-through ml-2 text-xs font-bold"><?php echo $value['formatted_price'] ?></p>
-                        <?php endif; ?>
-                    </div>
+                    <button
+                        class="bg-secondary hover:bg-primary rounded w-full mt-auto py-2 justify-center text-white flex items-center leading-normal text-xs md:text-base">
+                        <span class="material-symbols-rounded icon-outline hidden md:block">add_shopping_cart</span>
+                        ADD TO CART
+                    </button>
                 </div>
-                <button
-                    class="bg-secondary hover:bg-primary rounded w-full mt-auto py-2 justify-center text-white flex items-center leading-normal text-xs md:text-base">
-                    <span class="material-symbols-rounded icon-outline hidden md:block">add_shopping_cart</span>
-                    ADD TO CART
-                </button>
-            </a>
-        </div>
+            </div>
         <?php endforeach; ?>
     </div>
     <a href="#"
