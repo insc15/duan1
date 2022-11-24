@@ -1,70 +1,55 @@
 <!-- $product -->
 
 <section class="pt-11">
-    <div class="flex flex-wrap max-w-screen-xl mx-auto">
-        <div class="w-5/12">
-            <div data="main-carousel" class="splide">
+    <div class="flex flex-wrap max-w-screen-xl mx-auto px-4">
+        <div class="md:w-5/12">
+            <div data-slider="main-carousel" class="splide rounded overflow-hidden">
                 <div class="splide__track">
                     <ul class="splide__list">
                         <?php foreach ($product['list_image'] as $key => $value) { ?>
-                            <li class="splide__slide relative pt-[100%]">
-                                <img class="absolute top-0" src="<?php echo $value ?>" alt="">
+                            <li class="splide__slide">
+                                <img class="" src="<?php echo $value ?>" alt="">
                             </li>
                         <?php } ?>
                     </ul>
                 </div>
             </div>
-
-        </div>
-
-        <div class="w-7/12 ">
-            <div class="font-bold sm:text-sm text-xs">
-                <p>Home / T-shirt</p>
-            </div>
-            <div class="font-bold ">
-                <p class="py-4 sm:text-3xl text-xl"><?php echo $product['name'] ?></p>
-                <div class=" text-3xl text-primary flex ">
-                    <span class="pr-4 text-base sm:text-lg"> <?php echo $product['formatted_discount'] ?></span>
-                    <span class=" line-through text-gray-400 text-xs sm:text-base">
-                        <?php echo $product['formatted_price'] ?></span>
+            <div data-slider="thumbnail-carousel" class="splide mt-2">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <?php foreach ($product['list_image'] as $key => $value) { ?>
+                            <li class="splide__slide rounded overflow-hidden">
+                                <img class="" src="<?php echo $value ?>" alt="">
+                            </li>
+                        <?php } ?>
+                    </ul>
                 </div>
             </div>
-            <div class="sm:text-base text-xs mb-5">
-                <p>
-                    <?php echo $product['description'] ?>
-                </p>
+        </div>
+        <div class="md:w-7/12 md:pl-11">
+            <div class="mb-4">
+                <a href="<?php echo get_home_url() ?>">Home</a>
+                <span>/</span>
+                <a href="<?php echo get_home_url().'category?id='.$product['category'][0]['id'] ?>"><?php echo $product['category'][0]['name'] ?></a>
             </div>
-            <!-- color -->
-            <div class="flex items-center flex-wrap">
-                <div class="flex flex-wrap items-center ">
-                    <p class="font-bold mr-6">Color:</p>
-                    <div class="flex items-center mr-4 ">
-                        <input id="radio1" type="radio" name="radio" class="hidden peer" checked />
-                        <label for="radio1"
-                            class="flex items-center cursor-pointer text-xl rounded-full border peer-checked:bg-gray-800 peer-checked:ring-4">
-                            <span class="w-8 h-8 inline-block  rounded-full  border-grey flex-no-shrink "></span>
-                        </label>
-                    </div>
-                    <div class="flex items-center mr-4 ">
-                        <input id="radio2" type="radio" name="radio" class="hidden peer" />
-                        <label for="radio2"
-                            class="flex items-center cursor-pointer text-xl rounded-full border peer-checked:bg-white peer-checked:ring-4">
-                            <span class="w-8 h-8 inline-block  rounded-full  border-grey flex-no-shrink "></span>
-                        </label>
-                    </div>
-                    <div class="flex items-center mr-4 ">
-                        <input id="radio3" type="radio" name="radio" class="hidden peer" />
-                        <label for="radio3"
-                            class="flex items-center cursor-pointer text-xl rounded-full border peer-checked:bg-red-600 peer-checked:ring-4">
-                            <span class="w-8 h-8 inline-block  rounded-full  border-grey flex-no-shrink "></span>
-                        </label>
-                    </div>
-                    <div class="flex items-center mr-4 ">
-                        <input id="radio4" type="radio" name="radio" class="hidden peer" />
-                        <label for="radio4"
-                            class="flex items-center cursor-pointer text-xl rounded-full border peer-checked:bg-blue-700 peer-checked:ring-4">
-                            <span class="w-8 h-8 inline-block  rounded-full  border-grey flex-no-shrink "></span>
-                        </label>
+            <h1 class="text-3xl mb-4 font-bold"><?php echo $product['name'] ?></h1>
+            <div class="mb-4 flex items-center font-bold">
+                <h4 class="text-2xl text-primary"><?php echo $product['formatted_final_price'] ?></h4>
+                <?php if(intval($product['discount']) > 0) : ?>
+                    <p class="text-[#808080] line-through ml-4"><?php echo $product['formatted_price'] ?></p>
+                <?php endif; ?>
+            </div>
+            <p class="mb-4"><?php echo $product['description_detail'] ?></p>
+            <form action="">
+                <div class="flex">
+                    <p class="w-16">Color:</p>
+                    <div class="flex">
+                        <?php foreach($product['color'] as $key => $value) : ?>
+                            <div class="flex items-center mb-4">
+                                <input id="default-radio-<?php echo $value['id'] ?>" type="radio" value="" name="default-radio" class="w-4 h-4 bg-gray-100 border-gray-300">
+                                <label for="default-radio-<?php echo $value['id'] ?>" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Default radio</label>
+                            </div>
+                        <?php endforeach; ?>
                     </div>
                 </div>
             </div>
@@ -150,55 +135,28 @@
             </div>
         </div>
     </div>
-    <div class="px-5 lg:px-20 mt-10">
-        <h1 class="font-bold sm:text-xl text-lg ">Description</h1>
-        <hr class=" w-full my-4" />
-        <?php echo $product['description_detail'] ?>
-    </div>
-
-    <div class="px-5 w-fuil lg:px-20 mt-10">
-        <h1 class="font-bold sm:text-xl text-lg ">Comments</h1>
-        <hr class="w-full my-4" />
-    </div>
-    <div>
-        <div class="  overflow-hidden peer lg:px-20 flex mb-4 px-5">
-            <img src="https://scontent.fhan5-3.fna.fbcdn.net/v/t39.30808-6/316549076_1373762753158250_981437111763802629_n.jpg?stp=cp0_dst-jpg&_nc_cat=106&ccb=1-7&_nc_sid=730e14&_nc_ohc=Cr9XWsOLpwMAX-_V3av&_nc_ht=scontent.fhan5-3.fna&oh=00_AfBtuVyY-OxMmn4AMn1psY6d5G6iQz9GVX78FopSDrFuvw&oe=63828725"
-                alt="Avatar" class="object-cover w-16 h-16 rounded-full mr-4" />
-            <div class="relative w-full">
-                <input type="text" id="first_name"
-                    class="bg-gray-200 border border-gray-300 text-slate-700  rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full  dark:border-gray-600 dark:placeholder-gray-400  pl-4 dark:focus:ring-blue-500 dark:focus:border-blue-500 h-16"
-                    placeholder="Add a comment..." required>
-                <span class="material-symbols-rounded absolute right-4 top-1/2 -translate-y-1/2">
-                    send
-                </span>
-            </div>
-        </div>
-
-        <div class="  overflow-hidden peer lg:px-20 flex mb-4 px-5 text-base font-normal">
-            <img src="https://scontent.fhan5-3.fna.fbcdn.net/v/t39.30808-6/316549076_1373762753158250_981437111763802629_n.jpg?stp=cp0_dst-jpg&_nc_cat=106&ccb=1-7&_nc_sid=730e14&_nc_ohc=Cr9XWsOLpwMAX-_V3av&_nc_ht=scontent.fhan5-3.fna&oh=00_AfBtuVyY-OxMmn4AMn1psY6d5G6iQz9GVX78FopSDrFuvw&oe=63828725"
-                alt="Avatar" class="object-cover w-16 h-16 rounded-full mr-4" />
-            <div class="max-w-md md:max-w-xl lg:max-w-3xl xl:max-w-4xl pr-7">
-                <h5 class="font-bold">Nguyen Quang Huy</h5>
-                <p>Tôi tên huy tôi như lồn tôi nói thật.</p>
-                <span class="text-xs italic">10h30 - November 18, 2022</span>
-            </div>
-            <div class=" ">
-                <button class="text-cyan-300 font-semibold absolute ">Reply</button>
-            </div>
-        </div>
-
-        <div class=" overflow-hidden peer lg:px-20 flex mb-4 px-5 text-base font-normal">
-            <img src="https://scontent.fhan5-3.fna.fbcdn.net/v/t39.30808-6/316549076_1373762753158250_981437111763802629_n.jpg?stp=cp0_dst-jpg&_nc_cat=106&ccb=1-7&_nc_sid=730e14&_nc_ohc=Cr9XWsOLpwMAX-_V3av&_nc_ht=scontent.fhan5-3.fna&oh=00_AfBtuVyY-OxMmn4AMn1psY6d5G6iQz9GVX78FopSDrFuvw&oe=63828725"
-                alt="Avatar" class="object-cover w-16 h-16 rounded-full mr-2 " />
-            <div class="max-w-md md:max-w-xl lg:max-w-3xl xl:max-w-4xl pr-7">
-                <h5 class=" font-bold">Nguyen Quang Huy</h5>
-                <p>FB88 là Nhà Cái Uy Tín Hàng Đầu Châu Á. FB88 là Wesite chơi cá độ bóng đá trực tuyến, cá cược Thể
-                    Thao Online, Casino trên mạng hợp pháp và uy tín.</p>
-                <span class="text-xs italic">10h30 - November 18, 2022</span>
-            </div>
-            <div class="">
-                <button class="text-cyan-300 font-semibold absolute ">Reply</button>
-            </div>
-        </div>
-    </div>
 </section>  
+
+<script>
+    document.addEventListener( 'DOMContentLoaded', function () {
+        const mainCarousel = new Splide( '*[data-slider=main-carousel]', {
+            rewind    : true,
+            pagination: false,
+        } )
+
+        const thumbCarousel = new Splide( '*[data-slider=thumbnail-carousel]', {
+            // fixedWidth: 96,
+            // fixedHeight: 96,
+            perPage: 5,
+            gap       : 10,
+            rewind    : true,
+            pagination: false,
+            arrows: false,
+            isNavigation: true,
+        } )
+
+        mainCarousel.sync( thumbCarousel );
+        mainCarousel.mount();
+        thumbCarousel.mount();
+    } );
+</script>

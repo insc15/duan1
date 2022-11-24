@@ -1,40 +1,34 @@
 <?php
 require_once('models/config.php');
+require_once('models/category.php');
+require_once('models/color.php');
+require_once('models/size.php');
 
 function get_product($meta_query = null)
 {
-    $params = ''; //đây là biến chuỗi chứa kết quả
-    if(isset($meta_query)){
-        $params = ' WHERE ';
-        $query_array = [];//biến tạm thời chứa các tham số
-        foreach ($meta_query as $key => $value) {//lặp qua các tham số 
-            array_push($query_array, "$key = '$value' OR $key = ',$value' OR $key = ',$value,' OR $key = '$value,'");//đây là chuỗi để lọc chính xác, tránh trường hợp là lấy id = 1 thì sản phẩm id 123 nó vẫn sẽ lấy
-        }
-
-        $params .= join(' AND ',$query_array);//dựng câu query
-    }
-    $sql = "SELECT * FROM product $params";
+    $sql = queryBuilder('product', $meta_query);
     //câu query sau khi build: SELECT * FROM product WHERE featured = '1' OR featured = ',1' OR featured = ',1,' OR featured = '1,'
     $product = getData($sql, FETCH_ALL);
     $formatted_product = format_product($product);
     return $formatted_product;
 }
-function get_one_product($id)
-{
-    $sql = "SELECT * FROM product where id = $id";
-    $product = getData($sql, FETCH_ONE);
-    $formatted_product = format_product($product);
-    return $formatted_product;
-}
-// kt hàng mới
-function get_list_prnew($day)
-{
-    // đổi lấy giây ngày hiện tại
-    $date_second =  time();
-    // đổi lấy giây ngày tạo sản phẩm
-    $sc_product = strtotime($day);
-    return strftime('%d', $date_second - $sc_product);
-}
+
+// function get_one_product($id)
+// {
+//     $sql = "SELECT * FROM product where id = $id";
+//     $product = getData($sql, FETCH_ONE);
+//     $formatted_product = format_product($product);
+//     return $formatted_product;
+// }
+// // kt hàng mới
+// function get_list_prnew($day)
+// {
+//     // đổi lấy giây ngày hiện tại
+//     $date_second =  time();
+//     // đổi lấy giây ngày tạo sản phẩm
+//     $sc_product = strtotime($day);
+//     return strftime('%d', $date_second - $sc_product);
+// }
 
 // chỗ này để format các trường thông tin
 function format_product($product)
@@ -52,8 +46,31 @@ function format_product($product)
 function formatter($item)
 {
     $item['featured'] = boolval($item['featured']);
+    $item['formatted_final_price'] = number_format((intval($item['discount']) > 0 ? $item['discount'] : $item['price']), 0, '.', '.') . '&#8363;';
     $item['formatted_price'] = number_format($item['price'], 0, '.', '.') . '&#8363;';
     $item['formatted_discount'] = number_format($item['discount'], 0, '.', '.') . '&#8363;';
     $item['list_image'] = explode(',', $item['list_image']);
+    
+    $category_array = [];
+    foreach (explode(',',$item['category']) as $key => $value) {
+        $category = get_category(array('id' => $value));
+        array_push($category_array, $category[0]);
+    }
+    $item['category'] = $category_array;
+
+    $color_array = [];
+    foreach (explode(',',$item['color']) as $key => $value) {
+        $color = get_color(array('id' => $value));
+        array_push($color_array, $color[0]);
+    }
+    $item['color'] = $color_array;
+
+    $size_array = [];
+    foreach (explode(',',$item['size']) as $key => $value) {
+        $size = get_size(array('id' => $value));
+        array_push($size_array, $size[0]);
+    }
+    $item['size'] = $size_array;
+    
     return $item;
 }

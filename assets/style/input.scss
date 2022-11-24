@@ -171,3 +171,15 @@
 button{
   @apply duration-150;
 }
+
+.splide__track--nav>.splide__list>.splide__slide.is-active{
+    @apply border-primary;
+}
+
+.splide__track--nav>.splide__list>.splide__slide{
+  @apply border-0;
+}
+
+.splide__slide{
+  @apply duration-150;
+}
