@@ -1,5 +1,5 @@
 <?php
-require('./models/products.php');
+    require('./controllers/product.php');
 ?>
 
 <section
