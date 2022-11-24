@@ -118,29 +118,6 @@
                     </div>
                 </div>
             </div>
-            <div class="inline-block relative  mt-3 flex">
-                <input type="number" value="1" class="border border-solid " name="quantity">
-                <select
-                    class="w-25 block appearance-none  bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline ">
-                    <option>size</option>
-                    <option>XL</option>
-                    <option>L</option>
-                    <option>M</option>
-                    <option>S</option>
-                </select>
-                <form method="post" action="<?php echo get_home_url()."/cart"?>">
-                  <input type="hidden" name="idpro" value="<?php echo $product['id']?>" />
-                  <input type="hidden" name="name" value="<?php echo $product['name']?>" />
-                  <input type="hidden" name="price" value="<?php echo $product['price']?>" />
-                  <input type="hidden" name="featured_image" value="<?php echo $product['featured_image']?>" />
-                  <input type="hidden" name="quantity" value="1" />
-                    <button
-                        class="bg-secondary hover:bg-primary rounded ml-2 py-2 justify-center text-white flex items-center leading-normal text-xs md:text-base"
-                        name="add_to_cart" type="submit">
-                        <span class="material-symbols-rounded icon-outline hidden md:block">add_shopping_cart</span>
-                        ADD TO CART
-                    </button>
-                </form>
             <!-- Plus Minus -->
             <div class=" flex items-center flex-wrap ">
                 <div class="custom-number-input shadow-boxShadowInput mr-4 rounded-sm">
@@ -158,11 +135,18 @@
                         </button>
                     </div>
                 </div>
-                <button
+                <form method="post" action="<?php echo get_home_url()."/cart"?>">
+                  <input type="hidden" name="idpro" value="<?php echo $product['id']?>" />
+                  <input type="hidden" name="name" value="<?php echo $product['name']?>" />
+                  <input type="hidden" name="price" value="<?php echo $product['price']?>" />
+                  <input type="hidden" name="featured_image" value="<?php echo $product['featured_image']?>" />
+                  <input type="hidden" name="quantity" value="1" />
+                <button name="add_to_cart" type="submit"
                     class="bg-secondary hover:bg-primary rounded w-44 py-3 justify-center text-white flex items-center leading-normal text-xs ">
                     <span class="material-symbols-rounded icon-outline hidden md:block ">add_shopping_cart</span>
                     ADD TO CART
                 </button>
+                </form>
             </div>
         </div>
     </div>

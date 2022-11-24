@@ -1,31 +1,13 @@
 <?php
-    if(isset($_SESSION['cart_item'])){
-        $available = 0;
-        foreach ($_SESSION['cart_item'] as $item => $value) {
-            if ($_SESSION['cart_item'][$item]['id'] == $_POST['idpro']) {
-                $available++;
-                $_SESSION['cart_item'][$item]['quantity'] = $_SESSION['cart_item'][$item]['quantity'] + $_POST['quantity'];
-            }
-        }
-        if($available == 0){
-            $item = array(
-                'id' => $_POST['idpro'],
-                'featured_image' => $_POST['featured_image'],
-                'name' => $_POST['name'],
-                'price' => $_POST['price'],
-                'quantity' => $_POST['quantity'],
-            );
-            $_SESSION['cart_item'][] = $item;
-        }
-    } else{
-        $item = array(
-            'id' => $_POST['idpro'],
-            'featured_image' => $_POST['featured_image'],
-            'name' => $_POST['name'],
-            'price' => $_POST['price'],
-            'quantity' => $_POST['quantity'],
-        );
-        $_SESSION['cart_item'][] = $item;
-    }
-    include('./views/pages/cart.php'); 
+require_once('./models/carts.php');
+if(isset($_POST['add_to_cart'])){
+    return add_to_cart();   
+}
+if(isset($_POST['del_cart_item'])){
+    return del_cart_item();
+}
+if(isset($_POST['update_cart'])){
+    return update_cart();
+}
+include('./views/pages/cart.php'); 
 ?>
