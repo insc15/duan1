@@ -5,21 +5,24 @@ define('FETCH_ALL', 2);
 define('FETCH_ONE', 1);
 define('NOT_FETCH', 0);
 
-function getConnect()
-{
+// function getConnect()
+// {
     $connect = new PDO(
-        'mysql:host=212.24.97.235;dbname=cara',
+        'mysql:host=212.24.97.235;port=3306;charset=UTF8;dbname=cara',
         'cara_dev',
-        'aMMZ%3kZ'
+        'aMMZ%3kZ',
     );
-    return $connect;
-}
+    
+    // return $connect;
+// }
+
+define('CONNECTION', $connect);
 
 // Nhận  tham số 1 là câu truy vấn, tham số thứ 2 là cách lấy dũ liệu
 function getData($sql, $fetchType)
 {
-    $conn = getConnect();
-    $statement = $conn->prepare($sql);
+    // $conn = getConnect();
+    $statement = CONNECTION->prepare($sql);
     $statement->execute();
 
     // Lấy dl theo kiểu gì $fetchType
