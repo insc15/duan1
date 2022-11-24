@@ -50,13 +50,8 @@ function formatter($item)
     $item['formatted_price'] = number_format($item['price'], 0, '.', '.') . '&#8363;';
     $item['formatted_discount'] = number_format($item['discount'], 0, '.', '.') . '&#8363;';
     $item['list_image'] = explode(',', $item['list_image']);
-    
-    // $category_array = [];
-    // foreach (explode(',',$item['category']) as $key => $value) {
-    //     $category = get_category(array('id' => $value));
-    //     array_push($category_array, $category[0]);
-    // }
-    // $item['category'] = $category_array;
+
+    $item['category'] = explode(',',$item['category']);
 
     // $color_array = [];
     // foreach (explode(',',$item['color']) as $key => $value) {
