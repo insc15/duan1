@@ -35,7 +35,12 @@
                         <span class="material-symbols-rounded icon-fill">star</span>
                         <span class="material-symbols-rounded icon-fill">star</span>
                     </div>
-                    <p class="text-primary font-bold mt-1"><?php echo $value['formatted_price'] ?></p>
+                    <div class="flex items-baseline">
+                        <h4 class="text-primary font-bold mt-1"><?php echo $value['formatted_final_price'] ?></h4>
+                        <?php if(intval($value['discount']) > 0) : ?>
+                            <p class="text-[#808080] line-through ml-2 text-xs font-bold"><?php echo $value['formatted_price'] ?></p>
+                        <?php endif; ?>
+                    </div>
                 </div>
                 <button
                     class="bg-secondary hover:bg-primary rounded w-full mt-auto py-2 justify-center text-white flex items-center leading-normal text-xs md:text-base">
@@ -75,7 +80,12 @@
                         <span class="material-symbols-rounded icon-fill">star</span>
                         <span class="material-symbols-rounded icon-fill">star</span>
                     </div>
-                    <p class="text-primary font-bold mt-1"><?php echo $value['formatted_price'] ?></p>
+                    <div class="flex items-baseline">
+                        <h4 class="text-primary font-bold mt-1"><?php echo $value['formatted_final_price'] ?></h4>
+                        <?php if(intval($value['discount']) > 0) : ?>
+                            <p class="text-[#808080] line-through ml-2 text-xs font-bold"><?php echo $value['formatted_price'] ?></p>
+                        <?php endif; ?>
+                    </div>
                 </div>
                 <button
                     class="bg-secondary hover:bg-primary rounded w-full mt-auto py-2 justify-center text-white flex items-center leading-normal text-xs md:text-base">

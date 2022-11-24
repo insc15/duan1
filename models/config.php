@@ -32,3 +32,18 @@ function getData($sql, $fetchType)
             return true;
     }
 }
+
+function queryBuilder($table, $meta_query){
+    $params = ''; //đây là biến chuỗi chứa kết quả
+    if(isset($meta_query)){
+        $params = ' WHERE ';
+        $query_array = [];//biến tạm thời chứa các tham số
+        foreach ($meta_query as $key => $value) {//lặp qua các tham số 
+            array_push($query_array, "$key = '$value' OR $key = ',$value' OR $key = ',$value,' OR $key = '$value,'");//đây là chuỗi để lọc chính xác, tránh trường hợp là lấy id = 1 thì sản phẩm id 123 nó vẫn sẽ lấy
+        }
+
+        $params .= join(' AND ',$query_array);//dựng câu query
+    }
+    $sql = "SELECT * FROM $table$params";
+    return $sql;
+}
