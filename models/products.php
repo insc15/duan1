@@ -51,26 +51,26 @@ function formatter($item)
     $item['formatted_discount'] = number_format($item['discount'], 0, '.', '.') . '&#8363;';
     $item['list_image'] = explode(',', $item['list_image']);
     
-    $category_array = [];
-    foreach (explode(',',$item['category']) as $key => $value) {
-        $category = get_category(array('id' => $value));
-        array_push($category_array, $category[0]);
-    }
-    $item['category'] = $category_array;
+    // $category_array = [];
+    // foreach (explode(',',$item['category']) as $key => $value) {
+    //     $category = get_category(array('id' => $value));
+    //     array_push($category_array, $category[0]);
+    // }
+    // $item['category'] = $category_array;
 
-    $color_array = [];
-    foreach (explode(',',$item['color']) as $key => $value) {
-        $color = get_color(array('id' => $value));
-        array_push($color_array, $color[0]);
-    }
-    $item['color'] = $color_array;
+    // $color_array = [];
+    // foreach (explode(',',$item['color']) as $key => $value) {
+    //     $color = get_color(array('id' => $value));
+    //     array_push($color_array, $color[0]);
+    // }
+    // $item['color'] = $color_array;
 
-    $size_array = [];
-    foreach (explode(',',$item['size']) as $key => $value) {
-        $size = get_size(array('id' => $value));
-        array_push($size_array, $size[0]);
-    }
-    $item['size'] = $size_array;
+    // $size_array = [];
+    // foreach (explode(',',$item['size']) as $key => $value) {
+    //     $size = get_size(array('id' => $value));
+    //     array_push($size_array, $size[0]);
+    // }
+    // $item['size'] = $size_array;
     
     return $item;
 }
