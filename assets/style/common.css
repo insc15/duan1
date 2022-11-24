@@ -793,8 +793,8 @@ video {
   display: none;
 }
 
-.h-\[70vh\] {
-  height: 70vh;
+.h-\[480px\] {
+  height: 480px;
 }
 
 .h-24 {
@@ -811,6 +811,10 @@ video {
 
 .h-\[30vh\] {
   height: 30vh;
+}
+
+.h-\[70vh\] {
+  height: 70vh;
 }
 
 .h-full {
@@ -1107,6 +1111,7 @@ video {
   background-color: rgb(227 230 243 / var(--tw-bg-opacity));
 }
 
+<<<<<<< HEAD
 .bg-gray-200 {
   --tw-bg-opacity: 1;
   background-color: rgb(229 231 235 / var(--tw-bg-opacity));
@@ -1129,10 +1134,18 @@ video {
 
 .bg-\[url\(\'\.\.\/images\/hero4\.png\'\)\] {
   background-image: url('../images/hero4.png');
+=======
+.bg-\[url\(\'\.\.\/images\/AdobeStock_418499892\.jpeg\'\)\] {
+  background-image: url('../images/AdobeStock_418499892.jpeg');
+>>>>>>> 6c93e71c098d4489246b90e3c42759fea2350b11
 }
 
 .bg-\[url\(\'\.\.\/images\/checkout\.png\'\)\] {
   background-image: url('../images/checkout.png');
+}
+
+.bg-\[url\(\'\.\.\/images\/hero4\.png\'\)\] {
+  background-image: url('../images/hero4.png');
 }
 
 .bg-cover {
@@ -1932,12 +1945,12 @@ button {
     display: none;
   }
 
-  .md\:h-96 {
-    height: 24rem;
-  }
-
   .md\:h-80 {
     height: 20rem;
+  }
+
+  .md\:h-96 {
+    height: 24rem;
   }
 
   .md\:w-1\/4 {
