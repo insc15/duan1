@@ -2,30 +2,7 @@
 
 <section class="pt-11">
     <div class="flex flex-wrap max-w-screen-xl mx-auto px-4">
-        <div class="md:w-5/12">
-            <div data-slider="main-carousel" class="splide rounded overflow-hidden">
-                <div class="splide__track">
-                    <ul class="splide__list">
-                        <?php foreach ($product['list_image'] as $key => $value) { ?>
-                            <li class="splide__slide">
-                                <img class="" src="<?php echo $value ?>" alt="">
-                            </li>
-                        <?php } ?>
-                    </ul>
-                </div>
-            </div>
-            <div data-slider="thumbnail-carousel" class="splide mt-2">
-                <div class="splide__track">
-                    <ul class="splide__list">
-                        <?php foreach ($product['list_image'] as $key => $value) { ?>
-                            <li class="splide__slide rounded overflow-hidden">
-                                <img class="" src="<?php echo $value ?>" alt="">
-                            </li>
-                        <?php } ?>
-                    </ul>
-                </div>
-            </div>
-        </div>
+        
         <div class="md:w-7/12 md:pl-11">
             <div class="mb-4">
                 <a href="<?php echo get_home_url() ?>">Home</a>

@@ -1,5 +1,4 @@
 <?php
-require_once('models/config.php');
 function add_to_cart(){
     if(isset($_SESSION['cart_item'])){
         $available = 0;
