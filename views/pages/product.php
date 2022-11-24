@@ -4,9 +4,9 @@
     <div class="flex flex-wrap max-w-screen-xl mx-auto px-4">
         <div class="md:w-7/12 md:pl-11">
             <div class="mb-4">
-                <a href="<?php echo get_home_url() ?>">Home</a>
+                <a class="hover:text-primary" href="<?php echo get_home_url() ?>">Home</a>
                 <span>/</span>
-                <a href="<?php echo get_home_url().'category?id='.$product['category'][0]['id'] ?>"><?php echo $product['category'][0]['name'] ?></a>
+                <a class="hover:text-primary" href="<?php echo get_home_url().'category?id='.$product['category'][0]['id'] ?>"><?php echo $product['category'][0]['name'] ?></a>
             </div>
             <h1 class="text-3xl mb-4 font-bold"><?php echo $product['name'] ?></h1>
             <div class="mb-4 flex items-center font-bold">
@@ -15,103 +15,67 @@
                     <p class="text-[#808080] line-through ml-4"><?php echo $product['formatted_price'] ?></p>
                 <?php endif; ?>
             </div>
-            <p class="mb-4"><?php echo $product['description_detail'] ?></p>
+            <p class="mb-4"><?php echo $product['description'] ?></p>
             <form action="">
-                <div class="flex">
-                    <p class="w-16">Color:</p>
-                    <div class="flex">
+                <div class="flex items-end mb-4">
+                    <p class="w-16 font-semibold">Color:</p>
+                    <div class="flex ml-6">
                         <?php foreach($product['color'] as $key => $value) : ?>
-                            <div class="flex items-center mb-4">
-                                <input id="default-radio-<?php echo $value['id'] ?>" type="radio" value="" name="default-radio" class="w-4 h-4 bg-gray-100 border-gray-300">
-                                <label for="default-radio-<?php echo $value['id'] ?>" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Default radio</label>
+                            <div class="flex mr-2 last:mr-0">
+                                <input <?php if($key === 0) {echo 'checked';} ?> id="color-radio-<?php echo $value['id'] ?>" type="radio" value="<?php echo $value['id'] ?>" name="color" class="peer" hidden>
+                                <label for="color-radio-<?php echo $value['id'] ?>" class="cursor-pointer w-7 h-7 after:duration-150 after:border-2 after:rounded-full peer-checked:after:border-primary after:border-transparent after:content-[''] after:w-8 after:h-8 after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 relative border border-[#DDDDDD] rounded-full" style='background-color: <?php echo $value['hex'] ?>'></label>
                             </div>
                         <?php endforeach; ?>
                     </div>
                 </div>
-            </div>
-            <!-- size -->
-            <div class="flex my-5">
-
-                <div class="flex flex-wrap items-center my-5">
-                    <p class="font-bold mr-9">Size:</p>
-                    <div class="flex items-center">
-                        <div class="flex items-center mr-4 ">
-                            <input id="size1" type="radio" name="size" class="hidden peer" checked />
-                            <label for="size1"
-                                class="flex items-center cursor-pointer text-xl rounded-full border  peer-checked:ring-4">
-                                <span class="w-8 h-8 inline-block  rounded-full  border-grey flex-no-shrink  relative ">
-                                    <span class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">XL</span>
-                                </span>
-                            </label>
-                        </div>
-
-                        <div class="flex items-center mr-4 ">
-                            <input id="size2" type="radio" name="size" class="hidden peer" />
-                            <label for="size2"
-                                class="flex items-center cursor-pointer text-xl rounded-full border  peer-checked:ring-4">
-                                <span class="w-8 h-8 inline-block  rounded-full  border-grey flex-no-shrink relative  ">
-                                    <span class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">L</span>
-                                </span>
-                            </label>
-                        </div>
-
-                        <div class="flex items-center mr-4 ">
-                            <input id="size3" type="radio" name="size" class="hidden peer" />
-                            <label for="size3"
-                                class="flex items-center cursor-pointer text-xl rounded-full border peer-checked:ring-4">
-                                <span class="w-8 h-8 inline-block  rounded-full  border-grey flex-no-shrink relative  ">
-                                    <span class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">M</span>
-                                </span>
-                            </label>
-                        </div>
-
-                        <div class="flex items-center mr-4 ">
-                            <input id="size4" type="radio" name="size" class="hidden peer" />
-                            <label for="size4"
-                                class="flex items-center cursor-pointer text-xl rounded-full border  peer-checked:ring-4">
-                                <span class="w-8 h-8 inline-block  rounded-full  border-grey flex-no-shrink relative  ">
-                                    <span class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">S</span>
-                                </span>
-
-                            </label>
-                        </div>
-
+                <div class="flex items-end mb-4">
+                    <p class="w-16 font-semibold">Size:</p>
+                    <div class="flex ml-6">
+                        <?php foreach($product['size'] as $key => $value) : ?>
+                            <div class="flex mr-2 last:mr-0">
+                                <input <?php if($key === 0) {echo 'checked';} ?> id="size-radio-<?php echo $value['id'] ?>" type="radio" value="<?php echo $value['id'] ?>" name="size" class="peer" hidden>
+                                <label for="size-radio-<?php echo $value['id'] ?>" class="text-sm text-center leading-loose cursor-pointer w-7 h-7 after:duration-150 after:border-2 after:rounded-full peer-checked:after:border-primary after:border-transparent after:content-[''] after:w-8 after:h-8 after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 relative border border-[#DDDDDD] rounded-full"><?php echo $value['name'] ?></label>
+                            </div>
+                        <?php endforeach; ?>
                     </div>
                 </div>
-            </div>
-            <!-- Plus Minus -->
-            <div class=" flex items-center flex-wrap ">
-                <div class="custom-number-input shadow-boxShadowInput mr-4 rounded-sm">
-                    <div class="flex flex-row  w-full rounded-lg  bg-white px-1 py-2 items-center">
-                        <button data-action="decrement"
-                            class="  text-gray-600 hover:text-white hover:bg-secondary  h-7 w-7 rounded-sm  cursor-pointer outline-none mr-2 flex items-center">
-                            <span class="m-auto text-2xl font-thin ">−</span>
-                        </button>
-                        <input type="text"
-                            class=" amount-input focus:outline-none text-center h-7 w-7 font-semibold text-md hover:text-black focus:text-black  md:text-basecursor-default flex items-center text-gray-700 mr-2 outline-none"
-                            name="custom-input-number" value="1"></input>
-                        <button data-action="increment"
-                            class=" text-gray-600 hover:text-white hover:bg-secondary h-7 w-7  rounded-sm cursor-pointer relative">
-                            <span class="m-auto text-2xl font-thin ">+</span>
-                        </button>
+                <div class="flex">
+                    <div class="p-1 quantity-input shadow-default rounded w-fit flex items-center">
+                        <button type="button" class="plus rounded w-7 h-7 hover:bg-secondary hover:text-white"><span class="material-symbols-rounded icon-outline">add</span></button>
+                        <input type="number" class="w-7 h-7 text-center mx-2 outline-none focus:outline-none focus:border-primary border-b-2 duration-150" min="1" value="1">
+                        <button type="button" class="minus rounded w-7 h-7 hover:bg-secondary hover:text-white"><span class="material-symbols-rounded icon-outline">remove</span></button>
                     </div>
-                </div>
-                <form method="post" action="<?php echo get_home_url()."/cart"?>">
+                    <form method="post" action="<?php echo get_home_url()."/cart"?>">
                   <input type="hidden" name="idpro" value="<?php echo $product['id']?>" />
                   <input type="hidden" name="name" value="<?php echo $product['name']?>" />
                   <input type="hidden" name="price" value="<?php echo $product['price']?>" />
                   <input type="hidden" name="featured_image" value="<?php echo $product['featured_image']?>" />
                   <input type="hidden" name="quantity" value="1" />
-                <button name="add_to_cart" type="submit"
-                    class="bg-secondary hover:bg-primary rounded w-44 py-3 justify-center text-white flex items-center leading-normal text-xs ">
-                    <span class="material-symbols-rounded icon-outline hidden md:block ">add_shopping_cart</span>
-                    ADD TO CART
-                </button>
+                    <button type="submit" name="add_to_cart" class="bg-secondary ml-4 hover:bg-primary rounded w-fit px-4 mt-auto h-9 justify-center text-white flex items-center leading-normal text-xs md:text-base">
+                        <span class="material-symbols-rounded icon-outline hidden md:block text-base mr-2">add_shopping_cart</span>
+                        ADD TO CART
+                    </button>
                 </form>
-            </div>
+                </div>
+            </form>
         </div>
     </div>
 </section>  
+
+<section class="pt-11">
+    <div class="flex flex-wrap max-w-screen-xl mx-auto px-4">
+        <h2 class="font-semibold text-2xl">Description</h2>
+        <hr class="my-4 bg-[#333] w-full">
+        <?php echo html_entity_decode($product['description_detail']) ?>
+    </div>
+</section>
+
+<section class="pt-11">
+    <div class="flex flex-wrap max-w-screen-xl mx-auto px-4">
+        <h2 class="font-semibold text-2xl">Comments</h2>
+        <hr class="my-4 bg-[#333] w-full">
+    </div>
+</section>
 
 <script>
     document.addEventListener( 'DOMContentLoaded', function () {
