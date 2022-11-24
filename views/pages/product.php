@@ -2,7 +2,6 @@
 
 <section class="pt-11">
     <div class="flex flex-wrap max-w-screen-xl mx-auto px-4">
-        
         <div class="md:w-7/12 md:pl-11">
             <div class="mb-4">
                 <a href="<?php echo get_home_url() ?>">Home</a>
