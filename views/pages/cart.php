@@ -1,11 +1,11 @@
 
 <!-- banner -->
-<section class="bg-[url('../images/hero4.png')] bg-no-repeat bg-cover bg-center h-[70vh] md:h-96 lg:h-screen flex flex-col justify-center items-start"></section>
+<section class="bg-[url('../images/AdobeStock_418499892.jpeg')] bg-no-repeat bg-cover bg-center h-[60vh] flex flex-col justify-center items-start"></section>
 
 <section class="pt-9 max-w-screen-xl mx-auto items-center font-[Montserrat] mt-4">
    
       <div class="ml-2">
-         <h3 class="text-xl text-semibold">dit me thang hieu</h3>
+         <h3 class="text-xl text-bold">Items</h3>
       </div>
       <!-- main -->
       <div class="flex justify-center mt-4">

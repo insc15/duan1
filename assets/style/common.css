@@ -757,8 +757,8 @@ video {
   display: none;
 }
 
-.h-\[70vh\] {
-  height: 70vh;
+.h-\[54vh\] {
+  height: 54vh;
 }
 
 .h-24 {
@@ -777,12 +777,40 @@ video {
   height: 30vh;
 }
 
+.h-\[70vh\] {
+  height: 70vh;
+}
+
 .h-full {
   height: 100%;
 }
 
 .h-4 {
   height: 1rem;
+}
+
+.h-\[3vh\] {
+  height: 3vh;
+}
+
+.h-\[vh\] {
+  height: vh;
+}
+
+.h-\[55vh\] {
+  height: 55vh;
+}
+
+.h-\[56vh\] {
+  height: 56vh;
+}
+
+.h-\[59vh\] {
+  height: 59vh;
+}
+
+.h-\[60vh\] {
+  height: 60vh;
 }
 
 .w-8\/12 {
@@ -993,12 +1021,32 @@ video {
   background-color: rgb(227 230 243 / var(--tw-bg-opacity));
 }
 
-.bg-\[url\(\'\.\.\/images\/hero4\.png\'\)\] {
-  background-image: url('../images/hero4.png');
+.bg-\[url\(\'\.\/assets\/images\/AdobeStock_418499892\.png\'\)\] {
+  background-image: url('./assets/images/AdobeStock_418499892.png');
 }
 
 .bg-\[url\(\'\.\.\/images\/checkout\.png\'\)\] {
   background-image: url('../images/checkout.png');
+}
+
+.bg-\[url\(\'\.\.\/images\/hero4\.png\'\)\] {
+  background-image: url('../images/hero4.png');
+}
+
+.bg-\[url\(\'\.\/assets\/images\/AdobeStock_418499892\.pn\'\)\] {
+  background-image: url('./assets/images/AdobeStock_418499892.pn');
+}
+
+.bg-\[url\(\'\.\/assets\/images\/AdobeStock_418499892\.je\'\)\] {
+  background-image: url('./assets/images/AdobeStock_418499892.je');
+}
+
+.bg-\[url\(\'\.\/assets\/images\/AdobeStock_418499892\.jpeg\'\)\] {
+  background-image: url('./assets/images/AdobeStock_418499892.jpeg');
+}
+
+.bg-\[url\(\'\.\.\/images\/AdobeStock_418499892\.jpeg\'\)\] {
+  background-image: url('../images/AdobeStock_418499892.jpeg');
 }
 
 .bg-cover {
