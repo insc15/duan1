@@ -12,6 +12,7 @@ module.exports = {
         // brown: '#52433f'
       },
       boxShadow: {
+        'default': '0 0 17px rgba(0,0,0,0.12)',
         boxShadowInput: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",
       },
       // boxShadow: {

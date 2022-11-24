@@ -20,7 +20,7 @@
     <div class="flex flex-wrap max-w-screen-xl -mx-1 -my-2 md:mx-auto px-4">
         <?php foreach (get_product(array('featured' => 1)) as $value) : $category = get_category(array('id' => $value['category'][0]))[0] ?>
             <div class="w-1/2 md:w-1/4 py-2 px-1 md:px-3">
-                <div class="grid h-full bg-white rounded-lg md:hover:shadow-xl md:shadow border-primary md:border md:p-3 ease-in-out duration-150">
+                <div class="grid h-full bg-white rounded-lg md:hover:shadow-xl md:shadow-default border-primary md:border md:p-3 ease-in-out duration-150">
                     <a href="<?php echo get_home_url() . "/product?id=" . $value['id'] ?>">    
                         <div class="rounded pt-[100%] overflow-hidden relative">
                             <img class="absolute top-0" src="<?php echo $value['featured_image'] ?>" alt="" />
@@ -65,7 +65,7 @@
     <div class="flex flex-wrap max-w-screen-xl -mx-1 -my-2 md:mx-auto px-4">
         <?php foreach (get_product() as $value) : $category = get_category(array('id' => $value['category'][0]))[0] ?>
         <div class="w-1/2 md:w-1/4 py-2 px-1 md:px-3">
-                <div class="grid h-full bg-white rounded-lg md:hover:shadow-xl md:shadow border-primary md:border md:p-3 ease-in-out duration-150">
+                <div class="grid h-full bg-white rounded-lg md:hover:shadow-xl md:shadow-default border-primary md:border md:p-3 ease-in-out duration-150">
                     <a href="<?php echo get_home_url() . "/product?id=" . $value['id'] ?>">    
                         <div class="rounded pt-[100%] overflow-hidden relative">
                             <img class="absolute top-0" src="<?php echo $value['featured_image'] ?>" alt="" />

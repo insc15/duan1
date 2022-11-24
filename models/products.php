@@ -52,6 +52,8 @@ function formatter($item)
     $item['list_image'] = explode(',', $item['list_image']);
 
     $item['category'] = explode(',',$item['category']);
+    $item['color'] = explode(',',$item['color']);
+    $item['size'] = explode(',',$item['size']);
 
     // $color_array = [];
     // foreach (explode(',',$item['color']) as $key => $value) {
