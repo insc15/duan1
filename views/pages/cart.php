@@ -1,5 +1,5 @@
 <!-- banner -->
-<section class="bg-[url('../images/AdobeStock_418499892.jpeg')] bg-no-repeat bg-cover bg-center h-[480px] flex flex-col justify-center items-start"></section>
+<section class="bg-[url('../images/AdobeStock_418499892.jpeg')] bg-no-repeat bg-cover bg-center h-[320px] flex flex-col justify-center items-start"></section>
 
 <section class="pt-9 max-w-screen-xl mx-auto items-center font-[Montserrat] mt-4">
     <!-- main -->
