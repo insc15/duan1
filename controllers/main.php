@@ -16,8 +16,8 @@
             case str_contains($_SERVER['REQUEST_URI'], $root.'/checkout');
                      get_view('./controllers/pages/checkout.php');
                 break;
-            case str_contains($_SERVER['REQUEST_URI'], $root.'/statusmessage');
-                get_view('./controllers/pages/statusmessage.php');
+            case str_contains($_SERVER['REQUEST_URI'], $root.'/ordersuccessful');
+                get_view('./controllers/pages/ordersuccessful.php');
                 break;
             case str_contains($_SERVER['REQUEST_URI'], $root.'/shop'):
                     get_view('./controllers/pages/shop.php');
