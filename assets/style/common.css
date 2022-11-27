@@ -778,6 +778,14 @@ input[type="number"]::-webkit-inner-spin-button,
   margin-left: auto;
 }
 
+.mr-6 {
+  margin-right: 1.5rem;
+}
+
+.mr-3 {
+  margin-right: 0.75rem;
+}
+
 .block {
   display: block;
 }
@@ -904,8 +912,8 @@ input[type="number"]::-webkit-inner-spin-button,
   width: 200px;
 }
 
-.w-\[211px\] {
-  width: 211px;
+.w-24 {
+  width: 6rem;
 }
 
 .min-w-0 {
@@ -985,6 +993,10 @@ input[type="number"]::-webkit-inner-spin-button,
 
 .justify-center {
   justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
 }
 
 .gap-4 {
@@ -1088,6 +1100,15 @@ input[type="number"]::-webkit-inner-spin-button,
   border-color: rgb(229 231 235 / var(--tw-border-opacity));
 }
 
+.border-\[\#D9D9D9\] {
+  --tw-border-opacity: 1;
+  border-color: rgb(217 217 217 / var(--tw-border-opacity));
+}
+
+.border-transparent {
+  border-color: transparent;
+}
+
 .bg-\[\#041E42\] {
   --tw-bg-opacity: 1;
   background-color: rgb(4 30 66 / var(--tw-bg-opacity));
@@ -1152,6 +1173,10 @@ input[type="number"]::-webkit-inner-spin-button,
 
 .p-4 {
   padding: 1rem;
+}
+
+.p-3 {
+  padding: 0.75rem;
 }
 
 .px-2 {
@@ -1270,6 +1295,10 @@ input[type="number"]::-webkit-inner-spin-button,
 
 .pt-4 {
   padding-top: 1rem;
+}
+
+.pr-6 {
+  padding-right: 1.5rem;
 }
 
 .text-left {
@@ -1430,6 +1459,11 @@ input[type="number"]::-webkit-inner-spin-button,
 .text-blue-500 {
   --tw-text-opacity: 1;
   color: rgb(59 130 246 / var(--tw-text-opacity));
+}
+
+.text-secondary {
+  --tw-text-opacity: 1;
+  color: rgb(4 30 66 / var(--tw-text-opacity));
 }
 
 .line-through {
@@ -1903,6 +1937,10 @@ body {
   margin-right: 0px;
 }
 
+.last\:mb-0:last-child {
+  margin-bottom: 0px;
+}
+
 .hover\:flex:hover {
   display: flex;
 }
@@ -1916,9 +1954,9 @@ body {
   border-color: rgb(8 129 120 / var(--tw-border-opacity));
 }
 
-.hover\:border-\[\#25AE88\]:hover {
+.hover\:border-primary:hover {
   --tw-border-opacity: 1;
-  border-color: rgb(37 174 136 / var(--tw-border-opacity));
+  border-color: rgb(8 129 120 / var(--tw-border-opacity));
 }
 
 .hover\:bg-\[\#041E42\]:hover {
@@ -2115,8 +2153,16 @@ body {
     width: 25%;
   }
 
+  .md\:w-5\/12 {
+    width: 41.666667%;
+  }
+
   .md\:w-7\/12 {
     width: 58.333333%;
+  }
+
+  .md\:w-4\/12 {
+    width: 33.333333%;
   }
 
   .md\:border {

@@ -42,7 +42,7 @@
                 <?php endif; ?>
             </div>
             <p class="mb-4"><?php echo $product['description'] ?></p>
-            <form action="">
+            <form method="post" action="<?php echo get_home_url()."/cart"?>">
                 <div class="flex items-end mb-4">
                     <p class="w-16 font-semibold">Color:</p>
                     <div class="flex ml-6">
@@ -71,7 +71,7 @@
                         <input type="number" class="w-7 h-7 text-center mx-2 outline-none focus:outline-none focus:border-primary border-b-2 duration-150" min="1" value="1">
                         <button type="button" class="minus rounded w-7 h-7 hover:bg-secondary hover:text-white"><span class="material-symbols-rounded icon-outline">remove</span></button>
                     </div>
-                    <form method="post" action="<?php echo get_home_url()."/cart"?>">
+                    <!-- <form method="post" action="<?php// echo get_home_url()."/cart"?>"> -->
                   <input type="hidden" name="idpro" value="<?php echo $product['id']?>" />
                   <input type="hidden" name="name" value="<?php echo $product['name']?>" />
                   <input type="hidden" name="price" value="<?php echo $product['price']?>" />
