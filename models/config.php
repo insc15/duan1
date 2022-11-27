@@ -16,13 +16,15 @@ define('NOT_FETCH', 0);
     // return $connect;
 // }
 
-define('CONNECTION', $connect);
+$_SESSION['connection'] = $connect;
+
+// define('CONNECTION', $connect);
 
 // Nhận  tham số 1 là câu truy vấn, tham số thứ 2 là cách lấy dũ liệu
 function getData($sql, $fetchType)
 {
     // $conn = getConnect();
-    $statement = CONNECTION->prepare($sql);
+    $statement = $_SESSION['connection']->prepare($sql);
     $statement->execute();
 
     // Lấy dl theo kiểu gì $fetchType
