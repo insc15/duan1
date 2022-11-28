@@ -4,6 +4,8 @@
         $_SESSION['cart'] = $postData['data'];  
     }
 
+    $cart = json_decode($_SESSION['cart']);
+
     include('./views/partials/header.php');
     include('./views/pages/cart.php'); 
     include('./views/partials/footer.php');
