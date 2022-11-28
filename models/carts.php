@@ -48,6 +48,7 @@ function del_cart_item(){
     
 include('./views/pages/cart.php'); 
 };
+
 function update_cart(){ 
     foreach ($_POST['quantity'] as $qntity => $qty) {
         foreach ($_SESSION['cart_item'] as $key => $value) {
@@ -58,4 +59,9 @@ function update_cart(){
     }
     include('./views/pages/cart.php'); 
 };
+
+function get_cart(){
+    
+    // return
+}
 ?>

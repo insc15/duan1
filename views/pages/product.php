@@ -41,16 +41,14 @@
                 <?php endif; ?>
             </div>
             <p class="mb-4"><?php echo $product['description'] ?></p>
-            <form method="post" action="<?php echo get_home_url() . "/cart" ?>">
+            <form class="add-to-cart">
+                <input type="text" name="id" hidden value="<?php echo $product['id'] ?>">
                 <div class="flex items-end mb-4">
                     <p class="w-16 font-semibold">Color:</p>
                     <div class="flex ml-6">
                         <?php foreach ($product['color'] as $key => $value) : ?>
                         <div class="flex mr-2 last:mr-0">
-                            <input <?php if ($key === 0) {
-                                            echo 'checked';
-                                        } ?> id="color-radio-<?php echo $value['id'] ?>" type="radio"
-                                value="<?php echo $value['id'] ?>" name="color" class="peer" hidden>
+                            <input <?php if ($key === 0) { echo 'checked'; } ?> id="color-radio-<?php echo $value['id'] ?>" type="radio" value="<?php echo $value['id'] ?>" name="color" class="peer" hidden>
                             <label for="color-radio-<?php echo $value['id'] ?>"
                                 class="cursor-pointer w-7 h-7 after:duration-150 after:border-2 after:rounded-full peer-checked:after:border-primary after:border-transparent after:content-[''] after:w-8 after:h-8 after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 relative border border-[#DDDDDD] rounded-full"
                                 style='background-color: <?php echo $value['hex'] ?>'></label>
@@ -63,10 +61,7 @@
                     <div class="flex ml-6">
                         <?php foreach ($product['size'] as $key => $value) : ?>
                         <div class="flex mr-2 last:mr-0">
-                            <input <?php if ($key === 0) {
-                                            echo 'checked';
-                                        } ?> id="size-radio-<?php echo $value['id'] ?>" type="radio"
-                                value="<?php echo $value['id'] ?>" name="size" class="peer" hidden>
+                            <input <?php if ($key === 0) { echo 'checked'; } ?> id="size-radio-<?php echo $value['id'] ?>" type="radio" value="<?php echo $value['id'] ?>" name="size" class="peer" hidden>
                             <label for="size-radio-<?php echo $value['id'] ?>"
                                 class="text-sm text-center leading-loose cursor-pointer w-7 h-7 after:duration-150 after:border-2 after:rounded-full peer-checked:after:border-primary after:border-transparent after:content-[''] after:w-8 after:h-8 after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 relative border border-[#DDDDDD] rounded-full"><?php echo $value['name'] ?></label>
                         </div>
@@ -77,25 +72,15 @@
                     <div class="p-1 quantity-input shadow-default rounded w-fit flex items-center">
                         <button type="button" class="plus rounded w-7 h-7 hover:bg-secondary hover:text-white"><span
                                 class="material-symbols-rounded icon-outline">add</span></button>
-                        <input type="number"
-                            class="w-7 h-7 text-center mx-2 outline-none focus:outline-none focus:border-primary border-b-2 duration-150"
-                            min="1" value="1">
+                        <input name="quantity" type="number" class="w-7 h-7 text-center mx-2 outline-none focus:outline-none focus:border-primary border-b-2 duration-150" min="1" value="1">
                         <button type="button" class="minus rounded w-7 h-7 hover:bg-secondary hover:text-white"><span
                                 class="material-symbols-rounded icon-outline">remove</span></button>
                     </div>
-                    <form method="post" action="<?php echo get_home_url() . "/cart" ?>">
-                        <input type="hidden" name="idpro" value="<?php echo $product['id'] ?>" />
-                        <input type="hidden" name="name" value="<?php echo $product['name'] ?>" />
-                        <input type="hidden" name="price" value="<?php echo $product['price'] ?>" />
-                        <input type="hidden" name="featured_image" value="<?php echo $product['featured_image'] ?>" />
-                        <input type="hidden" name="quantity" value="1" />
-                        <button type="submit" name="add_to_cart"
-                            class="bg-secondary ml-4 hover:bg-primary rounded w-fit px-4 mt-auto h-9 justify-center text-white flex items-center leading-normal text-xs md:text-base">
+                        <button type="submit" class="bg-secondary ml-4 hover:bg-primary rounded w-fit px-4 mt-auto h-9 justify-center text-white flex items-center leading-normal text-xs md:text-base">
                             <span
                                 class="material-symbols-rounded icon-outline hidden md:block text-base mr-2">add_shopping_cart</span>
                             ADD TO CART
                         </button>
-                    </form>
                 </div>
             </form>
         </div>
@@ -138,5 +123,22 @@ document.addEventListener('DOMContentLoaded', function() {
     mainCarousel.sync(thumbCarousel);
     mainCarousel.mount();
     thumbCarousel.mount();
+
+    const productValidation = new JustValidate('.add-to-cart');
+
+    productValidation
+    .addField('input[name=quantity]', [
+        {
+            rule: 'required',
+            errorMessage: 'Email is required',
+        },
+        {
+            rule: 'minLength',
+            value: 1,
+        },
+    ])
+    .onSuccess((event) => {
+       addToCart(getFormData(event.target))
+    });
 });
 </script>

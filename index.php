@@ -16,14 +16,14 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.3/dist/css/splide.min.css">
     <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/v/dt/jq-3.6.0/dt-1.13.1/datatables.min.js"></script>
-
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700;800;900&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
     <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/jodit/3.18.9/jodit.es2018.min.css"
     />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jodit/3.18.9/jodit.es2018.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jodit/3.18.9/jodit.es2018.min.js"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <style>
         .material-symbols-rounded.icon-fill{
             font-variation-settings:

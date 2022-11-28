@@ -43,11 +43,10 @@ require('./controllers/product.php');
                             <?php endif; ?>
                         </div>
                     </div>
-                    <button
-                        class="bg-secondary hover:bg-primary rounded w-full mt-auto py-2 justify-center text-white flex items-center leading-normal text-xs md:text-base">
-                        <span class="material-symbols-rounded icon-outline hidden md:block">add_shopping_cart</span>
-                        ADD TO CART
-                    </button>
+                    <a href="<?php echo get_home_url() . "/product?id=" . $value['id'] ?>" class="bg-secondary hover:bg-primary rounded w-full mt-auto py-2 justify-center text-white flex items-center leading-normal text-xs md:text-base">
+                        <!-- <span class="material-symbols-rounded icon-outline hidden md:block">add_shopping_cart</span> -->
+                        Xem chi tiết
+                    </a>
                 </div>
             </div>
         <?php endforeach; ?>
@@ -88,11 +87,10 @@ require('./controllers/product.php');
                             <?php endif; ?>
                         </div>
                     </div>
-                    <button
-                        class="bg-secondary hover:bg-primary rounded w-full mt-auto py-2 justify-center text-white flex items-center leading-normal text-xs md:text-base">
-                        <span class="material-symbols-rounded icon-outline hidden md:block">add_shopping_cart</span>
-                        ADD TO CART
-                    </button>
+                    <a href="<?php echo get_home_url() . "/product?id=" . $value['id'] ?>" class="bg-secondary hover:bg-primary rounded w-full mt-auto py-2 justify-center text-white flex items-center leading-normal text-xs md:text-base">
+                        <!-- <span class="material-symbols-rounded icon-outline hidden md:block">add_shopping_cart</span> -->
+                        Xem chi tiết
+                    </a>
                 </div>
             </div>
         <?php endforeach; ?>

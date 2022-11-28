@@ -16,7 +16,7 @@ define('NOT_FETCH', 0);
     // return $connect;
 // }
 
-$_SESSION['connection'] = $connect;
+$GLOBALS['connection'] = $connect;
 
 // define('CONNECTION', $connect);
 
@@ -24,7 +24,7 @@ $_SESSION['connection'] = $connect;
 function getData($sql, $fetchType)
 {
     // $conn = getConnect();
-    $statement = $_SESSION['connection']->prepare($sql);
+    $statement = $GLOBALS['connection']->prepare($sql);
     $statement->execute();
 
     // Lấy dl theo kiểu gì $fetchType

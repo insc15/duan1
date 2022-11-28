@@ -1,13 +1,10 @@
 <?php
-require_once('./models/carts.php');
-if(isset($_POST['add_to_cart'])){
-    return add_to_cart();   
-}
-if(isset($_POST['del_cart_item'])){
-    return del_cart_item();
-}
-if(isset($_POST['update_cart'])){
-    return update_cart();
-}
-include('./views/pages/cart.php'); 
+    if($_SERVER['REQUEST_METHOD'] === 'POST'){
+        $postData = json_decode(file_get_contents('php://input'), true);//vì $_POST chỉ nhận các giá trị nhận từ form nên dữ liệu từ js gửi lên qua fetch sẽ dùng cái này
+        $_SESSION['cart'] = $postData['data'];  
+    }
+
+    include('./views/partials/header.php');
+    include('./views/pages/cart.php'); 
+    include('./views/partials/footer.php');
 ?>
