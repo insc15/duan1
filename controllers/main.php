@@ -16,6 +16,12 @@
             case str_contains($_SERVER['REQUEST_URI'], $root.'/checkout');
                      get_view('./controllers/pages/checkout.php');
                 break;
+            case str_contains($_SERVER['REQUEST_URI'], $root.'/header');
+                get_view('./controllers/admin/header.php');
+                break;
+            case str_contains($_SERVER['REQUEST_URI'], $root.'/content');
+                get_view('./controllers/admin/content.php');
+                break;
             case str_contains($_SERVER['REQUEST_URI'], $root.'/ordersuccessful');
                 get_view('./controllers/pages/ordersuccessful.php');
                 break;
