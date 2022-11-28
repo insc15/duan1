@@ -12,13 +12,7 @@
          <!-- left -->
         <div class="md:w-8/12 pr-3">
             <form method="POST" action="<?php echo get_home_url()."/cart";?>">
-                <?php 
-                    if (isset($_SESSION['cart_item'])) {
-                        $total_price = 0;
-                        $i = 0;
-                        foreach ($_SESSION['cart_item'] as $item) {
-                           $item_price = $item['price']*$item['quantity'];
-                           $total_price += $item_price; ?>
+                <?php if(count($cart['items'])> 0) : foreach ($cart['items'] as $key => $value) : $item = $value['data'] ?>
                 <!-- products -->
                 <div class="flex items-center justify-between rounded-lg shadow-default p-1 pr-6 mb-2 last:mb-0">
                     <div class="flex items-center">
@@ -43,11 +37,11 @@
                             </div>
                         </div>
                     </div>
-                    <p><?php echo $item['price'] ?></p>
+                    <p><?php echo $item['formatted_final_price'] ?></p>
                     <div class="flex items-center">
                         <div class="p-1 quantity-input rounded w-fit flex items-center">
                             <button type="button" class="plus rounded w-7 h-7 bg-secondary text-white"><span class="material-symbols-rounded icon-outline">add</span></button>
-                            <input name="quantity[<?php echo $item['id']?>]" type="number" class="w-7 h-7 text-center mx-2 outline-none focus:outline-none focus:border-primary border-b-2 duration-150" min="1" value="1">
+                            <input value="<?php echo $value['quantity'] ?>" name="quantity[<?php echo $item['id']?>]" type="number" class="w-7 h-7 text-center mx-2 outline-none focus:outline-none focus:border-primary border-b-2 duration-150" min="1" value="1">
                             <button type="button" class="minus rounded w-7 h-7 bg-secondary text-white"><span class="material-symbols-rounded icon-outline">remove</span></button>
                         </div>
                         <a href="<?php echo get_home_url()."/cart" ?>" class="flex justify-center items-center ml-4 w-7 h-7 rounded text-[#041E42] hover:bg-[#041E42] hover:text-white ">
@@ -57,7 +51,7 @@
                     </div>
                 </div>  
 
-                <?php } ?>
+                <?php endforeach;else: ?>
             
                 <div class="flex mt-4">   
                     <a href="<?php echo get_home_url()?>" class="duration-150 flex justify-center items-center text-base text-primary border-primary border py-1 px-3 rounded mr-6 hover:bg-[#041E42] hover:text-white">
@@ -89,7 +83,7 @@
             </div>
 
          </div>
-         <?php } ?>
+         <?php endif; ?>
       </div>
    </div>
 </section>

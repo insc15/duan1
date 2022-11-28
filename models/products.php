@@ -4,10 +4,9 @@ require_once('models/category.php');
 require_once('models/color.php');
 require_once('models/size.php');
 
-function get_product($meta_query = null)
+function get_product($meta_query = null, $order = null)
 {
-    $sql = queryBuilder('product', $meta_query);
-    //câu query sau khi build: SELECT * FROM product WHERE featured = '1' OR featured = ',1' OR featured = ',1,' OR featured = '1,'
+    $sql = queryBuilder('product', $meta_query, $order);
     $product = getData($sql, FETCH_ALL);
     $formatted_product = format_product($product);
     return $formatted_product;
@@ -46,6 +45,7 @@ function format_product($product)
 function formatter($item)
 {
     $item['featured'] = boolval($item['featured']);
+    $item['final_price'] = intval($item['discount']) > 0 ? $item['discount'] : $item['price'];
     $item['formatted_final_price'] = number_format((intval($item['discount']) > 0 ? $item['discount'] : $item['price']), 0, '.', '.') . '&#8363;';
     $item['formatted_price'] = number_format($item['price'], 0, '.', '.') . '&#8363;';
     $item['formatted_discount'] = number_format($item['discount'], 0, '.', '.') . '&#8363;';

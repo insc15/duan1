@@ -62,7 +62,7 @@ require('./controllers/product.php');
         <p class="md:text-base text-sm">Summer Collection New Morden Design</p>
     </div>
     <div class="flex flex-wrap max-w-screen-xl -mx-1 -my-2 md:mx-auto px-4">
-        <?php foreach (get_product() as $value) : $category = get_category(array('id' => $value['category'][0]))[0] ?>
+        <?php foreach (get_product(null, array('by'=> 'created_date', 'sort' => 'desc')) as $value) : $category = get_category(array('id' => $value['category'][0]))[0] ?>
         <div class="w-1/2 md:w-1/4 py-2 px-1 md:px-3">
                 <div class="grid h-full bg-white rounded-lg md:hover:shadow-xl md:shadow-default border-primary md:border md:p-3 ease-in-out duration-150">
                     <a href="<?php echo get_home_url() . "/product?id=" . $value['id'] ?>">    

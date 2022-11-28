@@ -38,7 +38,7 @@ function getData($sql, $fetchType)
     }
 }
 
-function queryBuilder($table, $meta_query){
+function queryBuilder($table, $meta_query, $order){
     $params = ''; //đây là biến chuỗi chứa kết quả
     if(isset($meta_query)){
         $params = ' WHERE ';
@@ -48,6 +48,9 @@ function queryBuilder($table, $meta_query){
         }
 
         $params .= join(' AND ',$query_array);//dựng câu query
+    }
+    if(isset($order)){
+        $params .= " ORDER BY {$order['by']} {$order['sort']}";
     }
     $sql = "SELECT * FROM $table$params";
     return $sql;
