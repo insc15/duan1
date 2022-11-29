@@ -20,13 +20,17 @@
     </div>
     <div class="mb-8">
         <!-- profile -->
-        <a class="mx-[32px]  flex mb-[32px] hover:shadow hover:drop-shadow-2xl hover:rounded-lg w-[236px]">
-            <img class="w-[48px] h-[48px] rounded-lg" src="../assets/images/bgcart.jpg" alt="">
-            <div class="ml-[12px]">
-                <span class="text-base font-medium">Huy Quang Nguyen</span>
-                <span class="mt-[4px] text-xs font-light">huy_gay_2003@gmail.com</span>
-            </div>
-        </a>
+        <div class="mx-[32px] flex mb-[32px] hover:shadow hover:drop-shadow-2xl hover:rounded-lg w-[236px]">
+        
+                <img class="w-[48px] h-[48px] rounded-lg" src="../assets/images/bgcart.jpg" alt="">
+            
+            <a href="">
+                <div class="ml-[12px]">
+                    <span class="text-base font-medium">Huy Quang Nguyen</span>
+                    <span class="mt-[4px] text-xs font-light">huy_gay_2003@gmail.com</span>
+                </div>
+            </a>
+        </div>
         <a href="" class="border border-red-700 mx-[32px] py-1 inline-block px-auto rounded text-center w-[240px]">
             <span class="text-red-700 ">Đăng xuất</span>
         </a>
