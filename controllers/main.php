@@ -20,8 +20,8 @@ function Run()
         case str_contains($_SERVER['REQUEST_URI'], $root . '/checkout');
             get_view('./controllers/pages/checkout.php');
             break;
-        case str_contains($_SERVER['REQUEST_URI'], $root . '/header');
-            get_view('./controllers/admin/header.php');
+        case str_contains($_SERVER['REQUEST_URI'], $root . '/admin/dashboard');
+            with_login('./controllers/admin/dashboard.php', '/admin/dashboard');
             break;
         case str_contains($_SERVER['REQUEST_URI'], $root . '/content');
             get_view('./controllers/admin/content.php');
