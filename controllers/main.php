@@ -23,6 +23,12 @@ function Run()
         case str_contains($_SERVER['REQUEST_URI'], $root . '/content');
             get_view('./controllers/admin/content.php');
             break;
+        case str_contains($_SERVER['REQUEST_URI'], $root . '/table');
+            get_view('./controllers/admin/table.php');
+            break;
+        case str_contains($_SERVER['REQUEST_URI'], $root . '/edit');
+            get_view('./controllers/admin/edit.php');
+            break;
         case str_contains($_SERVER['REQUEST_URI'], $root . '/ordersuccessful');
             get_view('./controllers/pages/ordersuccessful.php');
             break;
