@@ -681,11 +681,6 @@ input[type="number"]::-webkit-inner-spin-button,
   margin-right: 32px;
 }
 
-.my-1 {
-  margin-top: 0.25rem;
-  margin-bottom: 0.25rem;
-}
-
 .mt-4 {
   margin-top: 1rem;
 }
@@ -794,10 +789,6 @@ input[type="number"]::-webkit-inner-spin-button,
   margin-left: 15px;
 }
 
-.mt-\[583px\] {
-  margin-top: 583px;
-}
-
 .mb-\[32px\] {
   margin-bottom: 32px;
 }
@@ -812,6 +803,14 @@ input[type="number"]::-webkit-inner-spin-button,
 
 .block {
   display: block;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.inline {
+  display: inline;
 }
 
 .flex {
@@ -938,6 +937,18 @@ input[type="number"]::-webkit-inner-spin-button,
 
 .w-\[48px\] {
   width: 48px;
+}
+
+.w-\[256px\] {
+  width: 256px;
+}
+
+.w-\[246px\] {
+  width: 246px;
+}
+
+.w-\[240px\] {
+  width: 240px;
 }
 
 .min-w-0 {
@@ -2044,11 +2055,6 @@ body {
 .hover\:bg-gray-200:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(229 231 235 / var(--tw-bg-opacity));
-}
-
-.hover\:bg-red-700:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(185 28 28 / var(--tw-bg-opacity));
 }
 
 .hover\:text-primary:hover {

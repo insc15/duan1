@@ -4,13 +4,13 @@
                     <div class="flex items-center">
                         <div class="rounded overflow-hidden w-24">
                             <div class="relative pt-[100%]">
-                                <img class="absolute top-0" src="<?php echo $item['featured_image']?>" alt="">
+                                <img class="absolute top-0" src="" alt="">
                             </div>
                         </div>
                         <div class="ml-6">
-                            <a href="#"><h3 class="text-secondary hover:text-primary text-base font-bold"><?php echo $item['name'] ?></h3></a>
+                            <a href="#"><h3 class="text-secondary hover:text-primary text-base font-bold">co cai con cac</h3></a>
                         </div>
                     </div>
-                    <p><?php echo $item['formatted_final_price'] ?></p>
+                    <p>100000000</p>
                 </div> 
 </section>
