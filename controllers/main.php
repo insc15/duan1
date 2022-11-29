@@ -14,6 +14,9 @@ function Run()
         case str_contains($_SERVER['REQUEST_URI'], $root . '/login');
             include('./controllers/pages/login.php');
             break;
+        case str_contains($_SERVER['REQUEST_URI'], $root . '/register');
+            include('./controllers/pages/register.php');
+            break;
         case str_contains($_SERVER['REQUEST_URI'], $root . '/checkout');
             get_view('./controllers/pages/checkout.php');
             break;

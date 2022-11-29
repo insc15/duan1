@@ -1,3 +1,3 @@
 <?php
-include('./views/admin/header.php'); 
+include('./views/partials/admin/header.php'); 
 ?>
