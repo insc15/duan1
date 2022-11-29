@@ -17,6 +17,6 @@
             <?php endif; ?>
             <button class="w-full bg-primary text-primary py-2 px-3 mt-2" type="submit">Đăng nhập</button>
         </form>
-        <p class="text-sm mt-2">Chưa có tài khoản? <a class="text-primary" href="/web2041/register">Đăng ký ngay</a></p>
+        <p class="text-sm mt-2">Chưa có tài khoản? <a class="text-primary" href="/duan1/register">Đăng ký ngay</a></p>
     </div>
 </section>
