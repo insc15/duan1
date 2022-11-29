@@ -21,7 +21,7 @@ function Run()
             get_view('./controllers/pages/checkout.php');
             break;
         case str_contains($_SERVER['REQUEST_URI'], $root . '/admin/dashboard');
-            with_login('./controllers/admin/dashboard.php', '/admin/dashboard');
+            with_login('./controllers/admin/dashboard.php', '/admin/dashboard', true);
             break;
         case str_contains($_SERVER['REQUEST_URI'], $root . '/content');
             get_view('./controllers/admin/content.php');
