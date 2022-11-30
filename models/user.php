@@ -2,7 +2,7 @@
 require_once('models/config.php');
 function auth_user($username, $password)
 {
-    $password = ($password);
+    $password = md5($password);
     $query = "SELECT * FROM user WHERE username = '$username' AND password = '$password'";
 
     $user = getData($query, FETCH_ONE);
@@ -11,7 +11,7 @@ function auth_user($username, $password)
 }
 function register_user($display_name, $username, $password, $email, $profile_image)
 {
-    $password = ($password);
+    $password = md5($password);
     $query = "INSERT INTO user (display_name,username,password,email,profile_image,role) VALUES ('$display_name','$username', '$password', '$email','$profile_image',0)";
 
     try {
