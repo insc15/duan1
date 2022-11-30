@@ -34,54 +34,48 @@
                         Giá bán
                     </th>
                     <th scope="col" class="py-2 px-6">
-                        sửa
-                    </th>
-                    <th scope="col" class="py-2 px-6">
-                        xóa
+                        Sửa
                     </th>
                 </tr>
             </thead>
             <tbody>
                 <?php
-                    foreach (get_product(null,null) as $value) {
+                    foreach (get_product(null, array('by'=> 'created_date', 'sort' => 'asc')) as $value) {
                         $category = get_category(array('id' => $value['category'][0]))[0];
                 ?>
-                <tr
-                    class="bg-white rounded-md  dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 ">
-                    <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                        <?php echo $value['name'] ;?>
+                <tr class="bg-white rounded-md  dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 ">
+                    <th class="py-4 px-6">
+                        <?php echo $value['name'] ?>
                     </th>
-                    <td class="py-4 px-6"></td>
+                    <td class="py-4 px-6">
+                        <?php
+                            $color = get_color(array('id' => $value['color'][0]))[0];
+                            echo $color['name'];
+                        ?>
+                    </td>
                     <td class="py-4 px-6">
                         <img src="<?php echo $value['featured_image'] ?>" width="100px" alt="">
                     </td>
                     <td class="py-4 px-6">
-                        <?php echo $category['name']; ?>
+                        <?php echo $category['name'] ?>
                     </td>
                     <td class="py-4 px-6">
-                        <!-- <?php 
-                            $size_array = [];
-                            foreach ($product['size'] as $key => $value) {
-                                $size = get_size(array('id' => $value));
-                                array_push($size_array, $size[0]);
-                            }
-                            $product['size'] = $size_array;
-
-                            foreach ($product['size'] as $key => $value) {
-                                echo $value['name'].", "; 
-                            }
-                        ?> -->
-                        2XL,XL,L,M
+                        <?php
+                            $size = get_size(array('id' => $value['size'][0]))[0];
+                            echo $size['name'];
+                        ?>
+                    </td>
+                    <td>
+                        <?php echo $value['description'] ?>
                     </td>
                     <td class="py-4 px-6">
-                        <?php echo $value['description']; ?>
-                    </td>
-                    <td class="py-4 px-6"><?php echo $value['price']; ?></td>
-                    <td class="py-4 px-6"><?php echo $value['discount']; ?></td>
-                    <td class="py-4 px-6">
-                        <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Sửa</a>
+                        <?php echo $value['price'] ?>
                     </td>
                     <td class="py-4 px-6">
+                        <?php echo $value['discount'] ?>
+                    </td>
+                    <td class="py-4 px-6">
+                        <a href="<?php echo get_home_url() ?>/edit?id=<?=$value['id']?>" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Sửa</a>
                         <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Xóa</a>
                     </td>
                 </tr>
