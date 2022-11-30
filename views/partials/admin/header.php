@@ -5,7 +5,7 @@
             <img class="ml-[20px]" src="../assets/images/dashboard.svg" alt="">
             <span class="text-base ml-[15px]">Tổng quan</span>
         </a>
-        <a class="flex w-[236px] py-3 items-center mx-[32px] hover:shadow hover:drop-shadow-2xl hover:rounded-lg" href="">
+        <a class="flex w-[236px] py-3 items-center mx-[32px] hover:shadow hover:drop-shadow-2xl hover:rounded-lg" href="<?php get_home_url()."/admin/products"?>">
             <img class="ml-[20px]" src="../assets/images/products.svg" alt="">
             <span class="text-base ml-[15px]">Sản phẩm</span>
         </a>
