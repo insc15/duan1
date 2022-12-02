@@ -1,4 +1,4 @@
-<section class="flex  fixed top-0 flex-col w-3/12 border-xl border-black h-screen font-[Montserrat] shadow-xl bg-[#dfe7f0] justify-between ">
+<section class="flex  fixed top-0 flex-col w-3/12 border-xl h-screen font-[Montserrat]  justify-between ">
     <div>
         <img class="w-[100px] h-[36px] mt-8 mx-[100px] mb-[96px]" src="../assets/images/logo.png" alt="">
         <a class="flex w-[236px] py-3 items-center mx-[32px] hover:shadow hover:drop-shadow-2xl hover:rounded-lg" href="/duan1/homeadmin">
