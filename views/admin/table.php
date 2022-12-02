@@ -5,7 +5,7 @@
             <thead class="text-sm text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                 <tr>
                     <td class="py-4 px-6" colspan="10">
-                        <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Thêm sản phẩm mới</a>
+                        <a href="/duan1/moreproducts.php" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Thêm sản phẩm mới</a>
                     </td>
                 </tr>
                 <tr>
