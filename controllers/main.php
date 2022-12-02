@@ -20,6 +20,9 @@ function Run()
         case str_contains($_SERVER['REQUEST_URI'], $root . '/profile');
             get_view('./controllers/pages/profile.php');
             break;
+        case str_contains($_SERVER['REQUEST_URI'], $root . '/edit-profile');
+            get_view('./controllers/pages/editProfile.php');
+            break;
         case str_contains($_SERVER['REQUEST_URI'], $root . '/register');
             include('./controllers/pages/register.php');
             break;
