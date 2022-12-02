@@ -597,6 +597,10 @@ input[type="number"]::-webkit-inner-spin-button,
   }
 }
 
+.fixed {
+  position: fixed;
+}
+
 .absolute {
   position: absolute;
 }
@@ -801,6 +805,26 @@ input[type="number"]::-webkit-inner-spin-button,
   margin-top: 4px;
 }
 
+.mb-5 {
+  margin-bottom: 1.25rem;
+}
+
+.ml-9 {
+  margin-left: 2.25rem;
+}
+
+.ml-10 {
+  margin-left: 2.5rem;
+}
+
+.ml-8 {
+  margin-left: 2rem;
+}
+
+.ml-7 {
+  margin-left: 1.75rem;
+}
+
 .block {
   display: block;
 }
@@ -857,6 +881,10 @@ input[type="number"]::-webkit-inner-spin-button,
   height: 2.25rem;
 }
 
+.h-\[500px\] {
+  height: 500px;
+}
+
 .h-6 {
   height: 1.5rem;
 }
@@ -867,6 +895,18 @@ input[type="number"]::-webkit-inner-spin-button,
 
 .h-\[48px\] {
   height: 48px;
+}
+
+.h-48 {
+  height: 12rem;
+}
+
+.w-2\/12 {
+  width: 16.666667%;
+}
+
+.w-8\/12 {
+  width: 66.666667%;
 }
 
 .w-24 {
@@ -911,16 +951,16 @@ input[type="number"]::-webkit-inner-spin-button,
   width: 211px;
 }
 
+.w-96 {
+  width: 24rem;
+}
+
 .w-6 {
   width: 1.5rem;
 }
 
 .w-\[200px\] {
   width: 200px;
-}
-
-.w-\[300px\] {
-  width: 300px;
 }
 
 .w-\[100px\] {
@@ -937,6 +977,10 @@ input[type="number"]::-webkit-inner-spin-button,
 
 .w-\[240px\] {
   width: 240px;
+}
+
+.w-48 {
+  width: 12rem;
 }
 
 .min-w-0 {
@@ -1063,10 +1107,6 @@ input[type="number"]::-webkit-inner-spin-button,
   white-space: nowrap;
 }
 
-.whitespace-nowrap {
-  white-space: nowrap;
-}
-
 .rounded-lg {
   border-radius: 0.5rem;
 }
@@ -1151,6 +1191,11 @@ input[type="number"]::-webkit-inner-spin-button,
   border-color: rgb(185 28 28 / var(--tw-border-opacity));
 }
 
+.border-red-400 {
+  --tw-border-opacity: 1;
+  border-color: rgb(248 113 113 / var(--tw-border-opacity));
+}
+
 .bg-secondary {
   --tw-bg-opacity: 1;
   background-color: rgb(4 30 66 / var(--tw-bg-opacity));
@@ -1194,6 +1239,16 @@ input[type="number"]::-webkit-inner-spin-button,
 .bg-gray-50 {
   --tw-bg-opacity: 1;
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
+}
+
+.bg-slate-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(203 213 225 / var(--tw-bg-opacity));
+}
+
+.bg-slate-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(241 245 249 / var(--tw-bg-opacity));
 }
 
 .bg-\[url\(\'\.\.\/images\/bgcart\.jpg\'\)\] {

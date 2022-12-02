@@ -1,5 +1,5 @@
 
-    <footer class="border-t border-gray-200 bg-[#E3E6F3]">
+    <footer class=" border-t border-gray-200 bg-[#E3E6F3]">
       <div
         class="container flex flex-wrap items-center justify-center px-4 py-8 mx-auto  lg:justify-between"
       >
