@@ -1,4 +1,4 @@
-<section class="flex flex-col w-3/12 border-xl border-black h-screen font-[Montserrat] shadow-xl bg-[#F6F8FA] justify-between ">
+<section class="flex flex-col fixed top-0 w-3/12 border-xl border-black h-screen font-[Montserrat] shadow-xl bg-[#F6F8FA] justify-between ">
     <div>
         <img class="w-[100px] h-[36px] mt-8 mx-[100px] mb-[96px]" src="../assets/images/logo.png" alt="">
         <a class="flex w-[236px] py-3 items-center mx-[32px] hover:shadow hover:drop-shadow-2xl hover:rounded-lg" href="">
