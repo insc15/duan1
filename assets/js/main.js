@@ -1,17 +1,18 @@
 document.addEventListener("DOMContentLoaded", function () {
-  initCart()
+  // initCart()
+  setQuantityButton('.quantity-input')
   // initAddToCartButton()
 });
 
-function initCart() {
-  const cartData = localStorage.getItem('cart') || []
-  fetch(`${baseURL()}cart`,{
-    method: "POST",
-    body: JSON.stringify({
-      data: cartData
-    })
-  })
-}
+// function initCart() {
+//   const cartData = localStorage.getItem('cart') || JSON.stringify([])
+//   fetch(`${baseURL()}cart`,{
+//     method: "POST",
+//     body: JSON.stringify({
+//       data: cartData
+//     })
+//   })
+// }
 
 function baseURL() {
   let url;
@@ -24,22 +25,22 @@ function baseURL() {
   return url;
 }
 
-function addToCart(item) {
-  let data = item
-  const cartData = JSON.parse(localStorage.getItem('cart')) || []
-  const newCartData = cartData.map(cartItem => {
-    if(JSON.stringify(cartItem) === JSON.stringify(data)){
-      cartItem.quantity = Number(cartItem.quantity) + Number(data.quantity)
-      data = null
-    }
-    return cartItem
-  })
-  if(data){
-    newCartData.push(data)
-  }
-  localStorage.setItem('cart',JSON.stringify(newCartData))
-  toastr.success("Đã thêm sản phẩm vào giỏ");
-}
+// function addToCart(item) {
+//   let data = item
+//   const cartData = JSON.parse(localStorage.getItem('cart')) || []
+//   const newCartData = cartData.map(cartItem => {
+//     if(JSON.stringify(cartItem) === JSON.stringify(data)){
+//       cartItem.quantity = Number(cartItem.quantity) + Number(data.quantity)
+//       data = null
+//     }
+//     return cartItem
+//   })
+//   if(data){
+//     newCartData.push(data)
+//   }
+//   localStorage.setItem('cart',JSON.stringify(newCartData))
+//   toastr.success("Đã thêm sản phẩm vào giỏ");
+// }
 
 function getFormData(form) {
   const formData = new FormData(form);
@@ -62,4 +63,21 @@ toastr.options = {
   "hideEasing": "linear",
   "showMethod": "fadeIn",
   "hideMethod": "fadeOut"
+}
+
+function setQuantityButton(selector) {
+  document.querySelectorAll(selector).forEach(i=>{
+    const quantityGroup = i
+    const plusButton = quantityGroup.querySelector('.plus')
+    const minusButton = quantityGroup.querySelector('.minus')
+    const quantityInput = quantityGroup.querySelector('input')
+  
+    plusButton.onclick = () => {
+      quantityInput.value = Number(quantityInput.value) + 1
+    }
+  
+    minusButton.onclick = () => {
+      quantityInput.value = Number(quantityInput.value) - 1 < 1 ? 1 : Number(quantityInput.value) - 1
+    }
+  })
 }
