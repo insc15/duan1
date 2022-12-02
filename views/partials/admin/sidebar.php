@@ -1,7 +1,7 @@
-<section class="flex fixed top-0 flex-col w-3/12 border-xl border-black h-screen font-[Montserrat] shadow-xl bg-[#F6F8FA] justify-between ">
+<section class="flex  fixed top-0 flex-col w-3/12 border-xl border-black h-screen font-[Montserrat] shadow-xl bg-[#dfe7f0] justify-between ">
     <div>
         <img class="w-[100px] h-[36px] mt-8 mx-[100px] mb-[96px]" src="../assets/images/logo.png" alt="">
-        <a class="flex w-[236px] py-3 items-center mx-[32px] hover:shadow hover:drop-shadow-2xl hover:rounded-lg" href="">
+        <a class="flex w-[236px] py-3 items-center mx-[32px] hover:shadow hover:drop-shadow-2xl hover:rounded-lg" href="/duan1/homeadmin">
             <img class="ml-[20px]" src="../assets/images/dashboard.svg" alt="">
             <span class="text-base ml-[15px]">Tổng quan</span>
         </a>
@@ -13,7 +13,7 @@
             <img class="ml-[20px]" src="../assets/images/cate.svg" alt="">
             <span class="text-base ml-[15px]">Danh mục</span>
         </a>
-        <a class="flex w-[236px] py-3 items-center mx-[32px] hover:shadow hover:drop-shadow-2xl hover:rounded-lg" href="">
+        <a class="flex w-[236px] py-3 items-center mx-[32px] hover:shadow hover:drop-shadow-2xl hover:rounded-lg" href="/duan1/adminorder">
             <img class="ml-[20px]" src="../assets/images/order.svg" alt="">
             <span class="text-base ml-[15px]">Đơn hàng</span>
         </a>
@@ -37,3 +37,4 @@
     </div>
         
 </section>
+
