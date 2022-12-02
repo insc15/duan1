@@ -1,5 +1,5 @@
 <?php 
-    require_once('./models/config.php');
+    require_once('config.php');
 
     function get_size($meta_query = null, $order = null)
     {

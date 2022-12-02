@@ -1,8 +1,8 @@
 <?php
-require_once('models/config.php');
-require_once('models/category.php');
-require_once('models/color.php');
-require_once('models/size.php');
+require_once('config.php');
+require_once('category.php');
+require_once('color.php');
+require_once('size.php');
 
 function get_product($meta_query = null, $order = null)
 {
