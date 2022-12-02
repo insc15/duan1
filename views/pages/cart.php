@@ -1,4 +1,3 @@
-
 <!-- banner -->
 <section class="bg-[url('../images/bgcart.jpg')] bg-no-repeat bg-cover bg-center h-80 flex justify-center items-center">
    <h1 class="uppercase text-4xl font-bold text-white">Cart</h1>
@@ -14,7 +13,9 @@
             <?php if(count($cart['items'])> 0) : foreach ($cart['items'] as $key => $value) : $item = $value['data'] ?>
             <div class="grid grid-cols-2 items-center rounded-lg shadow-default p-1 pr-6 mb-2 last:mb-0">
                 <div class="flex items-center">
-                    <input type="hidden" name="item[<?php echo $product['id'] ?>][id]" value="<?php echo $item['id'] ?>">
+                    <input type="hidden" name="item[<?php echo $item['id'] ?>][id]" value="<?php echo $item['id'] ?>">
+                    <input type="hidden" name="item[<?php echo $item['id'] ?>][color]" value="<?php echo $item['color'][0] ?>">
+                    <input type="hidden" name="item[<?php echo $item['id'] ?>][size]" value="<?php echo $item['size'][0] ?>">
                     <div class="rounded overflow-hidden w-24 shrink-0">
                         <div class="relative pt-[100%]">
                             <img class="absolute top-0" src="<?php echo $item['featured_image']?>" alt="">
@@ -22,7 +23,7 @@
                     </div>
                     <div class="px-6 truncate">
                         <a href="#" class="text-secondary hover:text-primary text-base font-bold"><?php echo $item['name'] ?></a>
-                        <p><?php echo get_size(array('id' => $item['size'][0]))[0]['name'] ?>, <?php echo get_color(array('id' => $item['color'][0]))[0]['name'] ?></p>
+                        <p><?php echo $item['size']['name'] ?>, <?php echo $item['color']['name'] ?></p>
                         <!-- <div class="flex mt-2"> -->
                             <!-- <div class=""> -->
                             <!-- <select class="text-xs px-2 border-2 border-[#D9D9D9] py-2 rounded outline-none focus:outline-none" name="size"> -->
@@ -46,7 +47,7 @@
                     <div class="flex items-center">
                         <div class="p-1 quantity-input rounded w-fit flex items-center">
                             <button type="button" class="plus rounded w-7 h-7 bg-secondary text-white"><span class="material-symbols-rounded icon-outline">add</span></button>
-                            <input value="<?php echo $value['quantity'] ?>" name="item[<?php echo $product['id'] ?>][quantity]" type="number" class="w-7 h-7 text-center mx-2 outline-none focus:outline-none focus:border-primary border-b-2 duration-150" min="1" value="1">
+                            <input value="<?php echo $value['quantity'] ?>" name="item[<?php echo $item['id'] ?>][quantity]" type="number" class="w-7 h-7 text-center mx-2 outline-none focus:outline-none focus:border-primary border-b-2 duration-150" min="1" value="1">
                             <button type="button" class="minus rounded w-7 h-7 bg-secondary text-white"><span class="material-symbols-rounded icon-outline">remove</span></button>
                         </div>
                         <button class="flex justify-center items-center ml-4 w-7 h-7 rounded text-[#041E42] hover:bg-[#041E42] hover:text-white " name="del_cart_item" value="<?php echo $item['id']?>" type="submit">
@@ -65,7 +66,7 @@
                     <span class="material-symbols-rounded">arrow_back</span>
                     <span class="ml-3">Continue shopping</span>
                 </a>
-                <button type="submit" data-action="update-cart" class="duration-150 border py-1 px-4 rounded bg-[#041E42] text-white text-base hover:bg-white hover:text-primary hover:border-primary">Update cart</button>
+                <button type="submit" name="update_cart" class="duration-150 border py-1 px-4 rounded bg-[#041E42] text-white text-base hover:bg-white hover:text-primary hover:border-primary">Update cart</button>
             </div>
 
         </form>
