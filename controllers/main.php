@@ -17,6 +17,9 @@ function Run()
         case str_contains($_SERVER['REQUEST_URI'], $root . '/list-order');
             include('./controllers/pages/listorder.php');
             break;
+        case str_contains($_SERVER['REQUEST_URI'], $root . '/profile');
+            include('./controllers/pages/profile.php');
+            break;
         case str_contains($_SERVER['REQUEST_URI'], $root . '/register');
             include('./controllers/pages/register.php');
             break;
