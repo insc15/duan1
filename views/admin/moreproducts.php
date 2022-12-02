@@ -1,5 +1,5 @@
 <section>
-    <h1 class=" justify-center flex py-5 text-primary text-6xl font-bold	">Thêm Sản Phẩm Mới</h1>
+    <h1 class=" justify-center flex py-5 text-primary text-6xl font-bold">Thêm Sản Phẩm Mới</h1>
 </section>
 
 <section class="overflow-x-auto relative rounded-md flex justify-center py-9 ">
