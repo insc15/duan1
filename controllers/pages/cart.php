@@ -2,24 +2,48 @@
     require('models/products.php');
     // require('models/color.php');
 
+    function searchForId($id, $array) {
+        foreach ($array as $key => $val) {
+            if ($val['id'] === $id) {
+                return $key;
+            }
+        }
+        return null;
+     }
+
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
         $queue = $_POST['item'];
         $temp_cart = [];
-        foreach ($_SESSION['cart'] as $key => $item) {
-            $exist_item = isset($queue[$item['id']]);
-            if($exist_item && $queue[$item['id']]['color'] === $item['color'] && $queue[$item['id']]['size'] === $item['size']) {
-                if(isset($_POST['update_cart'])){
-                    $item['quantity'] = $queue[$item['id']]['quantity'];
-                }else{
-                    $item['quantity'] = intval($queue[$item['id']]['quantity']) + intval($item['quantity']);
+        if(!isset($_POST['add-to-cart']) && !isset($_POST['del_cart_item'])){
+            foreach ($_SESSION['cart'] as $key => $item) {
+                $exist_item = $queue[searchForId($item['id'],$queue)];
+                if($exist_item && $exist_item['color'] === $item['color'] && $exist_item['size'] === $item['size']) {
+                    $item['quantity'] = $queue[searchForId($item['id'],$queue)]['quantity'];
+                    unset($queue[searchForId($item['id'],$queue)]);
                 }
+                $temp_cart[] = $item;
             }
-            unset($queue[$item['id']]);
-            if(!isset($_POST['del_cart_item']) || $_POST['del_cart_item'] !== $item['id']){
+        }elseif(isset($_POST['del_cart_item'])){
+            foreach ($_SESSION['cart'] as $key => $item) {
+                $target = explode(',',$_POST['del_cart_item']);
+                $exist_item = $item['id'] === $target[0];
+                if($exist_item && $item['color'] === $target['1'] && $item['size'] === $target['2']) {
+                    unset($queue[searchForId($item['id'],$queue)]);
+                }else{
+                    // $temp_cart[] = $item;
+                }   
+            }
+        }else{
+            foreach ($_SESSION['cart'] as $key => $item) {
+                $exist_item = isset($queue[$item['id']]);
+                if($exist_item && $queue[$item['id']]['color'] === $item['color'] && $queue[$item['id']]['size'] === $item['size']) {
+                    $item['quantity'] = intval($queue[$item['id']]['quantity']) + intval($item['quantity']);
+                    unset($queue[$item['id']]);
+                }
                 $temp_cart[] = $item;
             }
         }
-
+        
         foreach ($queue as $key => $value) {
             $temp_cart[] = $value;
         }
@@ -45,6 +69,7 @@
     }
 
     $cart['formatted_total'] = number_format($cart['total'], 0, '.', '.') . '&#8363;';
+
 
     include('./views/partials/header.php');
     include('./views/pages/cart.php'); 
