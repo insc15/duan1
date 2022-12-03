@@ -17,7 +17,7 @@ function register_user($display_name, $username, $password, $email, $profile_ima
     $query = "INSERT INTO user (display_name,username,password,email,profile_image,role) VALUES ('$display_name','$username', '$password', '$email','$profile_image',0)";
 
     try {
-        $user = getData($query, NOT_FETCH);
+        $user = run_query($query, NOT_FETCH);
         return $user;
     } catch (\Throwable $th) {
         return false;
@@ -46,12 +46,12 @@ function edit_user($userData)
     if (count($params) > 0) {
         $query = "UPDATE user SET " . join(',', $params) . " WHERE id = $userData->id";
         echo $query;
-        $response = getData($query, NOT_FETCH);
+        $response = run_query($query, NOT_FETCH);
 
         if ($response) {
             move_uploaded_file($userData->profile_image->tmp_name, './assets/images/' . $userData->profile_image->name);
 
-            $newUserData = getData("SELECT * FROM user WHERE id=$userData->id", FETCH_ONE);
+            $newUserData = run_query("SELECT * FROM user WHERE id=$userData->id", FETCH_ONE);
 
             $_SESSION['currentUser'] = (object) $newUserData;
             if (isset($_COOKIE['user_lg'])) {
