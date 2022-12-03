@@ -21,7 +21,7 @@ $GLOBALS['connection'] = $connect;
 // define('CONNECTION', $connect);
 
 // Nhận  tham số 1 là câu truy vấn, tham số thứ 2 là cách lấy dũ liệu
-function getData($sql, $fetchType)
+function run_query($sql, $fetchType)
 {
     // $conn = getConnect();
     $statement = $GLOBALS['connection']->prepare($sql);
@@ -38,7 +38,7 @@ function getData($sql, $fetchType)
     }
 }
 
-function queryBuilder($table, $meta_query, $order){
+function select_query_builder($table, $meta_query, $order){
     $params = ''; //đây là biến chuỗi chứa kết quả
     if(isset($meta_query)){
         $params = ' WHERE ';
