@@ -3,8 +3,8 @@
 
     function get_size($meta_query = null, $order = null)
     {
-        $sql = queryBuilder('size', $meta_query, $order);
-        $sizes = getData($sql, FETCH_ALL);
+        $sql = select_query_builder('size', $meta_query, $order);
+        $sizes = run_query($sql, FETCH_ALL);
         return $sizes;
     }
 ?>

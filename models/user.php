@@ -5,7 +5,7 @@ function auth_user($username, $password)
     $password = md5($password);
     $query = "SELECT * FROM user WHERE username = '$username' AND password = '$password'";
 
-    $user = getData($query, FETCH_ONE);
+    $user = run_query($query, FETCH_ONE);
 
     return $user;
 }
@@ -18,7 +18,6 @@ function register_user($display_name, $username, $password, $email, $profile_ima
 
     try {
         $user = getData($query, NOT_FETCH);
-        move_uploaded_file($_FILES["avatar"]["tmp_name"], "./assets/images/" . $_FILES["avatar"]["name"]);
         return $user;
     } catch (\Throwable $th) {
         return false;

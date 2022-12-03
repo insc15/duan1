@@ -76,9 +76,15 @@
                <span class="">Total</span>
                <span class="ml-auto text-primary"><?php echo $cart['formatted_total'] ?></span>
             </div>
-            <a href="<?php echo get_home_url().'/checkout' ?>" class="rounded-lg p-3 mt-4 border-2 border-transparent duration-150 w-full block text-center text-white bg-[#041E42] hover:bg-white hover:text-primary hover:border-primary">
-               Proceed checkout
-            </a>
+            <?php if(count($cart['items'])> 0) : ?>
+                <a href="<?php echo get_home_url().'/checkout' ?>" class="rounded-lg p-3 mt-4 border-2 border-transparent duration-150 w-full block text-center text-white bg-[#041E42] hover:bg-white hover:text-primary hover:border-primary">
+                    Proceed checkout
+                </a> 
+            <?php else: ?>
+                <div class="rounded-lg p-3 mt-4 border-2 border-transparent duration-150 w-full block text-center text-white bg-[#808080] hover:bg-opacity-50">
+                    Proceed checkout
+                </div>
+            <?php endif; ?>  
             <!-- method -->
             <div class=" rounded-lg shadow-default p-4 mt-4">
                <p>Accepted payment methods:</p>

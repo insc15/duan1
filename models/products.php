@@ -6,8 +6,8 @@ require_once('size.php');
 
 function get_product($meta_query = null, $order = null)
 {
-    $sql = queryBuilder('product', $meta_query, $order);
-    $product = getData($sql, FETCH_ALL);
+    $sql = select_query_builder('product', $meta_query, $order);
+    $product = run_query($sql, FETCH_ALL);
     $formatted_product = format_product($product);
     return $formatted_product;
 }
@@ -15,7 +15,7 @@ function get_product($meta_query = null, $order = null)
 // function get_one_product($id)
 // {
 //     $sql = "SELECT * FROM product where id = $id";
-//     $product = getData($sql, FETCH_ONE);
+//     $product = run_query($sql, FETCH_ONE);
 //     $formatted_product = format_product($product);
 //     return $formatted_product;
 // }
