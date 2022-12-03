@@ -4,6 +4,15 @@
 
     if(isset($_GET['order_id'])){
         $order_id = $_GET['order_id'];
+
+        $order = get_order(array('id' => intval(str_replace('CARA','',$order_id))));
+        if(count($order) > 0){
+            $order = $order[0];
+            $order['id'] = $order_id;
+            $order['product_data'] = json_decode(urldecode($order['product_data']));
+        }else{
+            header("location: ".get_home_url());
+        }
     }else {
         $cart = array(
             'items' => [],
@@ -21,8 +30,14 @@
         $cart['formatted_total'] = number_format($cart['total'], 0, '.', '.') . '&#8363;';
     
         if(count($cart['items']) > 0){
-            create_order($cart, $_SESSION['currentUser']->id);
-            // header("location: ".get_current_url()."?order_id=1290458902357");
+            $active_order = get_order(array('customer_id' => $_SESSION['currentUser']->id, 'status' => 0));
+            if(count($active_order) > 0){
+                $order_id = "CARA".$active_order[0]['id'];
+                update_order($order_id, array('product_data' => encode_product_data($cart)));
+            }else{
+                $order_id = create_order($cart, $_SESSION['currentUser']->id);
+            }
+            header("location: ".get_current_url()."?order_id=$order_id");
         }else{
             header("location: ".get_home_url());
         }

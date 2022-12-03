@@ -52,6 +52,13 @@ function select_query_builder($table, $meta_query, $order){
     if(isset($order)){
         $params .= " ORDER BY {$order['by']} {$order['sort']}";
     }
-    $sql = "SELECT * FROM $table$params";
+
+    $aaa = '';
+
+    if($table === 'order'){
+        $aaa = ",LPAD(id,10,'0') AS id";
+    }
+
+    $sql = "SELECT *$aaa FROM `$table`$params";
     return $sql;
 }

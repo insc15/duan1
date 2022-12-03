@@ -1,11 +1,11 @@
 <!-- banner -->
 <section class="bg-[url('../images/bgcart.jpg')] bg-no-repeat bg-cover bg-center h-80 flex justify-center items-center">
-   <h1 class="uppercase text-4xl font-bold text-white">Cart</h1>
+   <h1 class="uppercase text-4xl font-bold text-white">Giỏ hàng</h1>
 </section>
 
 <section class="py-9 mt-4">
    <div class="max-w-screen-xl mx-auto px-4">
-      <h3 class="text-xl font-bold">Items</h3>
+      <h3 class="text-xl font-bold">Sản phẩm</h3>
       <!-- main -->
       <div class="flex justify-center mt-4 flex-wrap">
          <!-- left -->
@@ -64,33 +64,32 @@
             <div class="flex mt-4">   
                 <a href="<?php echo get_home_url()?>" class="duration-150 flex justify-center items-center text-base text-primary border-primary border py-1 px-3 rounded mr-6 hover:bg-[#041E42] hover:text-white">
                     <span class="material-symbols-rounded">arrow_back</span>
-                    <span class="ml-3">Continue shopping</span>
+                    <span class="ml-3">Tiếp tục mua sắm</span>
                 </a>
-                <button type="submit" name="update_cart" class="duration-150 border py-1 px-4 rounded bg-[#041E42] text-white text-base hover:bg-white hover:text-primary hover:border-primary">Update cart</button>
+                <button type="submit" name="update_cart" class="duration-150 border py-1 px-4 rounded bg-[#041E42] text-white text-base hover:bg-white hover:text-primary hover:border-primary">Cập nhật giỏ hàng</button>
             </div>
 
         </form>
          <!-- right -->
          <div class="md:w-4/12 pl-3">
             <div class="rounded-lg shadow-default p-4 flex font-semibold">
-               <span class="">Total</span>
+               <span class="">Tổng</span>
                <span class="ml-auto text-primary"><?php echo $cart['formatted_total'] ?></span>
             </div>
             <?php if(count($cart['items'])> 0) : ?>
-                <a href="<?php echo get_home_url().'/checkout' ?>" class="rounded-lg p-3 mt-4 border-2 border-transparent duration-150 w-full block text-center text-white bg-[#041E42] hover:bg-white hover:text-primary hover:border-primary">
-                    Proceed checkout
+                <a href="<?php echo get_home_url().'/checkout' ?>" class="rounded-lg px-3 py-2 mt-4 border-2 border-transparent duration-150 w-full block text-center text-white bg-[#041E42] hover:bg-white hover:text-primary hover:border-primary">
+                    Tiến hành thanh toán
                 </a> 
             <?php else: ?>
-                <div class="rounded-lg p-3 mt-4 border-2 border-transparent duration-150 w-full block text-center text-white bg-[#808080] hover:bg-opacity-50">
-                    Proceed checkout
+                <div class="rounded-lg px-3 py-2 mt-4 border-2 border-transparent duration-150 w-full block text-center text-white bg-[#808080] hover:bg-opacity-50">
+                    Tiến hành thanh toán
                 </div>
             <?php endif; ?>  
             <!-- method -->
             <div class=" rounded-lg shadow-default p-4 mt-4">
-               <p>Accepted payment methods:</p>
+               <p>Các phương thức thanh toán được chấp nhận:</p>
                <div class=" flex mt-3">
-                  <img src="<?php echo get_home_url() ?>/assets/images/cc-visa.svg" class="mr-3" alt="">
-                  <img src="<?php echo get_home_url() ?>/assets/images/mc_symbol.svg" class="mr-3" alt="">
+                  <img src="<?php echo get_home_url() ?>/assets/images/momo_square_pinkbg.svg" class="mr-3 h-8" alt="">
                   <img src="<?php echo get_home_url() ?>/assets/images/card-svgrepo-com.svg" class="mr-3" alt="">
                   <img src="<?php echo get_home_url() ?>/assets/images/payments_FILL0_wght400_GRAD0_opsz48.svg" class="mr-3" alt="">
                </div>
