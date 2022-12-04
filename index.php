@@ -48,7 +48,7 @@ require('controllers/main.php');
 </head>
 
 <body class="font-primary">
-    <?php //Run();
+    <?php Run();
     ?>
 </body>
 
