@@ -26,6 +26,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $error_msg = 'Cập nhật sản phẩm thành công.';
     }
 }
-
 include('./views/admin/edit.php');
 ?>

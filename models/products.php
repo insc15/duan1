@@ -19,7 +19,7 @@ function add_product($name,$price,$discount,$image,$category,$description,$descr
     } else {
         echo "Sorry, there was an error uploading your file.";
     }
-    $sql = "INSERT INTO product(name,price,discount,featured_image,category,description,description_detail,color,size) values('$name','$price','$discount','$image','$category','$description','$description_detail','$color','$size')";
+    $sql = "INSERT INTO product(name,price,discount,featured_image,list_image,category,description,description_detail,color,size) VALUES('$name','$price','$discount','$image','$image','$category','$description','$description_detail','$color','$size')";
     try {
         $add = run_query($sql, NOT_FETCH);
         return $add;
@@ -28,7 +28,7 @@ function add_product($name,$price,$discount,$image,$category,$description,$descr
     }
 }
 function update_product($id,$name,$price,$discount,$description_detail,$color,$size){
-    $sql = "UPDATE product SET name ='$name',price = '$price', discount = '$discount',description_detail = '$description_detail',color = '$color',size = '$size' where id = '$id'";
+    $sql = "UPDATE product SET name ='$name',price = '$price', discount = '$discount',description_detail = '$description_detail',color = '$color',size = '$size' WHERE id='$id'";
     try {
         $update = run_query($sql, NOT_FETCH);
         return $update;
@@ -44,7 +44,6 @@ function delete_product($id){
     } catch (\Throwable $th) {
         return false;
     }
-    header("location: admin/products");
 }
 // function get_one_product($id)
 // {

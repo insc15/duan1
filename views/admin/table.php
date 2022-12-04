@@ -75,22 +75,17 @@
                     <td class="py-4 px-6">
                         <?php echo $value['discount'] ?>
                     </td>
+                    <form method="post">
                     <td class="py-4 px-6">
                         <input type="hidden" name="id" value="<?php echo $value['id']?>">
-                        <a href="<?php echo get_home_url() ?>/edit?id=<?=$value['id']?>"
-                            class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Sửa</a>
-                        <!-- <a href="javascript:confirmDelete('<?php //delete_product($value['id']); ?>')"
-                            class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Xóa</a> -->
+                        <a href="<?php echo get_home_url() ?>/edit?id=<?=$value['id']?>" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Sửa</a>
+                        <a href="javascript:confirmDelete('<?php echo get_home_url() ?>/admin/products?id=<?=$value['id']?>')"
+                            class="font-medium text-blue-600 dark:text-blue-500 hover:underline"><button type="submit">Xóa</button></a>
+                        
                     </td>
+                    </form>
                 </tr>
                 <?php } ?>
-            </tbody>
+            </tbody> 
     </div>
 </section>
-<script>
-function confirmDelete(deleUrl) {
-    if (confirm("Bạn chắc chắn muốn xóa sản phẩm này?")) {
-        document.location = deleUrl;
-    }
-}
-</script>

@@ -4,7 +4,7 @@
 
 <section class="overflow-x-auto relative rounded-md flex justify-center py-9 ">
     <div class="max-w-screen-xl mx-auto px-4">
-        <form class="flex flex-wrap " method="POST" action="" enctype="multipart/form-data">
+        <form class="flex flex-wrap " method="post" action="" enctype="multipart/form-data">
             <div class="shadow-default rounded-lg p-4 w-full md:w-10/12">
                 <div class="py-4 flex flex-wrap ">
                     <div class="w-full  md:pr-3 mt-4 md:mt-0">
