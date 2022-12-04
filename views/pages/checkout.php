@@ -8,32 +8,33 @@
             <span class="material-symbols-rounded icon-outline">chevron_left</span>
             <p class="">Quay lại giỏ hàng</p>
         </a>
-        <form class="flex flex-wrap">
+        <form class="flex flex-wrap" method="post">
             <div class="w-full md:w-8/12 pr-3">
                 <div class="shadow-default rounded-lg p-4">
                     <h3 class="text-xl font-semibold mb-4">Hãy nhập thông tin đơn hàng của bạn</h3>
+                    <input type="text" hidden value="<?php echo $order['id'] ?>" name="order_id">
                     <div class="py-4 flex flex-wrap">
                         <div class="w-full md:w-1/2 md:pr-3 mt-4 md:mt-0">
                             <p class="text-sm mb-2">Họ</p>
-                            <input class="appearance-none block w-full font-medium rounded-lg py-3 px-4 outline-[#808080] outline-1 outline-double focus:outline-primary focus:outline-2 duration-150 placeholder:text-[#808080]" type="text" placeholder="Huy">
+                            <input name="first_name" class="appearance-none block w-full font-medium rounded-lg py-3 px-4 outline-[#808080] outline-1 outline-double focus:outline-primary focus:outline-2 duration-150 placeholder:text-[#808080]" type="text" placeholder="Huy">
                         </div>
                         <div class="w-full md:w-1/2 md:pl-3 mt-4 md:mt-0">
                             <p class="text-sm mb-2">Tên</p>
-                            <input class="appearance-none block w-full font-medium rounded-lg py-3 px-4 outline-[#808080] outline-1 outline-double focus:outline-primary focus:outline-2 duration-150 placeholder:text-[#808080]" type="text" placeholder="Nguyen Quang">
+                            <input name="last_name" class="appearance-none block w-full font-medium rounded-lg py-3 px-4 outline-[#808080] outline-1 outline-double focus:outline-primary focus:outline-2 duration-150 placeholder:text-[#808080]" type="text" placeholder="Nguyen Quang">
                         </div>
                         <div class="w-full mt-4">
                             <p class="text-sm mb-2">Địa chỉ email</p>
-                            <input class="appearance-none block w-full font-medium rounded-lg py-3 px-4 outline-[#808080] outline-1 outline-double focus:outline-primary focus:outline-2 duration-150 placeholder:text-[#808080]" type="email" placeholder="huynguyenquang@gmail.com">
+                            <input name="email" class="appearance-none block w-full font-medium rounded-lg py-3 px-4 outline-[#808080] outline-1 outline-double focus:outline-primary focus:outline-2 duration-150 placeholder:text-[#808080]" type="email" placeholder="huynguyenquang@gmail.com">
                         </div>
                     </div>
                     <div class="py-4 flex flex-wrap">
                         <div class="w-full md:mb-4">
                             <p class="text-sm mb-2">Địa chỉ</p>
-                            <input class="appearance-none block w-full font-medium rounded-lg py-3 px-4 outline-[#808080] outline-1 outline-double focus:outline-primary focus:outline-2 duration-150 placeholder:text-[#808080]" type="text" placeholder="158 / 3 Xo Viet Nghe Tinh Street, Binh Thanh District">
+                            <input name="address" class="appearance-none block w-full font-medium rounded-lg py-3 px-4 outline-[#808080] outline-1 outline-double focus:outline-primary focus:outline-2 duration-150 placeholder:text-[#808080]" type="text" placeholder="158 / 3 Xo Viet Nghe Tinh Street, Binh Thanh District">
                         </div>
                         <div class="w-full mt-4 md:mt-0">
                             <p class="text-sm mb-2">Tỉnh / Thành phố</p>
-                            <input class="appearance-none block w-full font-medium rounded-lg py-3 px-4 outline-[#808080] outline-1 outline-double focus:outline-primary focus:outline-2 duration-150 placeholder:text-[#808080]" type="text" placeholder="Ho Chi Minh">
+                            <input name="city" class="appearance-none block w-full font-medium rounded-lg py-3 px-4 outline-[#808080] outline-1 outline-double focus:outline-primary focus:outline-2 duration-150 placeholder:text-[#808080]" type="text" placeholder="Ho Chi Minh">
                         </div>
                     </div>
                     <div class="py-4">
@@ -54,7 +55,7 @@
 
                         </div>
                     </div>
-                    <div class="grid gap-4 grid-cols-2 mt-5 ml-3 py-5">
+                    <!-- <div class="grid gap-4 grid-cols-2 mt-5 ml-3 py-5">
                         <div>
                             <label class="block uppercase tracking-wide text-gray-700 text-xs  mb-2" for="grid-first-name">
                                 Cardholder name
@@ -91,7 +92,7 @@
                         </div>
 
 
-                    </div>
+                    </div> -->
                 </div>
             </div>
             <div class="w-full md:w-4/12 pl-3">
@@ -126,3 +127,47 @@
         </form>
     </div>
 </section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const form = new JustValidate('form');
+        
+        form.addField('input[name=first_name]', [
+            {
+                rule: 'required',
+                errorMessage: 'Trường này là bắt buộc'
+            },
+        ])
+        .addField('input[name=last_name]', [
+            {
+                rule: 'required',
+                errorMessage: 'Trường này là bắt buộc'
+            },
+        ])
+        .addField('input[name=email]', [
+            {
+                rule: 'required',
+                errorMessage: 'Trường này là bắt buộc'
+            },
+            {
+                rule: 'email',
+                errorMessage: 'Sai định dạng email'
+            }
+        ])
+        .addField('input[name=address]', [
+            {
+                rule: 'required',
+                errorMessage: 'Trường này là bắt buộc'
+            },
+        ])
+        .addField('input[name=city]', [
+            {
+                rule: 'required',
+                errorMessage: 'Trường này là bắt buộc'
+            },
+        ])
+        .onSuccess((event) => {
+            event.target.submit()
+        });
+    })
+</script>
