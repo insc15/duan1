@@ -11,7 +11,34 @@ function get_product($meta_query = null, $order = null)
     $formatted_product = format_product($product);
     return $formatted_product;
 }
-
+function add_product($name,$price,$discount,$image,$category,$description,$description_detail,$color,$size){
+    $sql = "INSERT INTO product(name,price,discount,featured_image,category,description,description_detail,color,size) values('$name','$price','$discount','$image','$category','$description','$description_detail','$color','$size')";
+    try {
+        $add = run_query($sql, NOT_FETCH);
+        return $add;
+    } catch (\Throwable $th) {
+        return false;
+    }
+}
+function update_product($id,$name,$price,$discount,$description_detail,$color,$size){
+    $sql = "UPDATE product SET name ='$name',price = '$price', discount = '$discount',description_detail = '$description_detail',color = '$color',size = '$size' where id = '$id'";
+    try {
+        $update = run_query($sql, NOT_FETCH);
+        return $update;
+    } catch (\Throwable $th) {
+        return false;
+    }
+}
+function delete_product($id){
+    $sql = "DELETE FROM product where id = '$id'";
+    try {
+        $delete = run_query($sql, NOT_FETCH);
+        return $delete;
+    } catch (\Throwable $th) {
+        return false;
+    }
+    header("location: admin/products");
+}
 // function get_one_product($id)
 // {
 //     $sql = "SELECT * FROM product where id = $id";
