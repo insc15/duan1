@@ -17,13 +17,14 @@
             Tên đăng nhập:
             <input class="rounded-lg" value="<?php echo $_SESSION['currentUser']->username ?>"></input>
             Mật khẩu cũ:
-            <input class="rounded-lg" name="oldPassword"></input>
+            <input class="rounded-lg" type="password" name="oldPassword"></input>
             Mật khẩu mới:
-            <input class="rounded-lg" name="newPassword"></input>
+            <input class="rounded-lg" type="password" name="newPassword"></input>
             Nhập Mật khẩu mới:
-            <input class="rounded-lg" name="passwordChecker"></input>
+            <input class="rounded-lg" type="password" name="passwordChecker"></input>
             Email:
-            <input class="rounded-lg" value="<?php echo $_SESSION['currentUser']->email ?>"></input>
+            <input class="rounded-lg" type="email" name="email"
+                value="<?php echo $_SESSION['currentUser']->email ?>"></input>
         </div>
         <div class="mt-5 mr-5 w-4/12 relative">
             <button type="submit"

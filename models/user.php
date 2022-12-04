@@ -34,11 +34,12 @@ function edit_user($userData)
     if (strlen($userData->oldPassword) > 0) {
         if (md5($userData->oldPassword) === $_SESSION['currentUser']->password) {
             array_push($params, "password='" . md5($userData->newPassword) . "'");
-        } else {
         }
     }
     if (strlen($userData->profile_image->name) > 0) {
         array_push($params, "profile_image='" . get_home_url() . '/assets/images/' . $userData->profile_image->name . "'");
+    }
+    if ($userData->email !== $_SESSION['currentUser']->email) {
     }
     print_r($params);
     $res = new stdClass();
