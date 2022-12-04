@@ -61,6 +61,7 @@
                             type="text" placeholder="" value="<?php echo $product['discount'] ?>">
                     </div>
                 </div>
+                <input type="hidden" name="id" value="<?php echo $product['id']?>">
                 <button type="submit"
                     class="appearance-none block mt-5 font-medium rounded-lg py-3 px-4 outline-[#808080] outline-1 outline-double focus:outline-primary focus:outline-2 duration-150 placeholder:text-[#808080]">
                     Sửa
