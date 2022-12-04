@@ -39,6 +39,9 @@ function Run()
         case str_contains($_SERVER['REQUEST_URI'], $root . '/adminorder');
             get_view('./controllers/admin/adminorder.php');
             break;
+         case str_contains($_SERVER['REQUEST_URI'], $root . '/user');
+            get_view('./controllers/admin/user.php');
+         break;
         case str_contains($_SERVER['REQUEST_URI'], $root . '/moreproducts');
             get_view('./controllers/admin/moreproducts.php');
             break;
