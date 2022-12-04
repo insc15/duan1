@@ -33,13 +33,13 @@
             <div class="md:hidden"><span class="material-symbols-rounded icon-outline">menu</span></div>
         </div>
         <div class=" flex justify-end gap-5 absolute right-0 top-0 mt-2 pl-5">
-            <?php if (isset($_SESSION['currentUser']) && $_SESSION['currentUser']->role == 1) : ?>
-            <a href="<?php echo get_home_url() ?>/admin/dashboard"
-                class="flex items-center hover:text-current font-semibold text-sm">
-                <i class="fi fi-rr-dashboard text-2xl"></i>
-                <span class="ml-2 leading-normal">Trang quản trị</span>
+            <a href="<?php echo get_home_url() ?>/<?php echo isset($_SESSION['currentUser']) ? 'profile' : '' ?>"
+                class="flex items-center hover:text-current font-semibold text-sm hover:text-primary  duration-150 relative hover:after:w-2/3 after:w-0 after:duration-150 after:bg-primary after:h-[2px] after:left-0 after:-bottom-1 after:absolute">
+
+                <span
+                    class="ml-2 leading-normal  hover:text-red-400"><?php echo isset($_SESSION['currentUser']) ? 'Tài Khoản' : '' ?></span>
+
             </a>
-            <?php endif; ?>
             <a href="<?php echo get_home_url() ?>/<?php echo isset($_SESSION['currentUser']) ? 'logout' : 'login' ?>"
                 class="flex items-center hover:text-current font-semibold text-sm duration-150 relative hover:after:w-2/3 after:w-0 after:duration-150 after:bg-primary after:h-[2px] after:left-0 after:-bottom-1 after:absolute">
                 <span
