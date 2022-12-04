@@ -49,7 +49,6 @@ require('controllers/main.php');
 
 <body class="font-primary">
     <?php //Run();
-    json_encode();
     ?>
 </body>
 
