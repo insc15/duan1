@@ -23,9 +23,7 @@
     </div>
     <div class=" flex justify-end gap-5 absolute right-0 top-0 mt-2 pl-5">
         <a href="<?php echo get_home_url() ?>/<?php echo isset($_SESSION['currentUser']) ? 'profile' : '' ?>" class="flex items-center hover:text-current font-semibold text-sm hover:text-primary  duration-150 relative hover:after:w-2/3 after:w-0 after:duration-150 after:bg-primary after:h-[2px] after:left-0 after:-bottom-1 after:absolute">
-            <span class="material-symbols-rounded">
-                account_circle
-            </span>
+            
             <span class="ml-2 leading-normal  hover:text-red-400"><?php echo isset($_SESSION['currentUser']) ? 'Tài Khoản' : '' ?></span>
 
         </a>

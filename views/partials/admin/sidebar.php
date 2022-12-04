@@ -24,7 +24,7 @@
     </div>
     <div class="mb-8">
         <!-- profile -->
-        <div class="mx-[32px] flex mb-[32px] hover:shadow hover:drop-shadow-2xl hover:rounded-lg w-[236px]">
+        <div class="mx-[32px] flex mb-[32px] w-[236px]">
         
                 <img class="w-[48px] h-[48px] rounded-lg" src="../assets/images/bgcart.jpg" alt="">
             
@@ -35,10 +35,10 @@
                 </div>
             </a>
         </div>
-        <a href="" class="border border-red-700 mx-[32px] py-1 inline-block px-auto rounded text-center w-[240px]">
+        
+        <a href="<?php  echo get_home_url()?>/admin/logout" class="border border-red-700 mx-[32px] py-1 inline-block px-auto rounded text-center w-[240px]">
             <span class="text-red-700 ">Đăng xuất</span>
         </a>
     </div>
-        
 </section>
 
