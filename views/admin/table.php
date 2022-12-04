@@ -1,11 +1,12 @@
-<section style="both:clear;">
+<section>
     <div class="overflow-x-auto relative shadow-md rounded-md flex justify-center py-9 ">
         <table border="1"
             class="max-w-screen-xl mx-auto px-4 shadow-default rounded-lg p-4 w-full md:w-11/12 text-gray-500 dark:text-gray-400  ">
             <thead>
                 <tr>
                     <td class="py-4 px-6" colspan="10">
-                        <a href="/duan1/moreproducts.php" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Thêm sản phẩm mới</a>
+                        <a href="/duan1/moreproducts.php"
+                            class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Thêm sản phẩm mới</a>
                     </td>
                 </tr>
                 <tr>
@@ -75,11 +76,21 @@
                         <?php echo $value['discount'] ?>
                     </td>
                     <td class="py-4 px-6">
-                        <a href="<?php echo get_home_url() ?>/edit?id=<?=$value['id']?>" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Sửa</a>
-                        <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Xóa</a>
+                        <input type="hidden" name="id" value="<?php echo $value['id']?>">
+                        <a href="<?php echo get_home_url() ?>/edit?id=<?=$value['id']?>"
+                            class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Sửa</a>
+                        <!-- <a href="javascript:confirmDelete('<?php //delete_product($value['id']); ?>')"
+                            class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Xóa</a> -->
                     </td>
                 </tr>
                 <?php } ?>
             </tbody>
     </div>
 </section>
+<script>
+function confirmDelete(deleUrl) {
+    if (confirm("Bạn chắc chắn muốn xóa sản phẩm này?")) {
+        document.location = deleUrl;
+    }
+}
+</script>
