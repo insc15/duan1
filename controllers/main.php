@@ -35,6 +35,7 @@ function Run()
         case str_contains($_SERVER['REQUEST_URI'], $root . '/admin/dashboard');
             with_login('./controllers/admin/dashboard.php', '/admin/dashboard', false, true);
             break;
+            
 
         case str_contains($_SERVER['REQUEST_URI'], $root . '/adminorder');
             get_view('./controllers/admin/adminorder.php');
@@ -47,6 +48,9 @@ function Run()
             break;
         case str_contains($_SERVER['REQUEST_URI'], $root . '/admin/products');
             with_login('./controllers/admin/table.php', '/admin/products', false, true);
+            break;
+            case str_contains($_SERVER['REQUEST_URI'], $root . '/admin/user');
+            with_login('./controllers/admin/user.php', '/admin/user', false, true);
             break;
         case str_contains($_SERVER['REQUEST_URI'], $root . '/edit');
             get_view('./controllers/admin/edit.php');
