@@ -18,7 +18,7 @@
             <span class="text-base ml-[15px]">Đơn hàng</span>
         </a>
         <a class="flex w-[236px] py-3 items-center mx-[32px] hover:shadow hover:drop-shadow-2xl hover:rounded-lg" href="/duan1/user">
-            <img class="ml-[20px]" src="../assets/images/order.svg" alt="">
+            <img class="ml-[20px]" src="../assets/images/user.svg" alt="">
             <span class="text-base ml-[15px]">Quản lý user</span>
         </a>
     </div>
