@@ -32,8 +32,8 @@ function Run()
         case str_contains($_SERVER['REQUEST_URI'], $root . '/checkout');
             with_login('./controllers/pages/checkout.php','/checkout', true);
             break;
-        case str_contains($_SERVER['REQUEST_URI'], $root . '/admin/dashboard');
-            with_login('./controllers/admin/dashboard.php', '/admin/dashboard', false, true);
+        case str_contains($_SERVER['REQUEST_URI'], $root . '/admin');
+            with_login('./controllers/admin/dashboard.php', '/admin', false, true);
             break;
             
 
