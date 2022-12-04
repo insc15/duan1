@@ -9,7 +9,7 @@
             <input type="file" name="avatar">
         </div>
 
-        <div class="mt-5 ml-5 w-6/12 flex flex-col">
+        <div class="mt-5 ml-5 mb-5 w-6/12 flex flex-col">
             <input type="text" name="id" value="<?php echo $_SESSION['currentUser']->id ?>" hidden>
             Họ Và Tên:
             <input class="rounded-lg" name="display_name"

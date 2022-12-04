@@ -14,9 +14,6 @@
     <div class="mt-5 mr-5 w-4/12 relative">
         <a class="absolute right-0 border border-red-400 p-2 rounded-lg text-red-400 hover:bg-sky-300 hover:text-white hover:border-transparent"
             href="edit-profile">Chỉnh sửa thông tin</a>
-        <a class=" right-0 top-3 border border-red-400 p-2 rounded-lg text-red-400 hover:bg-sky-300 hover:text-white hover:border-transparent "
-            href="
-            <?php echo get_home_url(); ?>/logout">Đăng xuất</a>
     </div>
     <div>
 
