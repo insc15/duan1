@@ -2,7 +2,7 @@
     <div class="overflow-x-auto relative shadow-md rounded-md flex justify-center py-9 ">
         <table border="1"
             class="max-w-screen-xl mx-auto px-4 shadow-default rounded-lg p-4 w-full md:w-11/12 text-gray-500 dark:text-gray-400  ">
-            <thead class="text-sm text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <thead>
                 <tr>
                     <td class="py-4 px-6" colspan="10">
                         <a href="/duan1/moreproducts.php" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Thêm sản phẩm mới</a>
@@ -43,7 +43,7 @@
                     foreach (get_product(null, array('by'=> 'created_date', 'sort' => 'asc')) as $value) {
                         $category = get_category(array('id' => $value['category'][0]))[0];
                 ?>
-                <tr class="bg-white rounded-md  dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 ">
+                <tr>
                     <th class="py-4 px-6">
                         <?php echo $value['name'] ?>
                     </th>
