@@ -45,6 +45,10 @@
                     $order = $order[0];
                     $order['id'] = $order_id;
                     $order['product_data'] = json_decode(urldecode($order['product_data']));
+
+                    include('./views/partials/header.php');
+                    include('./views/pages/checkout.php');
+                    include('./views/partials/footer.php');
                 }
             }else{
                 header("location: ".get_home_url());
@@ -78,9 +82,5 @@
                 header("location: ".get_home_url());
             }
         }
-    
-        include('./views/partials/header.php');
-        include('./views/pages/checkout.php');
-        include('./views/partials/footer.php');
     }
 ?>

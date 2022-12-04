@@ -44,7 +44,7 @@ function select_query_builder($table, $meta_query, $order){
         $params = ' WHERE ';
         $query_array = [];//biến tạm thời chứa các tham số
         foreach ($meta_query as $key => $value) {//lặp qua các tham số 
-            array_push($query_array, "$key LIKE '$value' OR $key LIKE '%,$value' OR $key LIKE '%,$value,%' OR $key LIKE '$value,%'");//đây là chuỗi để lọc chính xác, tránh trường hợp là lấy id = 1 thì sản phẩm id 123 nó vẫn sẽ lấy
+            array_push($query_array, "($key LIKE '$value' OR $key LIKE '%,$value' OR $key LIKE '%,$value,%' OR $key LIKE '$value,%')");//đây là chuỗi để lọc chính xác, tránh trường hợp là lấy id = 1 thì sản phẩm id 123 nó vẫn sẽ lấy
         }
 
         $params .= join(' AND ',$query_array);//dựng câu query
