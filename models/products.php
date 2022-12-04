@@ -12,6 +12,13 @@ function get_product($meta_query = null, $order = null)
     return $formatted_product;
 }
 function add_product($name,$price,$discount,$image,$category,$description,$description_detail,$color,$size){
+    $target_dir = "./assets/images/";
+    $target_file = $target_dir . basename($image);
+    if (move_uploaded_file($image, $target_file)) {
+        // echo "The file ". htmlspecialchars( basename( $_FILES["image"]["name"])). " has been uploaded.";
+    } else {
+        echo "Sorry, there was an error uploading your file.";
+    }
     $sql = "INSERT INTO product(name,price,discount,featured_image,category,description,description_detail,color,size) values('$name','$price','$discount','$image','$category','$description','$description_detail','$color','$size')";
     try {
         $add = run_query($sql, NOT_FETCH);

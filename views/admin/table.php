@@ -76,7 +76,7 @@
                         <?php echo $value['discount'] ?>
                     </td>
                     <td class="py-4 px-6">
-                        <input type="hidden" name="id" value="<?php echo $value['id']?>">;
+                        <input type="hidden" name="id" value="<?php echo $value['id']?>">
                         <a href="<?php echo get_home_url() ?>/edit?id=<?=$value['id']?>"
                             class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Sửa</a>
                         <!-- <a href="javascript:confirmDelete('<?php //delete_product($value['id']); ?>')"
