@@ -7,9 +7,8 @@
    <div class="max-w-screen-xl mx-auto px-4">
       <h3 class="text-xl font-bold">Sản phẩm</h3>
       <!-- main -->
-      <div class="flex justify-center mt-4 flex-wrap">
          <!-- left -->
-        <form method="POST">
+        <form method="POST" class="flex justify-center mt-4 flex-wrap">
         <div class="md:w-8/12 pr-3 product-list">
             <?php if(count($cart['items'])> 0) : foreach ($cart['items'] as $key => $value) : $item = $value['data'] ?>
             <div class="grid grid-cols-2 items-center rounded-lg shadow-default p-1 pr-6 mb-2 last:mb-0">
@@ -98,7 +97,6 @@
 
          </div>
         </form>
-      </div>
    </div>
 </section>
 

@@ -889,12 +889,12 @@ input[type="number"]::-webkit-inner-spin-button,
   width: 100%;
 }
 
-.w-3\/12 {
-  width: 25%;
+.w-2\/12 {
+  width: 16.666667%;
 }
 
-.w-8\/12 {
-  width: 66.666667%;
+.w-9\/12 {
+  width: 75%;
 }
 
 .w-24 {
@@ -913,10 +913,6 @@ input[type="number"]::-webkit-inner-spin-button,
 
 .w-4\/12 {
   width: 33.333333%;
-}
-
-.w-2\/12 {
-  width: 16.666667%;
 }
 
 .w-48 {
@@ -965,14 +961,6 @@ input[type="number"]::-webkit-inner-spin-button,
 
 .w-\[240px\] {
   width: 240px;
-}
-
-.w-9\/12 {
-  width: 75%;
-}
-
-.w-10\/12 {
-  width: 83.333333%;
 }
 
 .max-w-screen-xl {
