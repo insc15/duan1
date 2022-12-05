@@ -37,7 +37,7 @@
     
             $order = get_order(array('id' => intval(str_replace('CARA','',$order_id))));
             if(count($order) > 0){
-                if($order[0]['status'] !== 0){
+                if(intval($order[0]['status']) !== 0){
                     include('./views/partials/header.php');
                     include('./views/pages/ordersuccessful.php');
                     include('./views/partials/footer.php');
