@@ -11,10 +11,14 @@
         <p>Mật khẩu: *******</p>
         <p>Email: <?php echo $_SESSION['currentUser']->email ?></p>
     </div>
+    
     <div class="mt-5 mr-5 w-4/12 relative">
         <a class="absolute right-0 border border-red-400 p-2 rounded-lg text-red-400 hover:bg-sky-300 hover:text-white hover:border-transparent"
             href="edit-profile">Chỉnh sửa thông tin</a>
+            <a class="absolute left-0 border border-red-400 p-2 rounded-lg text-red-400 hover:bg-sky-300 hover:text-white hover:border-transparent"
+            href="list-order">Quản lí đơn hàng</a>
     </div>
+
     <div>
 
     </div>
