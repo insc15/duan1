@@ -13,5 +13,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     echo $result;
 }
 
-include('./views/admin/table.php');
+include('./views/admin/admin_product.php');
 ?>

@@ -36,28 +36,24 @@ function Run()
             with_login('./controllers/admin/dashboard.php', '/admin/dashboard', false, true);
             break;
             
-
-        case str_contains($_SERVER['REQUEST_URI'], $root . '/adminorder');
-            get_view('./controllers/admin/adminorder.php');
+        case str_contains($_SERVER['REQUEST_URI'], $root . '/admin/adminorder');
+            with_login('./controllers/admin/adminorder.php', '/admin/adminorder', false, true);
             break;
-         case str_contains($_SERVER['REQUEST_URI'], $root . '/user');
-            get_view('./controllers/admin/user.php');
-         break;
         case str_contains($_SERVER['REQUEST_URI'], $root . '/moreproducts');
             get_view('./controllers/admin/moreproducts.php');
             break;
         case str_contains($_SERVER['REQUEST_URI'], $root . '/admin/products');
-            with_login('./controllers/admin/table.php', '/admin/products', false, true);
+            with_login('./controllers/admin/admin_product.php', '/admin/products', false, true);
             break;
-            case str_contains($_SERVER['REQUEST_URI'], $root . '/admin/user');
+        case str_contains($_SERVER['REQUEST_URI'], $root . '/admin/user');
             with_login('./controllers/admin/user.php', '/admin/user', false, true);
             break;
-        case str_contains($_SERVER['REQUEST_URI'], $root . '/edit');
-            get_view('./controllers/admin/edit.php');
+        case str_contains($_SERVER['REQUEST_URI'], $root . '/admin/edit');
+            with_login('./controllers/admin/edit.php', '/admin/edit', false, true);
             break;
-        // case str_contains($_SERVER['REQUEST_URI'], $root . '/ordersuccessful');
-        //     get_view('./controllers/pages/ordersuccessful.php');
-        //     break;
+         case str_contains($_SERVER['REQUEST_URI'], $root . '/admin/category');
+            with_login('./controllers/admin/category.php', '/admin/category', false, true);
+            break;
         case str_contains($_SERVER['REQUEST_URI'], $root . '/shop'):
             get_view('./controllers/pages/shop.php');
             break;
