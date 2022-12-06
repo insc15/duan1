@@ -18,7 +18,7 @@ function Run()
             include('./controllers/pages/logout.php');
             break;
         case str_contains($_SERVER['REQUEST_URI'], $root . '/list-order');
-            include('./controllers/pages/listorder.php');
+            get_view('./controllers/pages/listorder.php');
             break;
         case str_contains($_SERVER['REQUEST_URI'], $root . '/profile');
             get_view('./controllers/pages/profile.php');
@@ -54,6 +54,9 @@ function Run()
             break;
         case str_contains($_SERVER['REQUEST_URI'], $root . '/edit');
             get_view('./controllers/admin/edit.php');
+            break;
+        case str_contains($_SERVER['REQUEST_URI'], $root . '/order-complete');
+            get_view('./controllers/pages/order-complete.php');
             break;
         // case str_contains($_SERVER['REQUEST_URI'], $root . '/ordersuccessful');
         //     get_view('./controllers/pages/ordersuccessful.php');
