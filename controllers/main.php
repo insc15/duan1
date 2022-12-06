@@ -54,15 +54,6 @@ function Run()
          case str_contains($_SERVER['REQUEST_URI'], $root . '/admin/category');
             with_login('./controllers/admin/category.php', '/admin/category', false, true);
             break;
-<<<<<<< HEAD
-=======
-        case str_contains($_SERVER['REQUEST_URI'], $root . '/order-complete');
-            get_view('./controllers/pages/order-complete.php');
-            break;
-        // case str_contains($_SERVER['REQUEST_URI'], $root . '/ordersuccessful');
-        //     get_view('./controllers/pages/ordersuccessful.php');
-        //     break;
->>>>>>> f140f187f14690b107c45f9e5a06f9d8e6bc8062
         case str_contains($_SERVER['REQUEST_URI'], $root . '/shop'):
             get_view('./controllers/pages/shop.php');
             break;
