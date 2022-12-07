@@ -1,4 +1,5 @@
-<section class="">
+<section class=" mx-auto max-w-screen-xl font-[Montserrat] mt-5 mb-5">
+    <h1 class="text-4xl mb-5">Thông tin tài khoản</h1>
     <form class="mx-auto mt-5 mb-5 flex max-w-screen-xl bg-slate-100 shadow-xl font-[Montserrat]" action=""
         enctype="multipart/form-data" method="POST">
 
