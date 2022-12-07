@@ -20,6 +20,9 @@
                     <th scope="col" class="py-2 px-6">
                         Size
                     </th>
+                    <th scope="col" class="py-2 px-6">
+                        Ngày mua hàng
+                    </th>
                     
                     <th scope="col" class="py-2 px-6">
                         Giá 
@@ -49,6 +52,9 @@
                 </th>
                 <th class="py-4 px-6">
                     xl
+                </th>
+                <th class="py-4 px-6">
+                    <input type="date">
                 </th>
                 <th class="py-4 px-6">
                     400.000 đ
