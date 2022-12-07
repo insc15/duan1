@@ -825,6 +825,10 @@ input[type="number"]::-webkit-inner-spin-button,
   margin-top: 4px;
 }
 
+.mt-20 {
+  margin-top: 5rem;
+}
+
 .block {
   display: block;
 }
@@ -1363,6 +1367,10 @@ input[type="number"]::-webkit-inner-spin-button,
 
 .pl-5 {
   padding-left: 1.25rem;
+}
+
+.pt-20 {
+  padding-top: 5rem;
 }
 
 .text-center {
