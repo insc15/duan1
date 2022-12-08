@@ -63,6 +63,12 @@ function Run()
          case str_contains($_SERVER['REQUEST_URI'], $root . '/admin/category');
             with_login('./controllers/admin/category.php', '/admin/category', false, true);
             break;
+        case str_contains($_SERVER['REQUEST_URI'], $root . '/morecategories');
+            with_login('./controllers/admin/morecategories.php', '/morecategories', false, true);
+            break;
+        case str_contains($_SERVER['REQUEST_URI'], $root . '/admin/update_cate');
+            with_login('./controllers/admin/edit_category.php', '/admin/update_cate', false, true);
+            break;
         case str_contains($_SERVER['REQUEST_URI'], $root . '/shop'):
             get_view('./controllers/pages/shop.php');
             break;
