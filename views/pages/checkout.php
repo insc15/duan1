@@ -97,27 +97,27 @@
             </div>
             <div class="w-full md:w-4/12 pl-3">
                 <div class="px-4 py-5 shadow-default rounded-lg">
-                    <?php if(count($order['product_data']->item)> 0) : foreach ($order['product_data']->item as $key => $value) : ?>
+                    <?php if(count($order['product_data']) > 0) : foreach ($order['product_data'] as $key => $value) : ?>
                         <div class="flex items-center pb-4">
                             <div class="w-24">
                                 <div class="relative pt-[100%]">
-                                    <img class="absolute top-0" src="<?php echo($value->featured_image) ?>" alt="">
+                                    <img class="absolute top-0" src="<?php echo($value['data']['featured_image']) ?>" alt="">
                                 </div>
                             </div>
                             <div class="px-3">
-                                <h4 class="font-bold text-secondary"><?php echo($value->name) ?></h4>
-                                <p class="text-xs text-[#7a7a7a] my-2"><?php echo($value->color->name) ?>, <?php echo($value->size->name) ?></p>
-                                <p><?php echo($value->formatted_final_price) ?></p>
+                                <h4 class="font-bold text-secondary"><?php echo($value['data']['name']) ?></h4>
+                                <p class="text-xs text-[#7a7a7a] my-2"><?php echo get_color(array('id' => $value['color']))[0]['name'] ?>, <?php echo get_size(array('id' => $value['size']))[0]['name'] ?></p>
+                                <p><?php echo($value['data']['formatted_final_price']) ?></p>
                             </div>
                             <div class="ml-auto pr-2">
-                                <p><?php echo($value->quantity) ?></p>
+                                <p><?php echo($value['quantity']) ?></p>
                             </div>
                         </div>
                     <?php endforeach;endif; ?>
                     <hr class="bg-[#d9d9d9]">
                     <div class="flex font-semibold py-4">
                         <span class="">Total</span>
-                        <span class="ml-auto text-primary"><?php echo $order['product_data']->formatted_total ?></span>
+                        <span class="ml-auto text-primary"><?php echo $order['formatted_total'] ?></span>
                     </div>
                     <button type="submit" href="<?php echo get_home_url().'/checkout' ?>" class="rounded-lg px-3 py-2 mt-4 border-2 border-transparent duration-150 w-full block text-center text-white bg-[#041E42] hover:bg-white hover:text-primary hover:border-primary">
                         Đặt hàng

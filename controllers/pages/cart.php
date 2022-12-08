@@ -35,11 +35,14 @@
             }
         }else{
             foreach ($_SESSION['cart'] as $key => $item) {
-                $exist_item = isset($queue[$item['id']]);
-                if($exist_item && $queue[$item['id']]['color'] === $item['color'] && $queue[$item['id']]['size'] === $item['size']) {
-                    $item['quantity'] = intval($queue[$item['id']]['quantity']) + intval($item['quantity']);
-                    unset($queue[$item['id']]);
+                if(searchForId($item['id'],$queue) !== null){
+                    $exist_item = $queue[searchForId($item['id'],$queue)];
+                    if($exist_item && $exist_item['color'] === $item['color'] && $exist_item['size'] === $item['size']) {
+                        $item['quantity'] = intval($queue[searchForId($item['id'],$queue)]['quantity']) + intval($item['quantity']);
+                        unset($queue[searchForId($item['id'],$queue)]);
+                    }
                 }
+                
                 $temp_cart[] = $item;
             }
         }
@@ -69,7 +72,6 @@
     }
 
     $cart['formatted_total'] = number_format($cart['total'], 0, '.', '.') . '&#8363;';
-
 
     include('./views/partials/header.php');
     include('./views/pages/cart.php'); 

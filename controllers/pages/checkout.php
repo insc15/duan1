@@ -10,19 +10,17 @@
             include('./views/partials/footer.php');
         }else{
             $delivery_data = array(
+                'order_id' => str_replace('CARA','',$_POST['order_id']),
                 'first_name' => $_POST['first_name'],
                 'last_name' => $_POST['last_name'],
                 'email' => $_POST['email'],
                 'address' => $_POST['address'],
                 'city' => $_POST['city'],
             );
-            $delivery_data = urlencode(json_encode($delivery_data));
             
-            $res = update_order(str_replace('CARA','',$_POST['order_id']),array(
-                'delivery_data' => $delivery_data,
-                'status' => 1,
-                'payment' => $_POST['payment_method']
-            ));
+            $res = update_order(str_replace('CARA','',$_POST['order_id']),null,null,$delivery_data);
+
+            var_dump($res);
     
             if($res){
                 $_SESSION['cart'] = [];
@@ -44,7 +42,7 @@
                 }else{
                     $order = $order[0];
                     $order['id'] = $order_id;
-                    $order['product_data'] = json_decode(urldecode($order['product_data']));
+                    // $order['product_data'] = json_decode(urldecode($order['product_data']));
 
                     include('./views/partials/header.php');
                     include('./views/pages/checkout.php');
@@ -73,7 +71,7 @@
                 $active_order = get_order(array('customer_id' => $_SESSION['currentUser']->id, 'status' => 0));
                 if(count($active_order) > 0){
                     $order_id = "CARA".$active_order[0]['id'];
-                    update_order($order_id, array('product_data' => encode_product_data($cart)));
+                    update_order($order_id, null, $cart);
                 }else{
                     $order_id = create_order($cart, $_SESSION['currentUser']->id);
                 }
