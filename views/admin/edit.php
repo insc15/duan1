@@ -16,7 +16,7 @@
                         <input name="featured_image"
                             class="appearance-none block w-full font-medium rounded-lg py-3 px-4 outline-[#808080] outline-1 outline-double focus:outline-primary focus:outline-2 duration-150 placeholder:text-[#808080]"
                             type="file" value="<?php echo $product['featured_image'] ?>">
-                        <img src="<?php echo $product['featured_image'] ?>" width="200px">
+                        <img src="http://localhost/duan1/assets/images/<?php echo $product['featured_image'] ?>" width="200px">
                         <?php if ($error_img !== '') { ?>
                         <p class="text-red-500"><?php echo $error_img; ?></p>
                         <?php } ?>
