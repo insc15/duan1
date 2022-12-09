@@ -1,5 +1,15 @@
 <?php
 require_once('models/config.php');
+function getALl_user(){
+    $query = "SELECT * FROM user";
+    $user = run_query($query, FETCH_ALL);
+    return $user;
+}
+function del_user($id){
+    $query = "DELETE FROM user where id = '$id'";
+    $del_user = run_query($query, NOT_FETCH);
+    return $del_user;
+}
 function auth_user($username, $password)
 {
     $password = md5($password);
@@ -11,7 +21,7 @@ function auth_user($username, $password)
 }
 function register_user($display_name, $username, $password, $email, $profile_image)
 {
-    $src = "./assets/images/";
+    $src = "http://localhost/duan1/assets/images/";
     $profile_image = $src . $profile_image;
     $password = md5($password);
     $query = "INSERT INTO user (display_name,username,password,email,profile_image,role) VALUES ('$display_name','$username', '$password', '$email','$profile_image',0)";

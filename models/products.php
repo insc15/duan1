@@ -11,30 +11,24 @@ function get_product($meta_query = null, $order = null)
     $formatted_product = format_product($product);
     return $formatted_product;
 }
-function add_product($name,$price,$discount,$image,$category,$description,$description_detail,$color,$size){
-    $target_dir = "./assets/images/";
-    $target_file = $target_dir . basename($image);
-    if (move_uploaded_file($image, $target_file)) {
-        // echo "The file ". htmlspecialchars( basename( $_FILES["image"]["name"])). " has been uploaded.";
-    } else {
-        echo "Sorry, there was an error uploading your file.";
-    }
-    $sql = "INSERT INTO product(name,price,discount,featured_image,list_image,category,description,description_detail,color,size) VALUES('$name','$price','$discount','$image','$image','$category','$description','$description_detail','$color','$size')";
-    try {
-        $add = run_query($sql, NOT_FETCH);
-        return $add;
-    } catch (\Throwable $th) {
-        return false;
-    }
+function add_product($name,$price,$discount,$image,$date,$category,$description,$description_detail,$color,$size){
+    $sql="INSERT INTO product(name,price,discount,featured_image,list_image,created_date,category,view,featured,description,description_detail,color,size) 
+    values('$name','$price','$discount','$image','$image','$date','$category',200,0,'$description','$description_detail','$color','$size')";
+    $result = run_query($sql,NOT_FETCH);
+
+    return $result;
 }
-function update_product($id,$name,$price,$discount,$description_detail,$color,$size){
-    $sql = "UPDATE product SET name ='$name',price = '$price', discount = '$discount',description_detail = '$description_detail',color = '$color',size = '$size' WHERE id='$id'";
-    try {
-        $update = run_query($sql, NOT_FETCH);
-        return $update;
-    } catch (\Throwable $th) {
-        return false;
-    }
+function update_product($id,$name,$price,$discount,$image,$category,$description,$description_detail,$color,$size){
+    $sql="UPDATE product SET name='$name', price ='$price', discount ='$discount',";
+    if($image!=""){ 
+        $sql.="featured_image='$image',";
+    } 
+    else{
+        $sql.=" ";
+    } 
+    $sql .= " category='$category', description='$description', description_detail='$description_detail', color='$color', size='$size' where id='$id'";
+    $update = run_query($sql, NOT_FETCH);
+    return $update;
 }
 function delete_product($id){
     $sql = "DELETE FROM product where id = '$id'";
@@ -45,13 +39,13 @@ function delete_product($id){
         return false;
     }
 }
-// function get_one_product($id)
-// {
-//     $sql = "SELECT * FROM product where id = $id";
-//     $product = run_query($sql, FETCH_ONE);
-//     $formatted_product = format_product($product);
-//     return $formatted_product;
-// }
+function getOne_product($id)
+{
+    $sql = "SELECT * FROM product where id = $id";
+    $product = run_query($sql, FETCH_ONE);
+    $formatted_product = format_product($product);
+    return $formatted_product;
+}
 // // kt hàng mới
 // function get_list_prnew($day)
 // {

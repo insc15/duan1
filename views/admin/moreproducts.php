@@ -4,7 +4,7 @@
 
 <section class="overflow-x-auto relative rounded-md flex justify-center py-9 ">
     <div class="max-w-screen-xl mx-auto px-4">
-        <form class="flex flex-wrap " method="post" action="" enctype="multipart/form-data">
+        <form class="flex flex-wrap " method="post" enctype="multipart/form-data">
             <div class="shadow-default rounded-lg p-4 w-full md:w-10/12">
                 <div class="py-4 flex flex-wrap ">
                     <div class="w-full  md:pr-3 mt-4 md:mt-0">
@@ -21,38 +21,42 @@
                     </div>
                     <div class="w-full mt-4">
                         <label for="large" class="block mb-2 text-base font-medium ">Màu Sắc</label>
-                        <select id="large" name="color"
-                            class=" text-base text-white-900 border border-gray-300  dark:focus:ring-blue-500 dark:focus:border-blue-500 appearance-none block w-full font-medium rounded-lg py-3 px-4 outline-[#808080] outline-1 outline-double focus:outline-primary focus:outline-2 duration-150 placeholder:text-[#808080]">
-                            <option value="0" selected>Chọn màu</option>
-                            <?php 
-                                foreach (get_color(null,null) as $key => $value) {
-                            ?>
-                            <option value="<?php echo $value['id']?>" id=""><?php echo $value['name']?></option>
-                            <?php
-                                } 
-                            ?>
-                        </select>
+                        <?php 
+                            foreach (get_color() as $key => $value) {
+                        ?>
+                        <div
+                            class="appearance-none block w-full font-medium rounded-lg py-3 px-4 outline-[#808080] outline-1 outline-double focus:outline-primary focus:outline-2 duration-150 placeholder:text-[#808080]">
+                            <input class="form-check-input" type="checkbox" name="color[<?=$value['id']?>]"
+                                value="<?php echo $value['id']?>">
+                            <label class="form-check-label"
+                                for="checkbox_auto_increment"><?php echo $value['name']?></label>
+                        </div>
+                        <?php
+                            }
+                        ?>
                     </div>
                 </div>
                 <div class="w-full md:pr-3 mt-4 md:mt-0 flex flex-wrap">
-                    <label for="large" class="block mb-2 text-base font-medium">Kích cỡ</label>
-                    <select id="large" name="size"
-                        class=" text-base text-white-900 border border-gray-300  dark:focus:ring-blue-500 dark:focus:border-blue-500 appearance-none block w-full font-medium rounded-lg py-3 px-4 outline-[#808080] outline-1 outline-double focus:outline-primary focus:outline-2 duration-150 placeholder:text-[#808080]">
-                        <option value="0" selected>Chọn kích cỡ</option>
-                        <?php 
-                            foreach (get_size(null,null) as $key => $value) {
-                        ?>
-                        <option value="<?php echo $value['id']?>" id=""><?php echo $value['name']?></option>
-                        <?php
-                            } 
-                        ?>
-                    </select>
+                    <label for="large" class="block mb-2 text-base font-medium ">Kích cỡ</label>
+                    <?php 
+                        foreach (get_size() as $key => $value) {
+                    ?>
+                    <div
+                        class="appearance-none block w-full font-medium rounded-lg py-3 px-4 outline-[#808080] outline-1 outline-double focus:outline-primary focus:outline-2 duration-150 placeholder:text-[#808080]">
+                        <input class="form-check-input" type="checkbox" name="size[<?=$value['id']?>]"
+                            value="<?php echo $value['id']?>">
+                        <label class="form-check-label"
+                            for="checkbox_auto_increment"><?php echo $value['name']?></label>
+                    </div>
+                    <?php
+                        }
+                    ?>
                     <label for="large" class="block mb-2 text-base font-medium">Danh mục</label>
                     <select id="large" name="category"
                         class=" text-base text-white-900 border border-gray-300  dark:focus:ring-blue-500 dark:focus:border-blue-500 appearance-none block w-full font-medium rounded-lg py-3 px-4 outline-[#808080] outline-1 outline-double focus:outline-primary focus:outline-2 duration-150 placeholder:text-[#808080]">
                         <option value="0" selected>Chọn danh mục</option>
                         <?php 
-                            foreach (get_category(null,null) as $key => $value) {
+                            foreach (get_category() as $key => $value) {
                         ?>
                         <option value="<?php echo $value['id']?>" id=""><?php echo $value['name']?></option>
                         <?php
@@ -88,11 +92,8 @@
                 </button>
                 <?php if ($error_msg !== '') { ?>
                     <p class="text-red-500"><?php echo $error_msg ?></p>
-                    <?php } ?>
+                <?php } ?>
             </div>
         </form>
-    </div>
-    </div>
-    </div>
     </div>
 </section>

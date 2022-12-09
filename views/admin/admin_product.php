@@ -5,11 +5,13 @@
             <thead>
                 <tr>
                     <td class="py-4 px-6" colspan="10">
-                        <a href="/duan1/moreproducts.php"
-                            class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Thêm sản phẩm mới</a>
+                        <a href="/duan1/moreproducts.php" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Thêm sản phẩm mới</a>
                     </td>
                 </tr>
                 <tr>
+                    <th scope="col" class="py-2 px-6">
+                        ID
+                    </th>
                     <th scope="col" class="py-2 px-6">
                         Tên
                     </th>
@@ -46,24 +48,41 @@
                 ?>
                 <tr>
                     <th class="py-4 px-6">
+                        <?php echo $value['id'] ?>
+                    </th>
+                    <th class="py-4 px-6">
                         <?php echo $value['name'] ?>
                     </th>
                     <td class="py-4 px-6">
                         <?php
-                            $color = get_color(array('id' => $value['color'][0]))[0];
-                            echo $color['name'];
+                            $color_array = [];
+                            foreach ($value['color'] as $colors => $col) {
+                                $color = get_color(array('id' => $col));
+                                array_push($color_array, $color[0]);
+                            }
+                            $value['color']=$color_array;
+                            foreach ($value['color'] as $clrs => $clr) {
+                                echo $clr['name'].", ";
+                            }
                         ?>
                     </td>
                     <td class="py-4 px-6">
-                        <img src="<?php echo $value['featured_image'] ?>" width="100px" alt="">
+                        <img src="http://localhost/duan1/assets/images/<?php echo $value['featured_image'] ?>" width="100px" alt="">
                     </td>
                     <td class="py-4 px-6">
                         <?php echo $category['name'] ?>
                     </td>
                     <td class="py-4 px-6">
                         <?php
-                            $size = get_size(array('id' => $value['size'][0]))[0];
-                            echo $size['name'];
+                            $size_array = [];
+                            foreach ($value['size'] as $colors => $col) {
+                                $size = get_size(array('id' => $col));
+                                array_push($size_array, $size[0]);
+                            }
+                            $value['size']=$size_array;
+                            foreach ($value['size'] as $clrs => $clr) {
+                                echo $clr['name'].", ";
+                            }
                         ?>
                     </td>
                     <td>
@@ -78,11 +97,9 @@
                     <form method="post">
                     <td class="py-4 px-6">
                         <input type="hidden" name="id" value="<?php echo $value['id']?>">
-                        <a href="duan1/admin/edit.php">sửa</a>
-                        <!-- <a href="<?php echo get_home_url() ?>/edit?id=<?=$value['id']?>" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Sửa</a> -->
+                        <a href="<?php echo get_home_url() ?>/admin/edit?id=<?=$value['id']?>" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Sửa</a>
                         <a href="javascript:confirmDelete('<?php echo get_home_url() ?>/admin/products?id=<?=$value['id']?>')"
-                            class="font-medium text-blue-600 dark:text-blue-500 hover:underline"><button type="submit">Xóa</button></a>
-                        
+                            class="font-medium text-blue-600 dark:text-blue-500 hover:underline"><button type="submit">Xóa</button></a>   
                     </td>
                     </form>
                 </tr>

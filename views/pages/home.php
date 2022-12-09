@@ -23,7 +23,7 @@ require('./controllers/product.php');
                 <div class="grid h-full bg-white rounded-lg md:hover:shadow-xl md:shadow-default border-primary md:border md:p-3 ease-in-out duration-150">
                     <a href="<?php echo get_home_url() . "/product?id=" . $value['id'] ?>">    
                         <div class="rounded pt-[100%] overflow-hidden relative">
-                            <img class="absolute top-0" src="<?php echo $value['featured_image'] ?>" alt="" />
+                            <img class="absolute top-0" src="http://localhost/duan1/assets/images/<?php echo $value['featured_image'] ?>" alt="" />
                         </div>
                     </a>
                     <div class="py-2 md:py-4">
@@ -67,7 +67,7 @@ require('./controllers/product.php');
                 <div class="grid h-full bg-white rounded-lg md:hover:shadow-xl md:shadow-default border-primary md:border md:p-3 ease-in-out duration-150">
                     <a href="<?php echo get_home_url() . "/product?id=" . $value['id'] ?>">    
                         <div class="rounded pt-[100%] overflow-hidden relative">
-                            <img class="absolute top-0" src="<?php echo $value['featured_image'] ?>" alt="" />
+                            <img class="absolute top-0" src="http://localhost/duan1/assets/images/<?php echo $value['featured_image'] ?>" alt="" />
                         </div>
                     </a>
                     <div class="py-2 md:py-4">
