@@ -24,7 +24,7 @@ function Run()
             get_view('./controllers/pages/listorder.php');
             break;
         case str_contains($_SERVER['REQUEST_URI'], $root . '/profile');
-            get_view('./controllers/pages/profile.php');
+            with_login('./controllers/pages/profile.php', '/login',true);
             break;
         case str_contains($_SERVER['REQUEST_URI'], $root . '/admin/profile');
             with_login('./controllers/pages/profile.php', '/admin/profile', false, true);

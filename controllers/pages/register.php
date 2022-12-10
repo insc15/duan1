@@ -8,12 +8,19 @@ if (isset($_SESSION['currentUser'])) {
 $error_msg = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    var_dump($_FILES['avatar']);
+    if($_FILES['avatar']['name'] === ""){
+        $profile_image =  get_home_url() . '/assets/images/avatar_default.jpg';
+    }else{
+        $profile_image =  get_home_url() . "/assets/images/{$_FILES['avatar']['name']}";
+        move_uploaded_file($_FILES['avatar']['tmp_name'], get_home_url() . "/assets/images/{$_FILES['avatar']['name']}");
+    }
     $result = register_user(
         $_POST['display_name'],
         $_POST['username'],
         $_POST['password'],
         $_POST['email'],
-        $_FILES['avatar']['name']
+        $profile_image
     );
     echo $result;
     if (!$result) {
