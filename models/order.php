@@ -2,10 +2,11 @@
     require_once('config.php');
 
     define('STATUS_INIT', 0); //chờ người dùng xác nhận đơn hàng
-    define('STATUS_PREPARING_GOODS', 1); //chờ người bán chuẩn bị đơn hàng
-    define('STATUS_BEING_TRANSPORTED', 2); //chờ người bán vận chuyển hàng tới người dùng
-    define('STATUS_WAITING_FOR_PAYMENT', 3); //chờ người bán xác nhận đã thanh toán
+    define('STATUS_WAITING_FOR_PAYMENT', 1); //chờ người bán xác nhận đã thanh toán
+    define('STATUS_PREPARING_GOODS', 2); //chờ người bán chuẩn bị đơn hàng
+    define('STATUS_BEING_TRANSPORTED', 3); //chờ người bán vận chuyển hàng tới người dùng
     define('STATUS_COMPLETED', 4); //thành công
+    define('STATUS_CANCELED', 5); //đã huỷ
 
     function encode_product_data($cart_data){
         $new_cart_data = array(

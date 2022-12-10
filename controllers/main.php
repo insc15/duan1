@@ -38,6 +38,9 @@ function Run()
         case str_contains($_SERVER['REQUEST_URI'], $root . '/register');
             include('./controllers/pages/register.php');
             break;
+        case str_contains($_SERVER['REQUEST_URI'], $root . '/payment');
+            include('./controllers/payment/index.php');
+            break;
         case str_contains($_SERVER['REQUEST_URI'], $root . '/checkout');
             with_login('./controllers/pages/checkout.php','/checkout', true);
             break;
