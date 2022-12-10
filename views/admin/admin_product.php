@@ -67,7 +67,7 @@
                         ?>
                     </td>
                     <td class="py-4 px-6">
-                        <img src="http://localhost/duan1/assets/images/<?php echo $value['featured_image'] ?>" width="100px" alt="">
+                        <img src="<?php echo get_home_url()?>/assets/images/<?php echo $value['featured_image'] ?>" width="100px" alt="">
                     </td>
                     <td class="py-4 px-6">
                         <?php echo $category['name'] ?>

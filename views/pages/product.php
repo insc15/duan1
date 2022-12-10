@@ -8,7 +8,7 @@
                     <ul class="splide__list">
                         <?php foreach ($product['list_image'] as $key => $value) { ?>
                         <li class="splide__slide relative pt-[100%]">
-                            <img class="absolute top-0" src="http://localhost/duan1/assets/images/<?php echo $value ?>" alt="">
+                            <img class="absolute top-0" src="<?php echo get_home_url()?>/assets/images/<?php echo $value ?>" alt="">
 
                             <?php } ?>
                     </ul>
@@ -19,7 +19,7 @@
                     <ul class="splide__list">
                         <?php foreach ($product['list_image'] as $key => $value) { ?>
                         <li class="splide__slide rounded overflow-hidden">
-                            <img class="" src="http://localhost/duan1/assets/images/<?php echo $value ?>" alt="">
+                            <img class="" src="<?php echo get_home_url()?>/assets/images/<?php echo $value ?>" alt="">
                         </li>
                         <?php } ?>
                     </ul>

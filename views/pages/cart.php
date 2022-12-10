@@ -18,7 +18,7 @@
                     <input type="hidden" name="item[<?php echo $key ?>][size]" value="<?php echo $item['size'][0] ?>">
                     <div class="rounded overflow-hidden w-24 shrink-0">
                         <div class="relative pt-[100%]">
-                            <img class="absolute top-0" src="http://localhost/duan1/assets/images/<?php echo $item['featured_image']?>" alt="">
+                            <img class="absolute top-0" src="<?php echo get_home_url() ?>/assets/images/<?php echo $item['featured_image']?>" alt="">
                         </div>
                     </div>
                     <div class="px-6 truncate">
