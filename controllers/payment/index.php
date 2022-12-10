@@ -1,11 +1,7 @@
 <?php
     require('./models/products.php'); 
     require('./models/order.php'); 
-
-    if($_SERVER['REQUEST_METHOD'] === "POST"){
-        update_order(41,array('status' => STATUS_PREPARING_GOODS));
-    }
-
+    
     try {
         // if(!isset($_GET['orderId'])) { throw 0; }
         $order = get_order(array('id' => intval(str_replace('CARA','',intval(str_replace('CARA','',$_GET['id']))))));
