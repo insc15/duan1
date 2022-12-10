@@ -133,7 +133,7 @@
 
             $fmt[] = array_merge(array(
                 'product_data' => $order_detail,
-                'delivery_info' => $delivery_info[0],
+                'delivery_info' => $delivery_info,
                 'total' => $total,
                 'formatted_total' => number_format($total, 0, '.', '.') . '&#8363;'
             ),$value);
