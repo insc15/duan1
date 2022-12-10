@@ -22,7 +22,7 @@
             $res = update_order(str_replace('CARA','',$_POST['order_id']),array('payment'=>$_POST['payment_method']),null,$delivery_data);
 
             if($res){
-                $_SESSION['cart'] = [];
+                // $_SESSION['cart'] = [];
                 // include('./views/partials/header.php');
                 // include('./views/pages/ordersuccessful.php');
                 // include('./views/partials/footer.php');
@@ -30,8 +30,11 @@
                     case 0:
                         # code...
                         break;
-                    case 2: //MoMo
-                        MoMo_init_payment($_POST['order_id'], "Thanh toán qua MoMo", $_POST['total']);
+                    case 1: //MoMoATM
+                        init_payment("payWithATM", $_POST['order_id'], "Thanh toán qua MoMo", $_POST['total']);
+                        break;
+                    case 2: //MoMoWallet
+                        init_payment("captureWallet", $_POST['order_id'], "Thanh toán qua MoMo", $_POST['total']);
                         break;
                     default:
                         # code...
