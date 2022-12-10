@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+<section class="max-w-screen-xl mx-auto font-[Montserrat] mt-5 border-t mb-2">
+    <h3 class="mt-5 text-4xl">Cảm ơn bạn! Đơn đặt hàng của bạn đã được đặt</h3>
+    <div class="flex justify-between mt-10">
+        <div class="w-5/12 ml-2">
+            <h3 class="uppercase mb-2">bạn đặt hàng # là: 12324121412</h3>
+=======
 <?php var_dump($order) ?>
 <section class="w-full mx-auto h-screen">
     <div class="w-[727px] shadow-lg rounded-sm border h-[381px] mx-auto flex flex-col items-center mt-10 font-[Montserrat]">
@@ -17,6 +24,7 @@
     <div class="flex justify-between mt-10">
         <div class="w-5/12 ml-2">
             <h3 class="uppercase mb-2">you order # is: 12324121412</h3>
+>>>>>>> 36b8cc53edde3888400ca864a51243dbd959e373
             <p class="font-light mb-2">lorem ipsum dolor sit amet, consectetur adip Lorem </p>
             <h3 class="uppercase mb-2">This order will be shipped to:</h3>
             <p class="font-light">john doe</p>
@@ -59,7 +67,16 @@
                                 <h2>123d</h2>
                             </div>
                         </div>
+<<<<<<< HEAD
+                        <a class="duration-150 flex justify-center items-center text-base text-primary border-primary border py-1 ml-3 rounded mr-3 hover:bg-[#041E42] hover:text-white " href="list-order">Quản lí đơn hàng</a>
+                        <a class="duration-150 flex justify-center items-center text-base text-primary border-primary border py-1 ml-3 rounded mr-3 hover:bg-[#041E42] hover:text-white" href="order-complete.php">Thanh Toán</a>
+
+        </div>
+    </div>
+</section>
+=======
                         <a class="duration-150 flex justify-center items-center text-base text-primary border-primary border py-1 ml-3 rounded mr-3 hover:bg-[#041E42] hover:text-white" href="list-order">Quản lí đơn hàng</a>
         </div>
     </div>
 </section> -->
+>>>>>>> 36b8cc53edde3888400ca864a51243dbd959e373
