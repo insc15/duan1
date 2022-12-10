@@ -119,6 +119,8 @@
         foreach ($orders as $key => $value) {
             $order_detail_sql = select_query_builder('order_detail', array('order_id' => intval($value['id'])), null);
             $order_detail = run_query($order_detail_sql, FETCH_ALL);
+            $delivery_info_sql = select_query_builder('delivery_info', array('order_id' => intval($value['id'])), null);
+            $delivery_info = run_query($delivery_info_sql, FETCH_ALL);
 
             $total = 0;
 
@@ -131,6 +133,7 @@
 
             $fmt[] = array_merge(array(
                 'product_data' => $order_detail,
+                'delivery_info' => $delivery_info[0],
                 'total' => $total,
                 'formatted_total' => number_format($total, 0, '.', '.') . '&#8363;'
             ),$value);
