@@ -41,15 +41,15 @@
                         <p class="text-sm mb-2">Phương thức thanh toán</p>
                         <div class="flex flex-wrap -mx-3">
                             <div class="px-3 w-4/12 font-medium flex items-center">
-                                <input id="payment_method_1" type="radio" name="payment_method" value="1" hidden class="peer" checked>
+                                <input id="payment_method_1" type="radio" name="payment_method" value="2" hidden class="peer" checked>
                                 <label for="payment_method_1" class="duration-150 px-4 py-3 peer-checked:text-white peer-checked:bg-primary peer-checked:border-primary border border-[#808080] w-full cursor-pointer rounded-lg text-center">Ví MoMo</label>
                             </div>
                             <div class="px-3 w-4/12 font-medium flex items-center">
-                                <input id="payment_method_2" type="radio" name="payment_method" value="2" hidden class="peer">
+                                <input id="payment_method_2" type="radio" name="payment_method" value="1" hidden class="peer">
                                 <label for="payment_method_2" class="duration-150 px-4 py-3 peer-checked:text-white peer-checked:bg-primary peer-checked:border-primary border border-[#808080] w-full cursor-pointer rounded-lg text-center">Chuyển khoản trực tiếp</label>
                             </div>
                             <div class="px-3 w-4/12 font-medium flex items-center">
-                                <input id="payment_method_3" type="radio" name="payment_method" value="3" hidden class="peer">
+                                <input id="payment_method_3" type="radio" name="payment_method" value="0" hidden class="peer">
                                 <label for="payment_method_3" class="duration-150 px-4 py-3 peer-checked:text-white peer-checked:bg-primary peer-checked:border-primary border border-[#808080] w-full cursor-pointer rounded-lg text-center">Trả tiền khi nhận hàng</label>
                             </div>
 
@@ -101,7 +101,7 @@
                         <div class="flex items-center pb-4">
                             <div class="w-24">
                                 <div class="relative pt-[100%]">
-                                    <img class="absolute top-0" src="<?php echo get_home_url()?>/assets/images/<?php echo($value['data']['featured_image']) ?>" alt="">
+                                    <img class="absolute top-0" src="<?php echo get_home_url() ?>/assets/images/<?php echo($value['data']['featured_image']) ?>" alt="">
                                 </div>
                             </div>
                             <div class="px-3">
@@ -116,6 +116,7 @@
                     <?php endforeach;endif; ?>
                     <hr class="bg-[#d9d9d9]">
                     <div class="flex font-semibold py-4">
+                        <input type="text" hidden name="total" value="<?php echo $order['total'] ?>">
                         <span class="">Total</span>
                         <span class="ml-auto text-primary"><?php echo $order['formatted_total'] ?></span>
                     </div>
@@ -169,5 +170,8 @@
         .onSuccess((event) => {
             event.target.submit()
         });
+
+
+        
     })
 </script>

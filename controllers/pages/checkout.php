@@ -1,6 +1,7 @@
 <?php
     require('models/products.php');
     require('models/order.php');
+    require('./controllers/payment/MoMo.php');
 
     if($_SERVER['REQUEST_METHOD'] === "POST"){
         $order = get_order(array('id' => intval(str_replace('CARA','',$_POST['order_id']))))[0];
@@ -18,15 +19,24 @@
                 'city' => $_POST['city'],
             );
             
-            $res = update_order(str_replace('CARA','',$_POST['order_id']),null,null,$delivery_data);
+            $res = update_order(str_replace('CARA','',$_POST['order_id']),array('payment'=>$_POST['payment_method']),null,$delivery_data);
 
-            var_dump($res);
-    
             if($res){
                 $_SESSION['cart'] = [];
-                include('./views/partials/header.php');
-                include('./views/pages/ordersuccessful.php');
-                include('./views/partials/footer.php');
+                // include('./views/partials/header.php');
+                // include('./views/pages/ordersuccessful.php');
+                // include('./views/partials/footer.php');
+                switch ($_POST['payment_method']) {
+                    case 0:
+                        # code...
+                        break;
+                    case 2: //MoMo
+                        MoMo_init_payment($_POST['order_id'], "Thanh toán qua MoMo", $_POST['total']);
+                        break;
+                    default:
+                        # code...
+                        break;
+                }
             }
         }
     }else{
