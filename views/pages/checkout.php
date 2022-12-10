@@ -101,7 +101,7 @@
                         <div class="flex items-center pb-4">
                             <div class="w-24">
                                 <div class="relative pt-[100%]">
-                                    <img class="absolute top-0" src="http://localhost/duan1/assets/images/<?php echo($value['data']['featured_image']) ?>" alt="">
+                                    <img class="absolute top-0" src="<?php echo get_home_url() ?>/assets/images/<?php echo($value['data']['featured_image']) ?>" alt="">
                                 </div>
                             </div>
                             <div class="px-3">
