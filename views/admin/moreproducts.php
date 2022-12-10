@@ -7,9 +7,14 @@
         <form class="flex flex-wrap " method="post" enctype="multipart/form-data">
             <div class="shadow-default rounded-lg p-4 w-full md:w-10/12">
                 <div class="py-4 flex flex-wrap ">
+                    <a class="font-medium text-blue-600 dark:text-blue-500 hover:underline" href="admin/products">Danh
+                        sách sản phẩm</a> <br>
+                    <?php if ($error_msg !== '') { ?>
+                    <p class="text-red-500"><?php echo $error_msg ?></p>
+                    <?php } ?>
                     <div class="w-full  md:pr-3 mt-4 md:mt-0">
                         <p class="text-sm mb-2">Tên Sản Phẩm </p>
-                        <input name="name"
+                        <input name="name" required
                             class="appearance-none block w-full font-medium rounded-lg py-3 px-4 outline-[#808080] outline-1 outline-double focus:outline-primary focus:outline-2 duration-150 placeholder:text-[#808080]"
                             type="text">
                     </div>
@@ -65,23 +70,23 @@
                     </select>
                     <div class="w-full md:pr-3 mt-5 md:mt-0">
                         <p class="text-sm mb-2 mt-5">Mô tả ngắn</p>
-                        <textarea name="description"
+                        <textarea name="description" required
                             class="resize-none  appearance-none block w-full font-medium rounded-lg py-3 px-4 outline-[#808080] outline-1 outline-double focus:outline-primary focus:outline-2 duration-150 placeholder:text-[#808080]"></textarea>
                     </div>
                     <div class="w-full md:pr-3 mt-5 md:mt-0">
                         <p class="text-sm mb-2 mt-5">Mô tả sản phẩm</p>
-                        <textarea name="description_detail"
+                        <textarea name="description_detail" required
                             class="resize-none  appearance-none block w-full font-medium rounded-lg py-3 px-4 outline-[#808080] outline-1 outline-double focus:outline-primary focus:outline-2 duration-150 placeholder:text-[#808080]"></textarea>
                     </div>
                     <div class="w-full  md:pr-3 mt-4 md:mt-0">
                         <p class="text-sm mb-2 mt-5">Giá gốc</p>
-                        <input name="price"
+                        <input name="price" required
                             class="appearance-none block w-full font-medium rounded-lg py-3 px-4 outline-[#808080] outline-1 outline-double focus:outline-primary focus:outline-2 duration-150 placeholder:text-[#808080]"
                             type="text" placeholder="">
                     </div>
                     <div class="w-full  md:pr-3 mt-4 md:mt-0">
                         <p class="text-sm mb-2 mt-5">Giá sale</p>
-                        <input name="discount"
+                        <input name="discount" required
                             class="appearance-none block w-full font-medium rounded-lg py-3 px-4 outline-[#808080] outline-1 outline-double focus:outline-primary focus:outline-2 duration-150 placeholder:text-[#808080]"
                             type="text" placeholder="">
                     </div>
@@ -90,9 +95,6 @@
                     class="appearance-none block mt-5 font-medium rounded-lg py-3 px-4 outline-[#808080] outline-1 outline-double focus:outline-primary focus:outline-2 duration-150 placeholder:text-[#808080]">
                     Thêm Sản Phẩm
                 </button>
-                <?php if ($error_msg !== '') { ?>
-                    <p class="text-red-500"><?php echo $error_msg ?></p>
-                <?php } ?>
             </div>
         </form>
     </div>
