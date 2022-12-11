@@ -1,6 +1,6 @@
 <?php 
     require_once('config.php');
-
+    require_once('./models/products.php ');
     define('STATUS_INIT', 0); //chờ người dùng xác nhận đơn hàng
     define('STATUS_WAITING_FOR_PAYMENT', 1); //chờ người bán xác nhận đã thanh toán
     define('STATUS_PREPARING_GOODS', 2); //chờ người bán chuẩn bị đơn hàng
@@ -141,4 +141,3 @@
 
         return $fmt;
     }
-?>
