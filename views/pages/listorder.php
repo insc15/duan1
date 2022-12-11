@@ -9,13 +9,17 @@
             <th class="border w-2/12">Tổng tiền</th>
             <th class="border w-2/12">Trạng thái</th>
         </tr>
+        
+        <?php foreach($orders as $key => $value):?>
+            <?php var_dump($orders)?>   
         <tr class="border">
-            <td class="border pl-2 ">12/12/12</td>
+            <td class="border pl-2 "><?php echo $orders['']?></td>
             <td class="border pl-2">124124124</td>
             <td class="border pl-2">Lorem ipsum dolor sit amet</td>
             <td class="border pl-2">2</td>
             <td class="border pl-2 ">123$</td>
             <td class="border pl-2">dang giao hang</td>
         </tr>
+        <?php endforeach; ?>
     </table>
 </section>

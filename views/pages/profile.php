@@ -18,7 +18,7 @@
             href="edit-profile">Chỉnh sửa thông tin</a>
             <?php if($_SESSION['currentUser']-> role==0) :?>
                 <a class="absolute left-0 border border-red-400 p-2 rounded-lg text-red-400 hover:bg-sky-300 hover:text-white hover:border-transparent"
-                href="list-order">Quản lí đơn hàng</a>
+                href="<?php echo get_home_url() . "/list-order?id=" . $value['id'] ?>">Quản lí đơn hàng</a>
             <?php endif; ?>
     </div>
 
