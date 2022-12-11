@@ -4,6 +4,12 @@ require_once('category.php');
 require_once('color.php');
 require_once('size.php');
 
+function count_product(){
+    $sql = "SELECT COUNT(id) FROM product";
+    $count = run_query($sql, FETCH_ONE);
+    return $count[0];
+}
+
 function get_product($meta_query = null, $order = null)
 {
     $sql = select_query_builder('product', $meta_query, $order);

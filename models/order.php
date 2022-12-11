@@ -8,40 +8,25 @@
     define('STATUS_COMPLETED', 4); //thành công
     define('STATUS_CANCELED', 5); //đã huỷ
 
-    function encode_product_data($cart_data){
-        $new_cart_data = array(
-            'total' => $cart_data['total'],
-            'formatted_total' => number_format($cart_data['total'], 0, '.', '.') . '&#8363;'
-        );
-        foreach($cart_data['items'] as $key => $value) {
-            $new_cart_data['item'][] = array(
-                'id' => $value['id'],
-                'name' => $value['data']['name'],
-                'color' => array(
-                    'id'=> $value['data']['color']['id'],
-                    'name'=> $value['data']['color']['name'],
-                    'hex'=> $value['data']['color']['hex']
-                ),
-                'size' => array(
-                    'id'=> $value['data']['size']['id'],
-                    'name'=> $value['data']['size']['name'],
-                ),
-                'quantity' => $value['quantity'],
-                'featured_image' => $value['data']['featured_image'],
-                'price' => $value['data']['price'],
-                'discount' => $value['data']['discount'],
-                'final_price' => $value['data']['final_price'],
-                'formatted_price' => $value['data']['formatted_price'],
-                'formatted_discount' => $value['data']['formatted_discount'],
-                'formatted_final_price' => $value['data']['formatted_final_price'],
-            );
+    function count_order($from = null, $to = null, $status = null){
+        $params = [];
+        if(isset($from)){
+            $params[] = "create_date >= '$from 00:00:00'";
         }
-        $product_data = urlencode(json_encode($new_cart_data));
-        return $product_data;
+        if(isset($to)){
+            $params[] = "create_date <= '$to 00:00:00'";
+        }
+        if(isset($status)){
+            $params[] = "status = ".$status;
+        }
+        $params = join(' AND ', $params);
+        if($params !== ""){ $params = " WHERE ".$params; }
+        $sql = "SELECT COUNT(id) FROM `order`$params";
+        $count = run_query($sql, FETCH_ONE);
+        return $count[0];
     }
 
     function create_order($cart_data, $customer_id){
-        $product_data = encode_product_data($cart_data);
         //create order
         $sql = "INSERT INTO `order` (customer_id) VALUES ($customer_id)";
         $stmt = $GLOBALS['connection']->prepare($sql);
