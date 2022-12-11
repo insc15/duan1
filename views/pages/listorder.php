@@ -9,18 +9,18 @@
             <th class="border w-2/12">Tổng tiền</th>
             <th class="border w-2/12">Trạng thái</th>
         </tr>
-        
-        <?php foreach($orders as $key => $value):?>
-              <?php var_dump($orders); ?>
+        <?php foreach ($orders as $key => $value) : ?>
         <tr class="border">
-            
-            <td class="border pl-2 "><?php echo $order['create_date']?></td>
-            <td class="border pl-2">CARA<?php echo $order['id']?></td>
-            <td class="border pl-2"><?php echo $order['name']?></td>
-            <td class="border pl-2"><?php echo $order['quantity']?></td>
-            <td class="border pl-2 "><?php echo $order['formatted_final_price']?></td>
-            <td class="border pl-2">dang giao hang</td>
+
+            <td class="border pl-2 "><?php echo $orders[$key]['create_date'] ?></td>
+            <td class="border pl-2">CARA<?php echo $orders[$key]['id'] ?></td>
+            <td class="border pl-2"><?php echo $orders[$key]['product_data'][0]['data']['name'] ?></td>
+            <td class="border pl-2"><?php echo $orders[$key]['product_data'][0]['quantity'] ?></td>
+            <td class="border pl-2 "><?php echo $orders[$key]['formatted_total'] ?></td>
+            <td class="border pl-2"><?php echo get_status($orders[$key]['status']) ?></td>
         </tr>
         <?php endforeach; ?>
+        </tr>
+
     </table>
 </section>
