@@ -22,13 +22,17 @@
             $res = update_order(str_replace('CARA','',$_POST['order_id']),array('payment'=>$_POST['payment_method']),null,$delivery_data);
 
             if($res){
-                // $_SESSION['cart'] = [];
+                $_SESSION['cart'] = [];
                 // include('./views/partials/header.php');
                 // include('./views/pages/ordersuccessful.php');
                 // include('./views/partials/footer.php');
                 switch ($_POST['payment_method']) {
                     case 0:
-                        # code...
+                        update_order(str_replace('CARA','',$_POST['order_id']),array('status' => STATUS_PREPARING_GOODS));
+                        $order = get_order(array('id' => intval(str_replace('CARA','',str_replace('CARA','',$_POST['order_id'])))))[0];
+                        include('./views/partials/header.php');
+                        include('./views/pages/ordersuccessful.php');
+                        include('./views/partials/footer.php');
                         break;
                     case 1: //MoMoATM
                         init_payment("payWithATM", $_POST['order_id'], "Thanh toán qua MoMo", $_POST['total']);
@@ -49,6 +53,7 @@
             $order = get_order(array('id' => intval(str_replace('CARA','',$order_id))));
             if(count($order) > 0){
                 if(intval($order[0]['status']) !== 0){
+                    $order = $order[0];
                     include('./views/partials/header.php');
                     include('./views/pages/ordersuccessful.php');
                     include('./views/partials/footer.php');

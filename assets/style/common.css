@@ -878,8 +878,8 @@ input[type="number"]::-webkit-inner-spin-button,
   height: 100vh;
 }
 
-.h-\[381px\] {
-  height: 381px;
+.h-\[390px\] {
+  height: 390px;
 }
 
 .h-\[40px\] {
@@ -910,12 +910,12 @@ input[type="number"]::-webkit-inner-spin-button,
   width: 100%;
 }
 
-.w-2\/12 {
-  width: 16.666667%;
+.w-4\/12 {
+  width: 33.333333%;
 }
 
-.w-9\/12 {
-  width: 75%;
+.w-8\/12 {
+  width: 66.666667%;
 }
 
 .w-24 {
@@ -932,8 +932,8 @@ input[type="number"]::-webkit-inner-spin-button,
   width: 1.75rem;
 }
 
-.w-4\/12 {
-  width: 33.333333%;
+.w-2\/12 {
+  width: 16.666667%;
 }
 
 .w-48 {
@@ -1081,6 +1081,10 @@ input[type="number"]::-webkit-inner-spin-button,
   justify-content: space-between;
 }
 
+.justify-items-start {
+  justify-items: start;
+}
+
 .gap-4 {
   gap: 1rem;
 }
@@ -1209,6 +1213,11 @@ input[type="number"]::-webkit-inner-spin-button,
 .border-red-700 {
   --tw-border-opacity: 1;
   border-color: rgb(185 28 28 / var(--tw-border-opacity));
+}
+
+.border-\[\#25AE88\] {
+  --tw-border-opacity: 1;
+  border-color: rgb(37 174 136 / var(--tw-border-opacity));
 }
 
 .bg-secondary {
@@ -1377,8 +1386,17 @@ input[type="number"]::-webkit-inner-spin-button,
   padding-bottom: 2rem;
 }
 
+.py-10 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
 .pr-3 {
   padding-right: 0.75rem;
+}
+
+.pl-3 {
+  padding-left: 0.75rem;
 }
 
 .pr-6 {
@@ -1387,10 +1405,6 @@ input[type="number"]::-webkit-inner-spin-button,
 
 .pt-\[100\%\] {
   padding-top: 100%;
-}
-
-.pl-3 {
-  padding-left: 0.75rem;
 }
 
 .pb-4 {
@@ -1453,9 +1467,18 @@ input[type="number"]::-webkit-inner-spin-button,
   font-family: Montserrat;
 }
 
+.font-\[Arial\] {
+  font-family: Arial;
+}
+
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
 }
 
 .text-sm {
@@ -1476,11 +1499,6 @@ input[type="number"]::-webkit-inner-spin-button,
 .text-4xl {
   font-size: 2.25rem;
   line-height: 2.5rem;
-}
-
-.text-xl {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
 }
 
 .text-xs {
@@ -1554,6 +1572,11 @@ input[type="number"]::-webkit-inner-spin-button,
 .text-blue-600 {
   --tw-text-opacity: 1;
   color: rgb(37 99 235 / var(--tw-text-opacity));
+}
+
+.text-orange-700 {
+  --tw-text-opacity: 1;
+  color: rgb(194 65 12 / var(--tw-text-opacity));
 }
 
 .text-red-500 {
@@ -1644,6 +1667,11 @@ input[type="number"]::-webkit-inner-spin-button,
 .text-red-700 {
   --tw-text-opacity: 1;
   color: rgb(185 28 28 / var(--tw-text-opacity));
+}
+
+.text-\[\#25AE88\] {
+  --tw-text-opacity: 1;
+  color: rgb(37 174 136 / var(--tw-text-opacity));
 }
 
 .line-through {
