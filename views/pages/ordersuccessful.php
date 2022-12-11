@@ -16,7 +16,7 @@ $info_order = $order[0]['delivery_info'];
                 EMAIL: <?php echo $info_order['email']; ?><br>
                 ADDRESS: <?php echo $info_order['address'].", ".$info_order['city']?><br>
             </p>
-            <a href="" class=" rounded-lg text-base font-normal flex mt-8 w-[211px] h-[40px] bg-[#041E42] text-white hover:bg-[white] hover:text-[#25AE88]  hover:border hover:border-[#25AE88]"><span class="material-symbols-rounded ml-6 text-base my-auto">arrow_back_ios</span><p class=" my-auto" >Continue shopping</p></a>
+            <a href="<?php echo get_home_url() ?>" class=" rounded-lg text-base font-normal flex mt-8 w-[211px] h-[40px] bg-[#041E42] text-white hover:bg-[white] hover:text-[#25AE88]  hover:border hover:border-[#25AE88]"><span class="material-symbols-rounded ml-6 text-base my-auto">arrow_back_ios</span><p class=" my-auto" >Continue shopping</p></a>
     </div>
 </section>
 
