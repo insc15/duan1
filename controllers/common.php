@@ -1,5 +1,8 @@
 <?php
 $root = '/duan1';
+if(!isset($_SESSION['currentUser']) && isset($_COOKIE['user_lg'])){
+    $_SESSION['currentUser'] = json_decode(base64_decode($_COOKIE['user_lg']));
+}
 
 if(!isset($_SESSION['cart'])){$_SESSION['cart'] = [];}
 // $_SESSION['cart'] = [];

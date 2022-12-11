@@ -1,8 +1,8 @@
 <main class="flex">
-    <div class="w-2/12 ">
+    <div class="w-4/12 ">
         <?php echo $sidebar ?>
     </div>
-    <div class="w-9/12 ml-5">
+    <div class="w-8/12">
         <?php include($page) ?>
     </div>
 </main>
