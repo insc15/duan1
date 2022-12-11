@@ -13,6 +13,7 @@
         <?php foreach($orders as $key => $value):?>
             <?php var_dump($orders)?>   
         <tr class="border">
+            <input type="hidden" name="order_id" value="<?php echo $value-> order_id?>">
             <td class="border pl-2 "><?php echo $orders['']?></td>
             <td class="border pl-2">124124124</td>
             <td class="border pl-2">Lorem ipsum dolor sit amet</td>

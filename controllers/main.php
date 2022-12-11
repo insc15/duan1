@@ -21,7 +21,7 @@ function Run()
             include('./controllers/pages/logout.php');
             break;
         case str_contains($_SERVER['REQUEST_URI'], $root . '/list-order');
-            get_view('./controllers/pages/listorder.php');
+            get_view('./controllers/pages/listorder.php','/login',true);
             break;
        
         case str_contains($_SERVER['REQUEST_URI'], $root . '/profile');

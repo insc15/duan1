@@ -71,5 +71,10 @@
                 </div>
             </div>
         </form>
+        
+            <div>
+                <a href="<?php echo get_home_url() . "/list-order?id=" . $_SESSION['currentUser']->$id?>">Quản lí đơn hàng</a>
+            </div>  
     </div>
+
 </section>
