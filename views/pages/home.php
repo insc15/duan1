@@ -5,17 +5,16 @@ require('./controllers/product.php');
 <section
     class="bg-[url('../images/hero4.png')] bg-no-repeat bg-cover bg-center h-[70vh] md:h-96 lg:h-screen flex flex-col justify-center items-start">
     <div class="max-w-screen-xl mx-auto px-4 w-full">
-        <h4 class="pb-4 text-base lg:text-xl font-bold">Trade-in-offer</h4>
-        <h1 class="text-3xl lg:text-5xl font-bold">Super value deals <br> <span class="text-primary leading-snug">On all
-                products</span> </h1>
-        <p class="my-5">Save more with coupons & up to 70%off!</p>
+        <h4 class="pb-4 text-base lg:text-xl font-bold">Website bán hàng Thời Trang </h4>
+        <h1 class="text-3xl lg:text-5xl font-bold">Giảm giá Cực Sốc <br> <span class="text-primary leading-snug">Thời trang Cara</span> </h1>
+        <p class="my-5">Giảm giá 80% tất cả sản phẩm </p>
     </div>
 </section>
 
 <section class="pt-12">
     <div class="mb-8 text-center">
-        <h2 class="text-2xl md:text-4xl font-bold">Featured Products</h2>
-        <p class="md:text-base text-sm">Summer Collection New Morden Design</p>
+        <h2 class="text-2xl md:text-4xl font-bold">Sản Phẩm Nổi Bật</h2>
+        <p class="md:text-base text-sm"></p>
     </div>
     <div class="flex flex-wrap max-w-screen-xl -mx-1 -my-2 md:mx-auto px-4">
         <?php foreach (get_product(array('featured' => 1)) as $value) : $category = get_category(array('id' => $value['category'][0]))[0] ?>
@@ -58,8 +57,8 @@ require('./controllers/product.php');
 
 <section class="pt-12">
     <div class="mb-8 text-center">
-        <h2 class="text-2xl md:text-4xl font-bold">New Arrivals</h2>
-        <p class="md:text-base text-sm">Summer Collection New Morden Design</p>
+        <h2 class="text-2xl md:text-4xl font-bold">Sản Phẩm mới</h2>
+        <p class="md:text-base text-sm"></p>
     </div>
     <div class="flex flex-wrap max-w-screen-xl -mx-1 -my-2 md:mx-auto px-4">
         <?php foreach (get_product(null, array('by'=> 'created_date', 'sort' => 'desc')) as $value) : $category = get_category(array('id' => $value['category'][0]))[0] ?>
