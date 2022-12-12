@@ -9,14 +9,12 @@
                     <a class="hover:text-primary duration-150 flex relative after:content-[''] hover:after:w-2/3 after:w-0 after:duration-150 after:bg-primary after:h-[2px] after:left-0 after:-bottom-1 after:absolute mx-5 "
                         href="#"><span class="">Shop</span><span class="material-symbols-rounded">expand_more</span></a>
                     <!-- dropdown-menu -->
-                    <div
-                        class="hidden absolute translate-y-full duration-150 pt-4 bottom-0 group-hover:flex hover:flex w-[200px] flex-col drop-shadow-lg">
-                        <a class="px-5 py-3 hover:bg-gray-200 bg-white" href="<?php echo get_home_url() ?>">danh muc
-                            ?</a>
-                        <a class="px-5 py-3 hover:bg-gray-200 bg-white" href="<?php echo get_home_url() ?>">danh muc
-                            ?</a>
-                        <a class="px-5 py-3 hover:bg-gray-200 bg-white" href="<?php echo get_home_url() ?>">danh muc
-                            ?</a>
+                    <div class="hidden absolute translate-y-full duration-150 pt-4 bottom-0 group-hover:flex hover:flex w-[200px] flex-col drop-shadow-lg">
+                    <?php 
+                    require('./models/category.php');
+                    foreach (get_category() as $key => $value) {?>
+                        <a class="px-5 py-3 hover:bg-gray-200 bg-white" href="<?php echo get_home_url() ?>"><?php echo $value['name']; ?></a>
+                    <?php } ?>
                     </div>
                 </div>
                 <a class="hover:text-primary md:block hidden duration-150 relative after:content-[''] hover:after:w-2/3 after:w-0 after:duration-150 after:bg-primary after:h-[2px] after:left-0 after:-bottom-1 after:absolute mx-5"

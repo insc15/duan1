@@ -59,16 +59,13 @@
       function drawChart() {
 
         var data = google.visualization.arrayToDataTable([
-          ['quần áo ', 'Hours per Day'],
-          ['Work',     11],
-          ['Eat',      2],
-          ['Commute',  2],
-          ['Watch TV', 2],
-          ['Sleep',    7]
+          ['thời trang ', 'Hours per Day'],
+          ['Áo dài tay', 15],
+          ['Áo ngắn tay', 9],
         ]);
 
         var options = {
-          title: 'My Daily Activities'
+          title: 'My website'
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart'));
