@@ -73,7 +73,7 @@
         </form>
         
             <div>
-                <a href="<?php echo get_home_url() . "/list-order?id=" . $_SESSION['currentUser']->id?>">Quản lí đơn hàng</a>
+                <a class="border p-4 rounded"href="<?php echo get_home_url() . "/list-order?id=" . $_SESSION['currentUser']->id?>">Quản lí đơn hàng</a>
             </div>  
     </div>
 
