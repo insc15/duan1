@@ -1,46 +1,49 @@
-<section class=" justify-items-start py-9 font-[Montserrat]">
-    <h1 class="font-normal text-2xl md:text-4xl ml-5 justify-center">Tổng Quan Website</h1>
+<section class=" justify-items-start py-9">
+    <h1 class="font-normal text-2xl md:text-4xl justify-center">Tổng Quan Website</h1>
 </section>
 <section>
-    <div class="flex flex-wrap">
-        <div class=" w-full flex pr-3">
-            <div class="grid gap-4 grid-cols-2  py-9  ">
-                
-                <div class="px-4 py-5 shadow-default rounded-lg flex  " style="width: 300px; height: 100px;">
-                    <img src="https://www.emojimeaning.com/img/img-apple-160/1f91d.png" class="" alt="">
-                    <h1 class="text-center py-2 font-[Montserrat] text-xl py-2"><a href="/duan1/admin/products">
-                        Tổng Quan Sản Phẩm
-                    </a>
-                    <p class="text-orange-700">156</p>
-                </h1>
+  <div class="flex flex-wrap">
+    <div class="w-5/12 flex pr-3">
+      <div class="flex flex-wrap -mx-2">
+            <div class="p-2 w-1/2">
+              <div class="px-4 py-6 items-center shadow-default rounded-lg flex">
+                <span class="text-5xl material-symbols-rounded text-[#FE6A05]">handshake</span>
+                <div class="ml-2">
+                  <h3 class="text-center py-2 text-xl leading-none">Số lượng sản phẩm</h3>
+                  <p class="text-[#FE6A05] text-2xl font-medium leading-none"><?php echo count_product() ?></p>
                 </div>
-                <div class="px-4 py-5 shadow-default rounded-lg flex  " style="width: 300px; height: 100px;">
-                    <img src="https://img.pikbest.com/png-images/qiantu/yellow-tick-pattern_2626970.png!bw700" class="" alt="">
-                    <h1 class="text-center py-2 font-[Montserrat] text-xl py-2"><a href="/duan1/admin/adminorder">
-                        Đơn Hàng Hoàn Thành
-                    </a>
-                    <p class="text-orange-700">30</p>
-                </h1>
+              </div>
+            </div>
+            <div class="p-2 w-1/2">
+              <div class="px-4 py-6 items-center shadow-default rounded-lg flex">
+                <span class="text-5xl material-symbols-rounded text-[#28A745]">done_all</span>
+                <div class="ml-2">
+                  <h3 class="text-center py-2 text-xl leading-none">Đơn hoàn thành</h3>
+                  <p class="text-[#28A745] text-2xl font-medium leading-none"><?php echo(count_order(date('Y-m-01', time()),date('Y-m-t', time()))) ?></p>
                 </div>
-                <div class="px-4 py-5 shadow-default rounded-lg flex  " style="width: 300px; height: 100px;">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzH6TfTtq91hzmeIvm_4JOdb5y1UWjTlYZdA&usqp=CAU" class="" alt="">
-                    <h1 class="text-center py-2 font-[Montserrat] text-xl py-2"><a href="/duan1/admin/user">
-                        Người Đùng mới
-                    </a>
-                    <p class="text-orange-700">3</p>
-                </h1>
+              </div>
+            </div>
+            <div class="p-2 w-1/2">
+              <div class="px-4 py-6 items-center shadow-default rounded-lg flex">
+                <span class="text-5xl material-symbols-rounded text-[#ECA400]">attach_money</span>
+                <div class="ml-2">
+                  <h3 class="text-center py-2 text-xl leading-none">Doanh thu</h3>
+                  <p class="text-[#ECA400] text-2xl font-medium leading-none"><?php echo count_product() ?></p>
                 </div>
-                <div class="px-4 py-5 shadow-default rounded-lg flex  " style="width: 300px; height: 100px;">
-                    <img src="https://cachlambanh.vn/wp-content/uploads/2017/10/price-icon.png" class="" alt="">
-                    <h1 class="text-center py-2 font-[Montserrat] text-xl py-2"><a href=" /duan1/admin/dashboard">
-                        Doanh Thu
-                    </a>
-                    <p class="text-orange-700">10.000.00đ</p>
-                </h1>
+              </div>
+            </div>
+            <div class="p-2 w-1/2">
+              <div class="px-4 py-6 items-center shadow-default rounded-lg flex">
+                <span class="text-5xl material-symbols-rounded text-[#28A745]">done_all</span>
+                <div class="ml-2">
+                  <h3 class="text-center py-2 text-xl leading-none">Tổng số đơn hàng</h3>
+                  <p class="text-[#28A745] text-2xl font-medium leading-none"><?php echo count_product() ?></p>
                 </div>
+              </div>
+            </div>
         </div>
-
-    </div>
+      </div>
+  </div>
 
 
     <div class="w-full pl-3 flex  ">
@@ -56,19 +59,19 @@
       function drawChart() {
 
         var data = google.visualization.arrayToDataTable([
-          [' ', 'Hours per Day'],
-          ['quần áo nam',     11],
-          ['quần náo nữ ',      2],
-          ['số lượng bán được ',  4],
-          ['số lượng còn lại', 2],
-          
+          ['quần áo ', 'Hours per Day'],
+          ['Work',     11],
+          ['Eat',      2],
+          ['Commute',  2],
+          ['Watch TV', 2],
+          ['Sleep',    7]
         ]);
 
         var options = {
-          title: 'Thống Kê website cara',
+          title: 'My Daily Activities'
         };
 
-          var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
 
         chart.draw(data, options);
       }
