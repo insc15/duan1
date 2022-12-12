@@ -60,8 +60,9 @@
 
         var data = google.visualization.arrayToDataTable([
           ['thời trang ', 'Hours per Day'],
-          ['Áo dài tay', 15],
-          ['Áo ngắn tay', 9],
+          ['Áo dài tay', 14],
+          ['Áo nỉ và hoodie', 8],
+          ['Áo ngắn tay', 2]
         ]);
 
         var options = {
