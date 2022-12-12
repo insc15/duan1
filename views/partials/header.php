@@ -1,3 +1,4 @@
+
 <header class="shadow-lg py-5 px-4 lg:px-20 bg-[#E3E6F3] sticky top-0 z-10">
     <div class="relative">
         <div class="max-w-screen-xl mx-auto flex items-center">
@@ -11,7 +12,6 @@
                     <!-- dropdown-menu -->
                     <div class="hidden absolute translate-y-full duration-150 pt-4 bottom-0 group-hover:flex hover:flex w-[200px] flex-col drop-shadow-lg">
                     <?php 
-                    require('./models/category.php');
                     foreach (get_category() as $key => $value) {?>
                         <a class="px-5 py-3 hover:bg-gray-200 bg-white" href="<?php echo get_home_url() ?>"><?php echo $value['name']; ?></a>
                     <?php } ?>
